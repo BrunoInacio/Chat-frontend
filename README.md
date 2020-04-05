@@ -1,4 +1,4 @@
-# Chat-frontend
+# chat-front-end
 Projeto de formatura - Chat - Front-End
 
 ---
