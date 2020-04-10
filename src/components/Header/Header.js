@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" color="primary">
         <Toolbar>
 
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="open drawer">
