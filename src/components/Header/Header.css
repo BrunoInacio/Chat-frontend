@@ -1,10 +1,9 @@
-.Footer {
+.Header {
+    background-color: gainsboro;
     text-align: center;
-    color: gray;
+    color: dimgray;
     font-size:.85rem;
 
-    position: fixed;
     left: 0;
-    bottom: 0;
     width: 100%;
 }
