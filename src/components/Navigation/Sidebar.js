@@ -3,13 +3,11 @@ import React from 'react';
 import clsx from 'clsx';
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Drawer, List, Typography, CssBaseline} from '@material-ui/core';
+import { Drawer, List, Typography } from '@material-ui/core';
 import { Divider, IconButton, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import HelpIcon from '@material-ui/icons/Help';
 import MailIcon from '@material-ui/icons/Mail';
@@ -57,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     overflowX: 'hidden',
     width: theme.spacing(7) + 1,
     [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9) + 1,
+      width: theme.spacing(7) + 1,
     },
   },
   toolbar: {
@@ -78,8 +76,6 @@ export default function Sidebar(props) {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      
       <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
@@ -93,8 +89,9 @@ export default function Sidebar(props) {
           }),
         }}
       >
+
         <div className={classes.toolbar}>
-          <Typography variant="h4">
+          <Typography variant="h4" color="primary">
             Chatbot
           </Typography>
 
@@ -102,8 +99,6 @@ export default function Sidebar(props) {
             <ChevronLeftIcon />
           </IconButton>
         </div>
-
-
 
         <Divider />
 

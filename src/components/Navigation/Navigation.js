@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { CssBaseline } from '@material-ui/core';
+
 import Sidebar from './Sidebar'
 import Header from './Header'
 
@@ -10,6 +12,8 @@ export default function Navigation() {
 
   return (
     <div className="Navigation">
+      <CssBaseline />
+
       <Header open={menuOpen} openMenu={handleOpenMenu} />
       <Sidebar open={menuOpen} closeMenu={handleCloseMenu} />
     </div>
