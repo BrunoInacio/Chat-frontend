@@ -1,28 +1,27 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Navigation from '../Navigation'
+import { makeStyles } from '@material-ui/core/styles';
+
+import Navigation from '../Navigation';
+import Home from '../Pages/Home';
+import Error404 from '../Pages/Error404';
 
 import './App.css';
 
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+export default function App() {
+  return (
+    <div className="App">
+      <Navigation />
 
-const useStyles = makeStyles((theme) => ({
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
-}));
+      <Router>
+        <Switch>
+          <Route component={Home} exact path="/" />
+          <Route component={Home} path="/home" />
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <Navigation />
-
-      </div>
-    );
-  }
+          <Route component={Error404}/>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
-
-export default App;
