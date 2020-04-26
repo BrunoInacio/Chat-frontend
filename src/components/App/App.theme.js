@@ -4,8 +4,8 @@ import { indigo, blue } from '@material-ui/core/colors/';
 
 export default createMuiTheme({
   palette: {
-    primary: blue,
-    secondary: indigo,
+    primary: indigo,
+    secondary: blue,
   },
   status: {
     danger: 'orange',
@@ -15,5 +15,8 @@ export default createMuiTheme({
     drawer: {
       width: 240,
     },
+    drawerClosed: {
+      width: 60,
+    }
   },
 });

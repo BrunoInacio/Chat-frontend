@@ -71,11 +71,11 @@ export default function Sidebar(props) {
             <ListItemText primary="Informações" />
           </ListItem>
         </List>
-        
+
         <div className={props.open ? classes.footer : classes.hide}>
           <Divider />
 
-          <Typography variant="caption">
+          <Typography variant="caption" align="center">
             Projeto de formatura
           </Typography>
           <br />

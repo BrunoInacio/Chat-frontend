@@ -18,8 +18,10 @@ export default makeStyles((theme) => ({
     display: 'none'
   },
   footer: {
+    width: theme.navigation.drawer.width,
     position: 'absolute',
     bottom: 0,
+    textAlign: 'center',
   },
   // Drawer
   drawer: {
@@ -34,7 +36,7 @@ export default makeStyles((theme) => ({
     }),
   },
   drawerClose: {
-    width: theme.spacing(7) + 1,
+    width: theme.navigation.drawerClosed.width,
     overflowX: 'hidden',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
