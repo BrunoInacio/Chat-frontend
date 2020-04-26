@@ -1,101 +1,39 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-import clsx from 'clsx';
+import useStyles from './Sidebar.style';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Drawer, List, Typography } from '@material-ui/core';
-import { Divider, IconButton, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import {
+  Drawer, List, Typography, Divider, IconButton, 
+  ListItem, ListItemIcon, ListItemText
+} from '@material-ui/core';
 
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import HomeIcon from '@material-ui/icons/Home';
-import HelpIcon from '@material-ui/icons/Help';
-import MailIcon from '@material-ui/icons/Mail';
-import InfoIcon from '@material-ui/icons/Info';
-
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  hide: {
-    display: 'none',
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  footer: {
-    alignSelf: "flex-center",
-    bottom: 0,
-  },
-  menuButton: {
-    marginRight: 36,
-  },
-
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-    whiteSpace: 'nowrap',
-  },
-
-
-  drawerOpen: {
-    width: drawerWidth,
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  drawerClose: {
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    overflowX: 'hidden',
-    width: theme.spacing(7) + 1,
-    [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(7) + 1,
-    },
-  },
-  toolbar: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-  },
-}));
+import {
+  Home as HomeIcon,
+  Help as HelpIcon,
+  Mail as MailIcon,
+  Info as InfoIcon,
+  People as PeoplIcon,
+  ChevronLeft as ChevronLeftIcon,
+  QuestionAnswer as QuestionAnswerIcon,
+} from '@material-ui/icons';
 
 export default function Sidebar(props) {
   const classes = useStyles();
-  const theme = useTheme();
-  
-  const handleToggleMenu = () => props.closeMenu();
 
   return (
     <div className={classes.root}>
-      <Drawer
-        variant="permanent"
-        className={clsx(classes.drawer, {
-          [classes.drawerOpen]: props.open,
-          [classes.drawerClose]: !props.open,
-        })}
+      <Drawer variant="permanent" className={classes.drawer}
         classes={{
-          paper: clsx({
-            [classes.drawerOpen]: props.open,
-            [classes.drawerClose]: !props.open,
-          }),
+          paper: props.open ? classes.drawerOpen : classes.drawerClose
         }}
       >
-
         <div className={classes.toolbar}>
-          <Typography variant="h4" color="primary">
+          <Typography variant="h4" color="secondary">
             Chatbot
           </Typography>
 
-          <IconButton onClick={handleToggleMenu}>
+          <IconButton onClick={props.closeMenu} className={classes.menuButton}>
             <ChevronLeftIcon />
           </IconButton>
         </div>
@@ -103,11 +41,11 @@ export default function Sidebar(props) {
         <Divider />
 
         <List>
-          <ListItem button key="inicio">
+          <ListItem button key="inicio" component={Link} to="/home">
             <ListItemIcon><HomeIcon /></ListItemIcon>
             <ListItemText primary="Início" />
           </ListItem>
-          <ListItem button key="chatbot">
+          <ListItem button key="chatbot" component={Link} to="/chatbot">
             <ListItemIcon><QuestionAnswerIcon /></ListItemIcon>
             <ListItemText primary="Chatbot" />
           </ListItem>
@@ -116,37 +54,35 @@ export default function Sidebar(props) {
         <Divider />
 
         <List>
-          <ListItem button key="duvidas">
-            <ListItemIcon><HelpIcon /></ListItemIcon>
-            <ListItemText primary="Dúvidas comuns" />
-          </ListItem>
-          <ListItem button key="contato">
+          <ListItem button key="contato" component={Link} to="/contact">
             <ListItemIcon><MailIcon /></ListItemIcon>
             <ListItemText primary="Entrar em contato" />
           </ListItem>
-          <ListItem button key="info">
+          <ListItem button key="duvidas" component={Link} to="/questions">
+            <ListItemIcon><HelpIcon /></ListItemIcon>
+            <ListItemText primary="Dúvidas comuns" />
+          </ListItem>
+          <ListItem button key="team" component={Link} to="/team">
+            <ListItemIcon><PeoplIcon /></ListItemIcon>
+            <ListItemText primary="Equipe" />
+          </ListItem>
+          <ListItem button key="info" component={Link} to="/info">
             <ListItemIcon><InfoIcon /></ListItemIcon>
             <ListItemText primary="Informações" />
           </ListItem>
         </List>
-      
-        <div className={classes.grow} />
         
-        <div className={clsx({
-          [classes.footer]: props.open,
-          [classes.hide]: !props.open,
-        })}>
+        <div className={props.open ? classes.footer : classes.hide}>
           <Divider />
 
           <Typography variant="caption">
             Projeto de formatura
           </Typography>
-
-          <Typography paragraph variant="overline">
+          <br />
+          <Typography variant="overline">
             PCS - USP
           </Typography>
         </div>
-
       </Drawer>
 
     </div>

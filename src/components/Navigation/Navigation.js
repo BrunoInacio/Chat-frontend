@@ -4,7 +4,7 @@ import Sidebar from './Sidebar'
 import Header from './Header'
 
 export default function Navigation() {
-  const [menuOpen, setMenuOpen] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(true);
   const handleOpenMenu = () => setMenuOpen(true);
   const handleCloseMenu = () => setMenuOpen(false);
 
