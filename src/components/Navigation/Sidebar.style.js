@@ -39,6 +39,9 @@ export default makeStyles((theme) => ({
   },
   drawerClose: {
     width: theme.navigation.drawerClosed.width,
+    [theme.breakpoints.down('sm')]: {
+      width: 0,
+    },
     overflowX: 'hidden',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
