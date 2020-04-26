@@ -24,10 +24,7 @@ export default function Sidebar(props) {
   return (
     <div className={classes.root}>
       <Drawer variant="permanent" className={classes.drawer}
-        classes={{
-          paper: props.open ? classes.drawerOpen : classes.drawerClose
-        }}
-      >
+        classes={{paper: props.open ? classes.drawerOpen : classes.drawerClose}}>
         <div className={classes.toolbar}>
           <Typography variant="h4" color="secondary">
             Chatbot
@@ -71,6 +68,8 @@ export default function Sidebar(props) {
             <ListItemText primary="Informações" />
           </ListItem>
         </List>
+        
+        <div className={classes.grow} />
 
         <div className={props.open ? classes.footer : classes.hide}>
           <Divider />

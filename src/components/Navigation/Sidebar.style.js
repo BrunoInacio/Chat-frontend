@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   // Header
   toolbar: {
+    width: theme.navigation.drawer.width,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
@@ -15,13 +16,14 @@ export default makeStyles((theme) => ({
   },
   // Footer
   hide: {
-    display: 'none'
+    display: 'none',
   },
   footer: {
     width: theme.navigation.drawer.width,
-    position: 'absolute',
-    bottom: 0,
     textAlign: 'center',
+  },
+  grow: {
+    flexGrow: 1,
   },
   // Drawer
   drawer: {
