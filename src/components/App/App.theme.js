@@ -1,16 +1,19 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-import './App.css';
-
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
+import { indigo, blue } from '@material-ui/core/colors/';
 
 export default createMuiTheme({
   palette: {
-    primary: purple,
-    secondary: green,
+    primary: blue,
+    secondary: indigo,
   },
   status: {
     danger: 'orange',
+  },
+
+  navigation: {
+    drawer: {
+      width: 240,
+    },
   },
 });
