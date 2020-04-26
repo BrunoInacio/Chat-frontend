@@ -1,29 +1,26 @@
 import React from 'react';
-import clsx from 'clsx';
 
-import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
-import { Menu as MenuIcon, AccountCircle as AccountCircleIcon } from '@material-ui/icons';
 import useStyles from './Header.style';
+
+import {
+  AppBar, Toolbar, IconButton, Typography,
+} from '@material-ui/core';
+
+import {
+  Menu as MenuIcon,
+  AccountCircle as AccountCircleIcon,
+  WbIncandescent as WbIncandescentIcon,
+} from '@material-ui/icons';
 
 export default function Header(props) {
   const classes = useStyles();
-  const menuId = 'primary-search-account-menu';
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="fixed" color="primary"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: props.open,
-        })}
-      >
+    <div>
+      <AppBar position="fixed" color="primary" className={classes.appBar + ' ' + (props.open ? classes.appBarShift : '')}>
         <Toolbar>
-
           <IconButton edge="start" color="inherit" aria-label="open drawer"
-            onClick={props.openMenu}
-            className={clsx(classes.menuButton, {
-              [classes.hide]: props.open,
-            })}
-          >
+            onClick={props.openMenu} className={classes.menuButton + ' ' + (props.open ? classes.hide : '')}>
             <MenuIcon />
           </IconButton>
 
@@ -34,7 +31,10 @@ export default function Header(props) {
           <div className={classes.grow} />
           
           <div className={classes.section}>
-            <IconButton edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="false" onClick={()=>{}} color="inherit">
+            <IconButton edge="end" aria-label="theme" onClick={() => { }} color="inherit">
+              <WbIncandescentIcon />
+            </IconButton>
+            <IconButton edge="end" aria-label="account of current user" onClick={()=>{}} color="inherit">
               <AccountCircleIcon />
             </IconButton>
           </div>
