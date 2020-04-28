@@ -7,7 +7,7 @@ import Header from './Header'
 export default function Navigation() {
   const theme = useTheme();
 
-  const [menuOpen, setMenuOpen] = React.useState(true);
+  const [menuOpen, setMenuOpen] = React.useState(false);
   const handleOpenMenu = () => setMenuOpen(true);
   const handleCloseMenu = () => setMenuOpen(false);
 

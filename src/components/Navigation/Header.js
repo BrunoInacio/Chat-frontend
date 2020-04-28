@@ -19,12 +19,12 @@ export default function Header(props) {
     <div>
       <AppBar position="fixed" color="primary" className={classes.appBar + ' ' + (props.open ? classes.appBarShift : '')}>
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="open drawer"
-            onClick={props.openMenu} className={classes.menuButton + ' ' + (props.open ? classes.hide : '')}>
+          <IconButton edge="start" color="inherit" aria-label="open drawer" onClick={props.openMenu}
+            className={classes.menuButton + ' ' + classes.menuButton + ' ' + (props.open ? classes.hide : '')}>
             <MenuIcon />
           </IconButton>
 
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" noWrap className={(props.open ? classes.titleDisplaced : classes.titleOrigin)}>
             Chatbot
           </Typography>
 
@@ -41,6 +41,8 @@ export default function Header(props) {
 
         </Toolbar>
       </AppBar>
+      
+      <div className={classes.appBarSpacer} />
     </div>
   );
 }

@@ -1,9 +1,25 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+  appBarSpacer: theme.mixins.toolbar,
   // Menu Button
   menuButton: {
-    marginRight: theme.spacing(2),
+    position: 'fixed',
+    left: theme.spacing(2),
+  },
+  titleDisplaced: {
+    marginLeft: theme.spacing(0),
+    transition: theme.transitions.create(['margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  titleOrigin: {
+    marginLeft: theme.spacing(4),
+    transition: theme.transitions.create(['margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
   },
   hide: {
     display: 'none',
