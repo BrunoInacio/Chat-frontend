@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core';
 
 import Sidebar from './Sidebar'
 import Header from './Header'
@@ -14,7 +14,7 @@ export default function Navigation() {
   return (
     <div className="Navigation">
       <Header open={menuOpen} openMenu={handleOpenMenu} />
-      <Sidebar open={menuOpen} closeMenu={handleCloseMenu} />
+      <Sidebar open={menuOpen} closeMenu={handleCloseMenu} openMenu={handleOpenMenu} />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { indigo, blue } from '@material-ui/core/colors/';
 
 export default makeStyles((theme) => ({
   // Header
@@ -15,20 +14,24 @@ export default makeStyles((theme) => ({
   menuButton: {
     marginLeft: theme.spacing(2),
   },
+  title: {
+  },
   // Footer
   hide: {
     display: 'none',
   },
   footer: {
     width: theme.navigation.drawer.width,
+    position: 'absolute',
+    bottom: 0,
     textAlign: 'center',
   },
   // Itens
+  root: {
+    display: 'flex',
+  },
   selected: {
     color: theme.palette.secondary.main,
-  },
-  grow: {
-    flexGrow: 1,
   },
   // Drawer
   drawer: {
@@ -44,9 +47,6 @@ export default makeStyles((theme) => ({
   },
   drawerClose: {
     width: theme.navigation.drawerClosed.width,
-    [theme.breakpoints.down('sm')]: {
-      width: 0,
-    },
     overflowX: 'hidden',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,

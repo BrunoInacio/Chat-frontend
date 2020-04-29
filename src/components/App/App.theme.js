@@ -1,11 +1,11 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-import { indigo, blue } from '@material-ui/core/colors/';
+import { indigo, deepPurple } from '@material-ui/core/colors/';
 
 export default createMuiTheme({
   palette: {
     primary: indigo,
-    secondary: blue,
+    secondary: deepPurple,
   },
   status: {
     danger: 'orange',
