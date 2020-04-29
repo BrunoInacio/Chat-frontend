@@ -73,7 +73,7 @@ export default function Sidebar(props) {
   );
 
   return (
-    <div className={classes.root}>
+    <div>
       {mobile ? mobileMenu : desktopMenu}
     </div>
   );
