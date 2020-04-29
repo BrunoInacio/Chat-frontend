@@ -38,6 +38,7 @@ export default makeStyles((theme) => ({
     whiteSpace: 'nowrap',
   },
   drawerOpen: {
+    overflowX: 'hidden',
     width: theme.navigation.drawer.width,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
