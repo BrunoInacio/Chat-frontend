@@ -8,7 +8,6 @@ export default function Routes() {
   return (
     <div className="Routes">
         <Switch>
-          <Route component={Home} exact path="/" />
           <Route component={Home} exact path="/home" />
 
           <Route component={Questions} exact path="/questions" />
@@ -20,6 +19,8 @@ export default function Routes() {
           <Route component={Chatbot} exact path="/chatbot" />
 
           <Route component={Error404} exact path='/404'/>
+
+          <Redirect exact from="/" to="/home" />
           <Redirect to="/404" />
         </Switch>
     </div>
