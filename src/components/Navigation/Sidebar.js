@@ -9,13 +9,13 @@ import {
 } from '@material-ui/core';
 
 import {
-  Home as HomeIcon,
-  Help as HelpIcon,
-  Mail as MailIcon,
-  Info as InfoIcon,
-  People as PeoplIcon,
-  ChevronLeft as ChevronLeftIcon,
-  QuestionAnswer as QuestionAnswerIcon,
+  Home as HomeIcon, HomeOutlined as HomeIconOutlined,
+  Mail as MailIcon, MailOutlined as MailIconOutlined,
+  Info as InfoIcon, InfoOutlined as InfoIconOutlined,
+  Help as HelpIcon, HelpOutlineOutlined as HelpIconOutlined,
+  People as PeoplIcon, PeopleOutlined as PeoplIconOutlined,
+  ChevronLeft as ChevronLeftIcon, ChevronLeftOutlined as ChevronLeftIconOutlined,
+  QuestionAnswer as QuestionAnswerIcon, QuestionAnswerOutlined as QuestionAnswerIconOutlined,
 } from '@material-ui/icons';
 
 export default function Sidebar(props) {
@@ -26,33 +26,39 @@ export default function Sidebar(props) {
     {
       title: 'Início',
       to: '/home',
-      icon: <HomeIcon />,
+      iconSelected: <HomeIcon />,
+      icon: <HomeIconOutlined />,
     },
     {
       title: 'Chatbot',
       to: '/chatbot',
-      icon: <QuestionAnswerIcon />,
+      iconSelected: <QuestionAnswerIcon />,
+      icon: <QuestionAnswerIconOutlined />,
       divider: true,
     },
     {
       title: 'Entrar em contato',
       to: '/contact',
-      icon: <MailIcon />,
+      iconSelected: <MailIcon />,
+      icon: <MailIconOutlined />,
     },
     {
       title: 'Dúvidas comuns',
       to: '/questions',
-      icon: <HelpIcon />,
+      iconSelected: <HelpIcon />,
+      icon: <HelpIconOutlined />,
     },
     {
       title: 'Equipe',
       to: '/team',
-      icon: <PeoplIcon />,
+      iconSelected: <PeoplIcon />,
+      icon: <PeoplIconOutlined />,
     },
     {
       title: 'Informações',
       to: '/info',
-      icon: <InfoIcon />,
+      iconSelected: <InfoIcon />,
+      icon: <InfoIconOutlined />,
     }
   ]
 
@@ -75,8 +81,10 @@ export default function Sidebar(props) {
         <List>
           {menu.map((item, _) => (
             <ListItem button key={item.title} component={Link} to={item.to} divider={item.divider}
-              selected={item.to == pathname}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
+              selected={item.to === pathname} classes={{selected: classes.selected}}>
+              <ListItemIcon className={(item.to === pathname ? classes.selected : '')}>
+                {(item.to === pathname ? item.iconSelected:item.icon)}
+              </ListItemIcon>
               <ListItemText primary={item.title} />
             </ListItem>
           ))}

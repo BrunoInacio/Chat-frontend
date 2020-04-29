@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { indigo, blue } from '@material-ui/core/colors/';
 
 export default makeStyles((theme) => ({
   // Header
@@ -21,6 +22,10 @@ export default makeStyles((theme) => ({
   footer: {
     width: theme.navigation.drawer.width,
     textAlign: 'center',
+  },
+  // Itens
+  selected: {
+    color: theme.palette.secondary.main,
   },
   grow: {
     flexGrow: 1,
