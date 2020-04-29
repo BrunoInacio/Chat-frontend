@@ -20,7 +20,7 @@ export default function Header(props) {
       <AppBar position="fixed" color="primary" className={classes.appBar + ' ' + (props.open ? classes.appBarShift : '')}>
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="open drawer" onClick={props.openMenu}
-            className={classes.menuButton + ' ' + classes.menuButton + ' ' + (props.open ? classes.hide : '')}>
+            className={classes.menuButton + ' ' + (props.open ? classes.hideButton : '')}>
             <MenuIcon />
           </IconButton>
 
