@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 import useStyles from './Sidebar.style';
 
@@ -20,16 +20,51 @@ import {
 
 export default function Sidebar(props) {
   const classes = useStyles();
+  const pathname = useLocation().pathname;
+
+  const menu = [
+    {
+      title: 'Início',
+      to: '/home',
+      icon: <HomeIcon />,
+    },
+    {
+      title: 'Chatbot',
+      to: '/chatbot',
+      icon: <QuestionAnswerIcon />,
+      divider: true,
+    },
+    {
+      title: 'Entrar em contato',
+      to: '/contact',
+      icon: <MailIcon />,
+    },
+    {
+      title: 'Dúvidas comuns',
+      to: '/questions',
+      icon: <HelpIcon />,
+    },
+    {
+      title: 'Equipe',
+      to: '/team',
+      icon: <PeoplIcon />,
+    },
+    {
+      title: 'Informações',
+      to: '/info',
+      icon: <InfoIcon />,
+    }
+  ]
 
   return (
     <div className={classes.root}>
       <Drawer variant="permanent" className={classes.drawer}
         classes={{paper: props.open ? classes.drawerOpen : classes.drawerClose}}>
+
         <div className={classes.toolbar}>
           <Typography variant="h4" color="secondary">
             Chatbot
           </Typography>
-
           <IconButton onClick={props.closeMenu} className={classes.menuButton}>
             <ChevronLeftIcon />
           </IconButton>
@@ -38,35 +73,13 @@ export default function Sidebar(props) {
         <Divider />
 
         <List>
-          <ListItem button key="inicio" component={Link} to="/home">
-            <ListItemIcon><HomeIcon /></ListItemIcon>
-            <ListItemText primary="Início" />
-          </ListItem>
-          <ListItem button key="chatbot" component={Link} to="/chatbot">
-            <ListItemIcon><QuestionAnswerIcon /></ListItemIcon>
-            <ListItemText primary="Chatbot" />
-          </ListItem>
-        </List>
-
-        <Divider />
-
-        <List>
-          <ListItem button key="contato" component={Link} to="/contact">
-            <ListItemIcon><MailIcon /></ListItemIcon>
-            <ListItemText primary="Entrar em contato" />
-          </ListItem>
-          <ListItem button key="duvidas" component={Link} to="/questions">
-            <ListItemIcon><HelpIcon /></ListItemIcon>
-            <ListItemText primary="Dúvidas comuns" />
-          </ListItem>
-          <ListItem button key="team" component={Link} to="/team">
-            <ListItemIcon><PeoplIcon /></ListItemIcon>
-            <ListItemText primary="Equipe" />
-          </ListItem>
-          <ListItem button key="info" component={Link} to="/info">
-            <ListItemIcon><InfoIcon /></ListItemIcon>
-            <ListItemText primary="Informações" />
-          </ListItem>
+          {menu.map((item, _) => (
+            <ListItem button key={item.title} component={Link} to={item.to} divider={item.divider}
+              selected={item.to == pathname}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.title} />
+            </ListItem>
+          ))}
         </List>
         
         <div className={classes.grow} />
@@ -82,8 +95,8 @@ export default function Sidebar(props) {
             PCS - USP
           </Typography>
         </div>
-      </Drawer>
 
+      </Drawer>
     </div>
   );
 }
