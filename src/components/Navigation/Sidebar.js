@@ -35,7 +35,8 @@ export default function Sidebar(props) {
       <List>
         {menuItens.map((item, _) => (
           <ListItem button key={item.title} component={Link} to={item.to} divider={item.divider}
-            selected={item.to === pathname} classes={{ selected: classes.selected }}>
+            selected={item.to === pathname} classes={{ selected: classes.selected }}
+            onClick={mobile ? props.closeMenu : null}>
             <ListItemIcon className={(item.to === pathname ? classes.selected : '')}>
               {(item.to === pathname ? item.iconSelected : item.icon)}
             </ListItemIcon>
@@ -65,7 +66,7 @@ export default function Sidebar(props) {
   );
 
   const desktopMenu = (
-    <Drawer variant="permanent"
+    <Drawer variant="permanent" className={props.open ? classes.drawerOpen : classes.drawerClose}
       classes={{ paper: props.open ? classes.drawerOpen : classes.drawerClose }}>
       {drawerContent}
     </Drawer>
