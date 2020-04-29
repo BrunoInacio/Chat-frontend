@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
   // Header
   toolbar: {
     width: theme.navigation.drawer.width,
@@ -27,9 +30,6 @@ export default makeStyles((theme) => ({
     textAlign: 'center',
   },
   // Itens
-  root: {
-    display: 'flex',
-  },
   selected: {
     color: theme.palette.secondary.main,
   },
@@ -39,7 +39,6 @@ export default makeStyles((theme) => ({
   },
   drawerOpen: {
     width: theme.navigation.drawer.width,
-    overflowX: 'hidden',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,

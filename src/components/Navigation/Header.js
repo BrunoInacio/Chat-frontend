@@ -41,8 +41,6 @@ export default function Header(props) {
 
         </Toolbar>
       </AppBar>
-      
-      <div className={classes.appBarSpacer} />
     </div>
   );
 }
