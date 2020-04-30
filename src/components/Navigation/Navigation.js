@@ -1,16 +1,14 @@
 import React from 'react';
-import { useTheme, useMediaQuery, } from '@material-ui/core';
+import { useTheme } from '@material-ui/core';
 
 import Sidebar from './Sidebar'
 import Header from './Header'
 
 export default function Navigation() {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.up('xs'));
+  const mobile = window.innerWidth < theme.breakpoints.values['sm'];
 
-  console.log(mobile)
-
-  const [menuOpen, setMenuOpen] = React.useState(true);
+  const [menuOpen, setMenuOpen] = React.useState(!mobile);
   const handleOpenMenu = () => setMenuOpen(true);
   const handleCloseMenu = () => setMenuOpen(false);
 
