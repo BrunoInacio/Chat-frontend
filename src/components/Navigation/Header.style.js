@@ -46,6 +46,7 @@ export default makeStyles((theme) => ({
     }
   },
   appBarShift: {
+    zIndex: theme.zIndex.drawer - 1,
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.navigation.drawer.width,
       width: `calc(100% - ${theme.navigation.drawer.width}px)`,
