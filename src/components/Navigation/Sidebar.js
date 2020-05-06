@@ -7,7 +7,6 @@ import menuItens from './Sidebar.itens';
 import {
   Drawer, SwipeableDrawer, List, Typography, IconButton, 
   Divider, ListItem, ListItemIcon, ListItemText,
-  useMediaQuery, useTheme,
 } from '@material-ui/core';
 
 import {
@@ -15,10 +14,8 @@ import {
 } from '@material-ui/icons';
 
 export default function Sidebar(props) {
-  const theme = useTheme();
   const classes = useStyles();
   const pathname = useLocation().pathname;
-  const mobile = useMediaQuery(theme.breakpoints.down('xs'));
 
   const drawerContent = (
     <div className={classes.drawer}>
@@ -32,11 +29,12 @@ export default function Sidebar(props) {
       </div>
 
       <Divider />
+      
       <List>
         {menuItens.map((item, _) => (
           <ListItem button key={item.title} component={Link} to={item.to} divider={item.divider}
             selected={item.to === pathname} classes={{ selected: classes.selected }}
-            onClick={mobile ? props.closeMenu : null}>
+            onClick={props.mobile ? props.closeMenu : null}>
             <ListItemIcon className={(item.to === pathname ? classes.selected : '')}>
               {(item.to === pathname ? item.iconSelected : item.icon)}
             </ListItemIcon>
@@ -74,7 +72,7 @@ export default function Sidebar(props) {
 
   return (
     <div>
-      {mobile ? mobileMenu : desktopMenu}
+      {props.mobile ? mobileMenu : desktopMenu}
     </div>
   );
 }
