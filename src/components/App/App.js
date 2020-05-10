@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline, Container } from '@material-ui/core';
 
 import Theme from './App.theme'
 import useStyles from './App.style';
@@ -17,13 +17,14 @@ export default function App() {
     <div className={classes.root}>
       <MuiThemeProvider theme={Theme}>
         <Router>
-          <CssBaseline />          
+          <CssBaseline />
+
           <Navigation />
 
-          <main>
+          <Container className={classes.content} disableGutters>
             <div className={classes.appBarSpacer} />
             <Routes />
-          </main>
+          </Container>
 
         </ Router>
       </MuiThemeProvider>
