@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   // Menu Button
   menuButton: {
-    position: 'absolute',
+    position: 'fixed',
     left: theme.spacing(2),
   },
   hideButton: {
@@ -37,6 +37,7 @@ export default makeStyles((theme) => ({
   },
   // Drawer
   appBar: {
+    position: 'fixed',
     [theme.breakpoints.up('sm')]: {
       zIndex: theme.zIndex.drawer + 1,
       transition: theme.transitions.create(['width', 'margin'], {

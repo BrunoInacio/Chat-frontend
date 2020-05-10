@@ -1,80 +1,50 @@
 import React from 'react';
+import usePageStyles from './Pages.style';
+import authors from './Team.authors';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Card, CardMedia, CardContent, CardActionArea, Grid, Typography } from '@material-ui/core';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    margin: theme.spacing(2, 0, 0, 2),
-  },
-  card: {
-    width: 220,
-    [theme.breakpoints.down('sm')]: {
-      width: 150,
-    },
-  },
-  grid: {
-    margin: theme.spacing(0, 0, 0, 1),
-  },
-  media: {
-    height: 220,
-    [theme.breakpoints.down('sm')]: {
-      height: 150,
-    },
-  },
-}));
+import {
+  Paper, Grid, Typography,
+  Card, CardMedia, CardContent, CardActionArea,
+} from '@material-ui/core';
 
 export default function Team() {
-  const classes = useStyles();
-  const theme = useTheme();
+  const pageClasses = usePageStyles();
 
   return (
-    <div className={classes.root}>
-      <Typography paragraph variant="h3">
-        Autores
-      </Typography>
+    <Paper elevation={2} className={pageClasses.content}>
 
-      <Grid container justify="center" spacing={2} className={classes.grid}>
-        <Grid item>
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia className={classes.media}
-                image="https://avatars1.githubusercontent.com/u/3254614"
-                title="Bruno Brandão Inácio"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h6" component="h2">
-                  Bruno Brandão Inácio
-                </Typography>
-                <Typography variant="overline" color="textSecondary" component="p">
-                  9838122
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
+        {authors.map((item, key) => (
+          <Grid container spacing={3} className={pageClasses.grid} key={key}>
 
-        <Grid item>
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia className={classes.media}
-                image="https://avatars3.githubusercontent.com/u/36277911"
-                title="Pedro de Moraes Ligabue"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h6" component="h2">
-                  Pedro de Moraes Ligabue
-                </Typography>
-                <Typography variant="overline" color="textSecondary" component="p">
-                  9837434
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
+            <Grid item xs={12}>
+              <Typography variant="h2" className={pageClasses.title} gutterBottom>
+                {item.title}
+              </Typography>
+            </Grid>
 
-      </Grid>
+            {item.members.map((member, _) => (
+              <Grid item lg={4} sm={6} className={pageClasses.desc} key={member.name}>
 
-    </div>
+                <Card className={pageClasses.card}>
+                  <CardActionArea>
+                    <CardMedia className={pageClasses.media} image={member.photo} title={member.name} />
+                    <CardContent>
+                      <Typography gutterBottom variant="h6">
+                        {member.name}
+                      </Typography>
+                      <Typography variant="overline" color="textSecondary" component="p">
+                        {member.NUSP}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+
+              </Grid>
+            ))}
+
+          </Grid>
+        ))}
+
+    </Paper>
   );
 }

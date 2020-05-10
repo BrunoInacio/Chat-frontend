@@ -10,8 +10,25 @@ export default makeStyles((theme) => ({
     },
     title: {
         textAlign: 'left',
+        color: theme.palette.secondary.main,
     },
     desc: {
         textAlign: 'justify',
+    },
+    grid: {
+        marginBottom: theme.spacing(6),
+    },
+
+    card: {
+        width: 240,
+        [theme.breakpoints.down('sm')]: {
+            width: 140,
+        },
+    },
+    media: {
+        height: 240,
+        [theme.breakpoints.down('sm')]: {
+            height: 140,
+        },
     },
 }));

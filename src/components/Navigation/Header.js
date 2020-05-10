@@ -17,7 +17,7 @@ export default function Header(props) {
 
   return (
     <div>
-      <AppBar position="absolute" color="primary" className={classes.appBar + ' ' + (props.open ? classes.appBarShift : '')}>
+      <AppBar color="primary" className={classes.appBar + ' ' + (props.open ? classes.appBarShift : '')}>
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="open drawer" onClick={props.openMenu}
             className={classes.menuButton + ' ' + (props.open ? classes.hideButton : '')}>

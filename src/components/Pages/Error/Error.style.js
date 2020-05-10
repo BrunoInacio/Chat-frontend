@@ -10,8 +10,10 @@ export default makeStyles((theme) => ({
     },
     title: {
         textAlign: 'left',
+        color: theme.palette.error.main,
     },
     desc: {
         textAlign: 'justify',
+        color: theme.palette.error.main,
     },
 }));

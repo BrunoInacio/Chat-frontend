@@ -1,5 +1,5 @@
 import React from 'react';
-import useStyles from './Error.style';
+import useErrorStyles from './Error.style';
 
 import {
   Paper, Typography
@@ -7,17 +7,17 @@ import {
 
 
 export default function Error404() {
-  const classes = useStyles();
+  const errorClasses = useErrorStyles();
   
   return (
-    <div className={classes.root}>
-      <Paper elevation={4} className={classes.content}>
+    <div className={errorClasses.root}>
+      <Paper elevation={4} className={errorClasses.content}>
 
-        <Typography variant="h2" color="error" className={classes.title} gutterBottom>
+        <Typography variant="h2" className={errorClasses.title} gutterBottom>
           Página não encontrada
         </Typography>
 
-        <Typography variant="subtitle1" color="error" className={classes.desc}>
+        <Typography variant="subtitle1" className={errorClasses.desc}>
           Utilize o menu lateral para navegar apenas por páginas válidas.
         </Typography>
 

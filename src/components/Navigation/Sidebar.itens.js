@@ -6,6 +6,7 @@ import {
   Info as InfoIcon, InfoOutlined as InfoIconOutlined,
   Help as HelpIcon, HelpOutlineOutlined as HelpIconOutlined,
   People as PeoplIcon, PeopleOutlined as PeoplIconOutlined,
+  Code as CodeIcon, SettingsEthernet as SettingsEthernetIcon,
   QuestionAnswer as QuestionAnswerIcon, QuestionAnswerOutlined as QuestionAnswerIconOutlined,
 } from '@material-ui/icons';
 
@@ -24,12 +25,6 @@ export default [
     divider: true,
   },
   {
-    title: 'Entrar em contato',
-    to: '/contact',
-    iconSelected: <MailIcon />,
-    icon: <MailIconOutlined />,
-  },
-  {
     title: 'Dúvidas comuns',
     to: '/questions',
     iconSelected: <HelpIcon />,
@@ -40,6 +35,18 @@ export default [
     to: '/team',
     iconSelected: <PeoplIcon />,
     icon: <PeoplIconOutlined />,
+  },
+  {
+    title: 'Entrar em contato',
+    to: '/contact',
+    iconSelected: <MailIcon />,
+    icon: <MailIconOutlined />,
+  },
+  {
+    title: 'Tecnologias',
+    to: '/tech',
+    iconSelected: <SettingsEthernetIcon />,
+    icon: <CodeIcon />,
   },
   {
     title: 'Informações',
