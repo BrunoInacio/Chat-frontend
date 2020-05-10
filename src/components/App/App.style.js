@@ -6,7 +6,8 @@ export default makeStyles((theme) => ({
     display: 'flex',
   },
   content: {
-    margin: theme.spacing(2),
-    maxWidth: theme.breakpoints.values['xl'],
+    margin: 'auto',
+    padding: theme.spacing(2, 1, 2, 1),
+    maxWidth: theme.breakpoints.values['lg'],
   }
 }));

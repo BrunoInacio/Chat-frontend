@@ -11,14 +11,13 @@ export default function Error404() {
   
   return (
     <div className={classes.root}>
+      <Paper elevation={4} className={classes.content}>
 
-      <Paper elevation={4} className={classes.desc}>
-
-        <Typography variant="h2" color="error" align="left" gutterBottom>
+        <Typography variant="h2" color="error" className={classes.title} gutterBottom>
           Página não encontrada
         </Typography>
 
-        <Typography variant="subtitle1" color="error" align="left" >
+        <Typography variant="subtitle1" color="error" className={classes.desc}>
           Utilize o menu lateral para navegar apenas por páginas válidas.
         </Typography>
 
