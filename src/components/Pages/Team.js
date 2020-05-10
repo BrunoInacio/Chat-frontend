@@ -1,6 +1,6 @@
 import React from 'react';
 import usePageStyles from './Pages.style';
-import authors from './Team.authors';
+import authors from './Team.list';
 
 import {
   Paper, Grid, Typography,

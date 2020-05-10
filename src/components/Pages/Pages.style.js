@@ -20,13 +20,13 @@ export default makeStyles((theme) => ({
     },
 
     card: {
-        width: 240,
+        width: 220,
         [theme.breakpoints.down('sm')]: {
             width: 140,
         },
     },
     media: {
-        height: 240,
+        height: 220,
         [theme.breakpoints.down('sm')]: {
             height: 140,
         },
