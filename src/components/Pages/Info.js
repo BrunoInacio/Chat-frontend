@@ -1,13 +1,70 @@
 import React from 'react';
+import usePageStyles from './Pages.style';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  Paper, Typography
+} from '@material-ui/core';
+
 
 export default function Info() {
-    return (
-        <div className="Info">
-            <h1>1 Info</h1>
-            <h1>2 Info</h1>
-            <h1>3 Info</h1>
-        </div>
-    );
+  const pageClasses = usePageStyles();
+
+  return (
+    <Paper elevation={2} className={pageClasses.content}>
+
+      <Typography variant="h2" className={pageClasses.title} gutterBottom>
+        Chatbot
+      </Typography>
+
+      <br />
+
+      <div className={pageClasses.desc}>
+        <Typography paragraph variant="h5">
+          Olá,
+        </Typography>
+
+        <Typography paragraph variant="subtitle1">
+          Este site é a demonstração do Projeto de Formatura entitulado
+          <Typography variant="overline">
+            <b> Chatbots para Antecipação de Demanda de Clientes numa Distribuidora de Energia Elétrica </b>
+          </Typography>
+          do curso de Engenharia Elétrica com Ênfase em Computação da Escola Politécnica da Universidade de São Paulo (POLI-USP)
+          e foi desenvolvido pelos alunos Bruno Brandão Inácio e Pedro de Moraes Ligabue.
+        </Typography>
+
+        <Typography paragraph variant="subtitle1">
+          Neste projeto de formatura são estudados métodos de apoio à interação,
+          em forma de conversa de texto, entre usuários e chatbots, em um sistema 
+          de atendimento ao cliente. A fim de atingir seu objetivo, é realizado 
+          primeiramente o desenvolvimento de uma interface gráfica para sistemas 
+          web, capaz de receber requisições de usuários e se comunicar com o servidor, 
+          possibilitando uma interação simples e intuitiva por meio de conversas de 
+          texto entre os usuários e os chatbots. Em seguida, é feita a análise de 
+          diferentes algoritmos de Processamento de Linguagem Natural (PLN) que 
+          possam ser aplicados aos chatbots de forma que estes sejam capazes 
+          de identificar e responder questões dos usuários de forma coerente.
+          </Typography>
+
+        <Typography paragraph variant="subtitle1">
+          Através do menu na lateral esquerda é possível navegar pelo site.
+          Você encontrará opções referentes à página 'Chatbot', onde poderá
+          observar e realizar testes com o chatbot desenvolvido. Além disso,
+          outras páginas apresentam todas as informações relevantes sobre o
+          projeto, como a as tecnologias utilizadas e dúvidas comuns. Por fim,
+          na página referente à equipe, é possível encontrar mais informações
+          sobre os autores do projeto.
+        </Typography>
+
+        <Typography paragraph variant="subtitle1">
+          O projeto foi dividido em duas partes: o front-end e o back-end. Os
+          códigos desenvolvidos estão disponíveis de forma aberta em repositórios
+          do GitHub.
+          <ul>
+            <li>Front-end: <a href="https://github.com/BrunoInacio/chat-front-end">https://github.com/BrunoInacio/chat-front-end</a></li>
+          </ul>
+        </Typography>
+      </div>
+
+    </Paper>
+  );
 }
