@@ -1,13 +1,36 @@
 import React from 'react';
+import usePageStyles from './Pages.style';
+import QeA from './Questions.list';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  Paper, Typography,
+  ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails
+} from '@material-ui/core';
+
+import {
+  ExpandMore as ExpandMoreIcon,
+} from '@material-ui/icons';
 
 export default function Questions() {
-    return (
-        <div className="Questions">
-            <h1>1 Questions</h1>
-            <h1>2 Questions</h1>
-            <h1>3 Questions</h1>
-        </div>
-    );
+  const pageClasses = usePageStyles();
+
+  return (
+      <div className={pageClasses.desc}>
+
+        {QeA.map((item, _) => (
+          <ExpansionPanel>
+            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="subtitle1">{item.question}</Typography>
+            </ExpansionPanelSummary>
+
+            <ExpansionPanelDetails>
+              <Typography>
+                {item.answer}
+              </Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+        ))}
+
+      </div>
+  );
 }

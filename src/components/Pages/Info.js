@@ -16,8 +16,6 @@ export default function Info() {
         Chatbot
       </Typography>
 
-      <br />
-
       <div className={pageClasses.desc}>
         <Typography paragraph variant="h5">
           Olá,

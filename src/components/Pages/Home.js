@@ -15,8 +15,6 @@ export default function Home() {
       <Typography variant="h2" className={pageClasses.title} gutterBottom>
         Chatbot
       </Typography>
-      
-      <br />
 
       <div className={pageClasses.desc}>
         <Typography paragraph variant="h5">

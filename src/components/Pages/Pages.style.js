@@ -11,6 +11,7 @@ export default makeStyles((theme) => ({
     title: {
         textAlign: 'left',
         color: theme.palette.secondary.main,
+        marginBottom: theme.spacing(5),
     },
     desc: {
         textAlign: 'justify',
