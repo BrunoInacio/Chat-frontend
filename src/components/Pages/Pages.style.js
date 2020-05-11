@@ -32,4 +32,10 @@ export default makeStyles((theme) => ({
             height: 140,
         },
     },
+
+    fullBox: {
+        flexGrow: 1,
+        padding: theme.spacing(3),
+        height: '89vh',
+    },
 }));
