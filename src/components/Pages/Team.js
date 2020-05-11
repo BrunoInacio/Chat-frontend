@@ -11,15 +11,15 @@ export default function Team() {
   const pageClasses = usePageStyles();
 
   return (
-    <Paper elevation={2} className={pageClasses.content}>
-
-        {authors.map((item, key) => (
+    <div>
+      {authors.map((item, key) => (
+        <Paper elevation={2} className={pageClasses.content + ' ' + pageClasses.grid}>
           <Grid container spacing={3} className={pageClasses.grid} key={key}>
 
             <Grid item xs={12}>
-              <Typography variant="h2" className={pageClasses.title} gutterBottom>
-                {item.title}
-              </Typography>
+                <Typography variant="h2" className={pageClasses.title} gutterBottom>
+                  {item.title}
+                </Typography>
             </Grid>
 
             {item.members.map((member, _) => (
@@ -43,8 +43,9 @@ export default function Team() {
             ))}
 
           </Grid>
-        ))}
+        </Paper>
+      ))}
 
-    </Paper>
+    </div>
   );
 }

@@ -17,9 +17,8 @@ export default makeStyles((theme) => ({
         textAlign: 'justify',
     },
     grid: {
-        marginBottom: theme.spacing(6),
+        marginBottom: theme.spacing(2),
     },
-
     card: {
         width: 220,
         [theme.breakpoints.down('sm')]: {

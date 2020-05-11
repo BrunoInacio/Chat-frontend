@@ -11,16 +11,9 @@ export default function Technology() {
   const pageClasses = usePageStyles();
 
   return (
-    <Paper elevation={2} className={pageClasses.content}>
-
+    <div>
       {Technologies.map((item, key) => (
         <Grid container spacing={3} className={pageClasses.grid} key={key}>
-
-          <Grid item xs={12}>
-            <Typography variant="h2" className={pageClasses.title} gutterBottom>
-              {item.title}
-            </Typography>
-          </Grid>
 
           {item.members.map((tech, _) => (
             <Grid item lg={4} sm={6} className={pageClasses.desc} key={tech.name}>
@@ -41,7 +34,6 @@ export default function Technology() {
 
         </Grid>
       ))}
-
-    </Paper>
+    </div>
   );
 }
