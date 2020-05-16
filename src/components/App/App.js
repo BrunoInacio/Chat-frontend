@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline, Container } from '@material-ui/core';
+import { CssBaseline, Container, Box } from '@material-ui/core';
 
 import Theme from './App.theme'
 import useStyles from './App.style';
@@ -19,10 +19,15 @@ export default function App() {
 
         <Navigation />
 
-        <Container className={classes.content} disableGutters>
+        <Box flexGrow={1} display="flex" flexDirection="column">
           <div className={classes.appBarSpacer} />
-          <Routes />
-        </Container>
+            
+          <Box overflow="auto">
+            <Container className={classes.content}>
+              <Routes />
+            </Container>
+          </Box>
+        </Box>
 
       </MuiThemeProvider>
     </div>

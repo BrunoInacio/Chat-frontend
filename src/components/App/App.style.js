@@ -6,7 +6,6 @@ export default makeStyles((theme) => ({
     display: 'flex',
     height: '100vh',
     width: '100vw',
-    overflow: 'auto',
   },
   content: {
     position: 'relative',
