@@ -20,11 +20,11 @@ export default function Questions() {
         {QeA.map((item, _) => (
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="subtitle1">{item.question}</Typography>
+              <Typography variant="subtitle2">{item.question}</Typography>
             </ExpansionPanelSummary>
 
             <ExpansionPanelDetails>
-              <Typography>
+              <Typography variant="body1" color="TextSecondary">
                 {item.answer}
               </Typography>
             </ExpansionPanelDetails>

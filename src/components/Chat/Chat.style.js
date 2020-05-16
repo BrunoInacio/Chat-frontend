@@ -7,6 +7,11 @@ export default makeStyles((theme) => ({
   form: {
     marginRight: theme.spacing(3),
   },
+  sendButton: {
+    height: 36,
+    alignSelf: 'flex-end',
+  },
+
   message: {
     position: 'relative',
     display: 'inline-block',
