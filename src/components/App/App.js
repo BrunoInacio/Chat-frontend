@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom'
 
+import Box from '@material-ui/core/Box'
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline, Container } from '@material-ui/core';
 
 import Theme from './App.theme'
 import useStyles from './App.style';
@@ -14,20 +13,14 @@ export default function App() {
   const classes = useStyles();
   
   return (
-    <div className={classes.root}>
+    <Box className={classes.root} display="flex" overflow="hidden">
       <MuiThemeProvider theme={Theme}>
-        <Router>
-          <CssBaseline />
-
           <Navigation />
-
-          <Container className={classes.content} disableGutters>
-            <div className={classes.appBarSpacer} />
-            <Routes />
-          </Container>
-
-        </ Router>
+          <Box className={classes.content} flexGrow={1} display="flex" flexDirection="column">
+            <Box className={classes.appBarSpacer} />
+            <Box flexGrow={1} p={2} overflow="auto"><Routes /></Box>
+          </Box>
       </MuiThemeProvider>
-    </div>
+    </Box>
   );
 }
