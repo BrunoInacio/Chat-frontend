@@ -46,11 +46,8 @@ export default makeStyles((theme) => ({
   },
   fullBox: {
     flexGrow: 1,
+    height: "88vh",
     padding: theme.spacing(3),
-    height: '89vh',
-  },
-  sendButton: {
-    height: theme.spacing(5),
   },
   closeButton: {
     position: 'absolute',

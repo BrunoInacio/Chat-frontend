@@ -41,7 +41,7 @@ export default function TeamDetailed(props) {
           {props.detailed.email ? (
             <ListItem dense disableGutters>
               <ListItemIcon><MailIcon color="secondary" /></ListItemIcon>
-              <ListItemText primaryTypographyProps={{variant: 'overline'}} primary={props.detailed.email} />
+              <ListItemText primaryTypographyProps={{variant: 'body2'}} primary={props.detailed.email} />
             </ListItem>
           ) : null}
         </CardContent>

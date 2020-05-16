@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
   },
   form: {
-    marginRight: theme.spacing(3),
+    marginRight: theme.spacing(2),
   },
   sendButton: {
     height: 36,

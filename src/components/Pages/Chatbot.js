@@ -1,13 +1,21 @@
 import React from 'react';
+import usePageStyles from './Pages.style';
 
-import { makeStyles } from '@material-ui/core/styles';
+import Chat from '../Chat';
 
-export default function Chatbot() {
-    return (
-        <div className="Chatbot">
-            <h1>1 Chat</h1>
-            <h1>2 Chat</h1>
-            <h1>3 Chat</h1>
-        </div>
-    );
+import {
+  Paper, Typography, Grid
+} from '@material-ui/core';
+
+
+export default function ChatBot() {
+  const pageClasses = usePageStyles();
+
+  return (
+    <div className={pageClasses.root}>
+      <Paper elevation={5} className={pageClasses.fullBox}>
+        <Chat />
+      </Paper>
+    </div>
+  );
 }

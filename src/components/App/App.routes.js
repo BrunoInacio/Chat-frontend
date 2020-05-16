@@ -6,7 +6,7 @@ import { Error404 } from '../Pages/Error';
 
 export default function Routes() {
   return (
-    <div className="Routes">
+    <div>
         <Switch>
           <Route component={Home} exact path="/home" />
 
