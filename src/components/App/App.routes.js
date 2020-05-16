@@ -13,7 +13,9 @@ export default function Routes() {
         <Route exact path="/info"><Info /></Route>
         <Route exact path="/team"><Team /></Route>
         <Route exact path="/chatbot"><Chatbot /></Route>
+        
         <Route exact path='/404'><Error404 /></Route>
+
         <Redirect exact from="/" to="/home" />
         <Redirect to="/404" />
       </Switch>

@@ -21,7 +21,8 @@ export default makeStyles((theme) => ({
     overflow: 'hidden',
     borderRadius: 4,
     marginBottom: theme.spacing(1),
-    padding: theme.spacing(2, 2, 2, 2),
+    padding: theme.spacing(2),
+    color: theme.palette.secondary.contrastText,
   },
   miniTime: {
     color: 'white',
@@ -36,15 +37,13 @@ export default makeStyles((theme) => ({
     textAlign: 'right',
   },
   user: {
-    color: theme.palette.text.primary,
     backgroundColor: theme.palette.secondary.light,
   },
   botContainer: {
     textAlign: 'left',
   },
   bot: {
-    color: theme.palette.text.primary,
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: theme.palette.secondary.dark,
   },
   dateContainer: {
     textAlign: 'center',
@@ -52,5 +51,6 @@ export default makeStyles((theme) => ({
   date: {
     color: theme.palette.text.secondary,
     backgroundColor: theme.palette.warning.light,
+    padding: theme.spacing(1),
   },
 }));
