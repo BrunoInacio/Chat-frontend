@@ -6,23 +6,16 @@ import { Error404 } from '../Pages/Error';
 
 export default function Routes() {
   return (
-    <div>
-        <Switch>
-          <Route component={Home} exact path="/home" />
-
-          <Route component={Questions} exact path="/questions" />
-
-          <Route component={Technology} exact path="/tech" />
-          <Route component={Info} exact path="/info" />
-          <Route component={Team} exact path="/team" />
-
-          <Route component={Chatbot} exact path="/chatbot" />
-
-          <Route component={Error404} exact path='/404'/>
-
-          <Redirect exact from="/" to="/home" />
-          <Redirect to="/404" />
-        </Switch>
-    </div>
+      <Switch>
+        <Route exact path="/home"><Home /></Route>
+        <Route exact path="/questions"><Questions /></Route>
+        <Route exact path="/tech"><Technology /></Route>
+        <Route exact path="/info"><Info /></Route>
+        <Route exact path="/team"><Team /></Route>
+        <Route exact path="/chatbot"><Chatbot /></Route>
+        <Route exact path='/404'><Error404 /></Route>
+        <Redirect exact from="/" to="/home" />
+        <Redirect to="/404" />
+      </Switch>
   );
 }
