@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { Home, Info, Team, Questions, Contact, Technology, Chatbot } from '../Pages';
+import { Home, Info, Team, Questions, Technology, Chatbot } from '../Pages';
 import { Error404 } from '../Pages/Error';
 
 export default function Routes() {
@@ -11,8 +11,7 @@ export default function Routes() {
           <Route component={Home} exact path="/home" />
 
           <Route component={Questions} exact path="/questions" />
-          <Route component={Contact} exact path="/contact" />
-            
+
           <Route component={Technology} exact path="/tech" />
           <Route component={Info} exact path="/info" />
           <Route component={Team} exact path="/team" />

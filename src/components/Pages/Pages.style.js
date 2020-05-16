@@ -1,40 +1,60 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-    root: {
-        display: 'flex',
+  root: {
+    display: 'flex',
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(2),
+  },
+  title: {
+    textAlign: 'left',
+    color: theme.palette.secondary.main,
+    marginBottom: theme.spacing(5),
+  },
+  desc: {
+    textAlign: 'justify',
+  },
+  grid: {
+    marginBottom: theme.spacing(2),
+  },
+  card: {
+    width: 220,
+    [theme.breakpoints.down('sm')]: {
+      width: 140,
     },
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing(2),
+  },
+  media: {
+    height: 220,
+    [theme.breakpoints.down('sm')]: {
+      height: 140,
     },
-    title: {
-        textAlign: 'left',
-        color: theme.palette.secondary.main,
-        marginBottom: theme.spacing(5),
+  },
+  detailed: {
+    margin: 'auto',
+    width: 440,
+    [theme.breakpoints.down('sm')]: {
+      width: 280,
     },
-    desc: {
-        textAlign: 'justify',
+  },
+  bigMedia: {
+    height: 440,
+    [theme.breakpoints.down('sm')]: {
+      height: 280,
     },
-    grid: {
-        marginBottom: theme.spacing(2),
-    },
-    card: {
-        width: 220,
-        [theme.breakpoints.down('sm')]: {
-            width: 140,
-        },
-    },
-    media: {
-        height: 220,
-        [theme.breakpoints.down('sm')]: {
-            height: 140,
-        },
-    },
-
-    fullBox: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-        height: '89vh',
-    },
+  },
+  fullBox: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    height: '89vh',
+  },
+  sendButton: {
+    height: theme.spacing(5),
+  },
+  closeButton: {
+    position: 'absolute',
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+  },
 }));

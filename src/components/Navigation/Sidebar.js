@@ -43,7 +43,7 @@ export default function Sidebar(props) {
         ))}
       </List>
 
-      <div className={(props.open ? classes.footer : classes.hide)}>
+      <div className={(props.open || props.mobile ? classes.footer : classes.hide)}>
         <Divider />
         <Typography variant="caption" align="center">
           Projeto de formatura

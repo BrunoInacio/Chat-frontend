@@ -3,7 +3,7 @@ import usePageStyles from './Pages.style';
 import Technologies from './Technology.list';
 
 import {
-  Paper, Grid, Typography,
+  Grid, Typography,
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
@@ -16,7 +16,7 @@ export default function Technology() {
         <Grid container spacing={3} className={pageClasses.grid} key={key}>
 
           {item.members.map((tech, _) => (
-            <Grid item lg={4} sm={6} className={pageClasses.desc} key={tech.name}>
+            <Grid item lg={3} sm={6} className={pageClasses.desc} key={tech.name}>
 
               <Card className={pageClasses.card}>
                 <CardActionArea>

@@ -3,7 +3,7 @@ import usePageStyles from './Pages.style';
 import QeA from './Questions.list';
 
 import {
-  Paper, Typography,
+  Typography,
   ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails
 } from '@material-ui/core';
 

@@ -37,12 +37,6 @@ export default [
     icon: <PeoplIconOutlined />,
   },
   {
-    title: 'Entrar em contato',
-    to: '/contact',
-    iconSelected: <MailIcon />,
-    icon: <MailIconOutlined />,
-  },
-  {
     title: 'Tecnologias',
     to: '/tech',
     iconSelected: <SettingsEthernetIcon />,
