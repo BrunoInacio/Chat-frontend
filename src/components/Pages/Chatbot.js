@@ -13,7 +13,7 @@ export default function ChatBot() {
 
   return (
     <div className={pageClasses.root}>
-      <Paper elevation={5} className={pageClasses.fullBox}>
+      <Paper elevation={2} className={pageClasses.fullBox}>
         <Chat />
       </Paper>
     </div>
