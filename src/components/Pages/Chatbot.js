@@ -12,10 +12,8 @@ export default function ChatBot() {
   const pageClasses = usePageStyles();
 
   return (
-    <div className={pageClasses.root}>
-      <Paper elevation={2} className={pageClasses.fullBox}>
-        <Chat />
-      </Paper>
-    </div>
+    <Paper elevation={2} className={pageClasses.fullBox}>
+      <Chat />
+    </Paper>
   );
 }
