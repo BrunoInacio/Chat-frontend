@@ -6,6 +6,8 @@ export default makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
+    maxHeight: "100%",
+    overflow: 'auto',
     padding: theme.spacing(2),
   },
   title: {
