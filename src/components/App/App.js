@@ -21,8 +21,8 @@ export default function App() {
 
         <Box flexGrow={1} display="flex" flexDirection="column">
           <div className={classes.appBarSpacer} />
-            
-          <Box overflow="auto">
+
+          <Box overflow="auto" flexGrow={1}>
             <Container className={classes.content}>
               <Routes />
             </Container>
