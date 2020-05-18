@@ -55,7 +55,7 @@ export default function Team() {
       ))}
       
 
-      {detailed.open 
+      {detailed.open
         ? <TeamDetailed detailed={detailed} handleClose={handleClose}/>
         : null
       }
