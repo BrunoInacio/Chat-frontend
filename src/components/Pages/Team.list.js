@@ -20,7 +20,7 @@ const professor = [
   }
 ]
 
-const colaborathor = [
+const collaborator = [
   {
     'name': "Pedro Koch",
     'photo': "https://avatars0.githubusercontent.com/u/34276307",
@@ -39,6 +39,6 @@ export default [
   },
   {
     'title': "Colaborador",
-    'members': colaborathor,
+    'members': collaborator,
   }
 ]
