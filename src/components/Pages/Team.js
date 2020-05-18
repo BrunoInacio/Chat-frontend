@@ -1,11 +1,11 @@
 import React from 'react';
 import usePageStyles from './Pages.style';
-import authors from './Team.list';
+import team from './Team.list';
 import TeamDetailed from './Team.detailed';
 
 import {
-  Paper, Grid, Typography,
-  Card, CardMedia, CardContent, CardActionArea,
+  Paper, Typography,
+  Card, CardMedia, CardContent, CardActionArea, Box,
 } from '@material-ui/core';
 
 export default function Team() {
@@ -28,19 +28,13 @@ export default function Team() {
   };
 
   return (
-    <div>
-      {authors.map((item, key) => (
-        <Paper elevation={2} className={pageClasses.content + ' ' + pageClasses.grid} key={key}>
-          <Grid container spacing={3} className={pageClasses.grid} key={key}>
-
-            <Grid item xs={12} key={item.title}>
-                <Typography variant="h3" className={pageClasses.title} gutterBottom>
-                  {item.title}
-                </Typography>
-            </Grid>
-
-            {item.members.map((member, _) => (
-              <Grid item lg={4} sm={6} className={pageClasses.desc} key={member.name}>
+    <Box overflow="auto">
+      {team.map(group => (
+        <Paper elevation={2} className={pageClasses.content + ' ' + pageClasses.grid} key={group.title}>
+          <Typography variant="h4" className={pageClasses.title}>{group.title}</Typography>
+          <Box display="flex" flexWrap="wrap">
+            {group.members.map(member => (
+              <Box m={1} key={member.name}>
                 <Card className={pageClasses.card}>
                   <CardActionArea onClick={() => handleOpen(member)} profile={member}>
                     <CardMedia className={pageClasses.media} image={member.photo} title={member.name} />
@@ -54,17 +48,17 @@ export default function Team() {
                     </CardContent>
                   </CardActionArea>
                 </Card>
-              </Grid>
-            ))}
-
-          </Grid>
+              </Box>
+              ))}
+          </Box>    
         </Paper>
       ))}
+      
 
-      {detailed.open ?
-        <TeamDetailed detailed={detailed} handleClose={handleClose}/>
-      : null}
-
-    </div>
+      {detailed.open 
+        ? <TeamDetailed detailed={detailed} handleClose={handleClose}/>
+        : null
+      }
+    </Box>
   );
 }

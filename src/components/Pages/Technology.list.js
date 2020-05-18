@@ -13,9 +13,4 @@ const tecnologias = [
   }
 ]
 
-export default [
-  {
-    'title': "Tecnologias",
-    'members': tecnologias
-  },
-]
+export default tecnologias;
