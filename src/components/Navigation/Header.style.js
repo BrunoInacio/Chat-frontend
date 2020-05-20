@@ -9,6 +9,7 @@ export default makeStyles((theme) => ({
   hideButton: {
     display: 'none',
   },
+  // Title
   titleDisplaced: {
     marginLeft: theme.spacing(4),
     [theme.breakpoints.up('sm')]: {
@@ -28,16 +29,8 @@ export default makeStyles((theme) => ({
       }),
     }
   },
-  // Itens
-  section: {
-    display: 'flex',
-  },
-  grow: {
-    flexGrow: 1,
-  },
   // Drawer
   appBar: {
-    position: 'fixed',
     [theme.breakpoints.up('sm')]: {
       zIndex: theme.zIndex.drawer + 1,
       transition: theme.transitions.create(['width', 'margin'], {

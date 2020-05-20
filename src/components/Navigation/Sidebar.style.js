@@ -8,18 +8,12 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
   menuButton: {
     marginLeft: theme.spacing(2),
   },
-  title: {
-  },
   // Footer
-  hide: {
-    display: 'none',
-  },
   footer: {
     width: theme.navigation.drawer.width,
     position: 'absolute',
@@ -43,8 +37,8 @@ export default makeStyles((theme) => ({
     }),
   },
   drawerClose: {
-    width: theme.navigation.drawerClosed.width,
     overflowX: 'hidden',
+    width: theme.navigation.drawerClosed.width,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,

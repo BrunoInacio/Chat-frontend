@@ -5,8 +5,8 @@ import useStyles from './Sidebar.style';
 import menuItens from './Sidebar.itens';
 
 import {
-  Drawer, SwipeableDrawer, List, Typography, IconButton, 
-  Divider, ListItem, ListItemIcon, ListItemText,
+  Drawer, SwipeableDrawer, Box, Typography, IconButton, 
+  List, ListItem, ListItemIcon, ListItemText, Divider,
 } from '@material-ui/core';
 
 import {
@@ -18,24 +18,25 @@ export default function Sidebar(props) {
   const pathname = useLocation().pathname;
 
   const drawerContent = (
-    <div className={classes.drawer}>
-      <div className={classes.toolbar}>
-        <Typography variant="h4" color="secondary" className={classes.title}>
+    <Box className={classes.drawer}>
+      <Box className={classes.toolbar}>
+        <Typography variant="h4" color="secondary">
           Chatbot
         </Typography>
         <IconButton onClick={props.closeMenu} className={classes.menuButton}>
           <ChevronLeftIcon />
         </IconButton>
-      </div>
+      </Box>
 
       <Divider />
-      
+
       <List>
-        {menuItens.map((item, _) => (
-          <ListItem button key={item.title} component={Link} to={item.to} divider={item.divider}
+        {menuItens.map((item) => (
+          <ListItem button key={item.title} component={Link} divider={item.divider}
             selected={item.to === pathname} classes={{ selected: classes.selected }}
-            onClick={props.mobile ? props.closeMenu : null}>
-            <ListItemIcon className={(item.to === pathname ? classes.selected : '')}>
+            onClick={props.mobile ? props.closeMenu : null} to={item.to}
+          >
+            <ListItemIcon className={(item.to === pathname ? classes.selected : null)}>
               {(item.to === pathname ? item.iconSelected : item.icon)}
             </ListItemIcon>
             <ListItemText primary={item.title} />
@@ -43,32 +44,31 @@ export default function Sidebar(props) {
         ))}
       </List>
 
-      <div className={(props.open || props.mobile ? classes.footer : classes.hide)}>
+      <Box className={classes.footer} display={(props.open || props.mobile ? 'block':'none')}>
         <Divider />
         <Typography variant="caption" align="center">
           Projeto de formatura
-          </Typography>
+        </Typography>
         <br />
         <Typography variant="overline">
           PCS - USP
-      </Typography>
-      </div>
-    </div>
+        </Typography>
+      </Box>
+    </Box>
   );
 
-  const mobileMenu = (
-    <SwipeableDrawer classes={{ paper: classes.drawerOpen }}
-      open={props.open} onClose={props.closeMenu} onOpen={props.openMenu}>
-      {drawerContent}
-    </SwipeableDrawer>
-  );
-
-  const desktopMenu = (
-    <Drawer variant="permanent" className={props.open ? classes.drawerOpen : classes.drawerClose}
-      classes={{ paper: props.open ? classes.drawerOpen : classes.drawerClose }}>
-      {drawerContent}
-    </Drawer>
-  );
-
-  return props.mobile ? mobileMenu : desktopMenu;
+  return props.mobile ? (
+      <SwipeableDrawer classes={{ paper: classes.drawerOpen }}
+        open={props.open} onClose={props.closeMenu} onOpen={props.openMenu}
+      >
+        {drawerContent}
+      </SwipeableDrawer>
+    ) : (
+      <Drawer variant="permanent"
+        className={props.open ? classes.drawerOpen : classes.drawerClose}
+        classes={{ paper: props.open ? classes.drawerOpen : classes.drawerClose }}
+      >
+        {drawerContent}
+      </Drawer>
+    )
 }

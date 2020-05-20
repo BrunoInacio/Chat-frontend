@@ -3,7 +3,7 @@ import React from 'react';
 import useStyles from './Header.style';
 
 import {
-  AppBar, Toolbar, IconButton, Typography,
+  Box, AppBar, Toolbar, IconButton, Typography,
 } from '@material-ui/core';
 
 import {
@@ -16,31 +16,34 @@ export default function Header(props) {
   const classes = useStyles();
 
   return (
-    <div>
-      <AppBar color="primary" className={classes.appBar + ' ' + (props.open ? classes.appBarShift : '')}>
-        <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="open drawer" onClick={props.openMenu}
-            className={classes.menuButton + ' ' + (props.open ? classes.hideButton : '')}>
-            <MenuIcon />
+    <AppBar color="primary" position="fixed"
+      className={(props.open ? classes.appBarShift : classes.appBar)}
+    >
+      <Toolbar>
+        <IconButton edge="start" color="inherit" onClick={props.openMenu}
+          className={(props.open ? classes.hideButton : classes.menuButton)}
+        >
+          <MenuIcon />
+        </IconButton>
+
+        <Typography variant="h6" noWrap 
+          className={(props.open ? classes.titleDisplaced : classes.titleOrigin)}
+        >
+          Chatbot
+        </Typography>
+
+        <Box flexGrow={1} />
+        
+        <Box display="flex">
+          <IconButton edge="end" onClick={() => { }} color="inherit">
+            <WbIncandescentIcon />
           </IconButton>
+          <IconButton edge="end" onClick={() => { }} color="inherit">
+            <AccountCircleIcon />
+          </IconButton>
+        </Box>
 
-          <Typography variant="h6" noWrap className={(props.open ? classes.titleDisplaced : classes.titleOrigin)}>
-            Chatbot
-          </Typography>
-
-          <div className={classes.grow} />
-          
-          <div className={classes.section}>
-            <IconButton edge="end" aria-label="theme" onClick={() => { }} color="inherit">
-              <WbIncandescentIcon />
-            </IconButton>
-            <IconButton edge="end" aria-label="account of current user" onClick={()=>{}} color="inherit">
-              <AccountCircleIcon />
-            </IconButton>
-          </div>
-
-        </Toolbar>
-      </AppBar>
-    </div>
+      </Toolbar>
+    </AppBar>
   );
 }
