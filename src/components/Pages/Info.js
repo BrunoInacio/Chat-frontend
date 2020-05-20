@@ -6,8 +6,12 @@ import {
 } from '@material-ui/core';
 
 
-export default function Info() {
+export default function Info(props) {
   const pageClasses = usePageStyles();
+
+  React.useEffect(() => {
+    props.setTitle("Informações");
+  })
 
   return (
     <Paper elevation={2} className={pageClasses.content}>
@@ -53,7 +57,7 @@ export default function Info() {
           sobre os autores do projeto.
         </Typography>
 
-        <Typography paragraph variant="subtitle1">
+        <Typography variant="subtitle1">
           O projeto foi dividido em duas partes: o front-end e o back-end. Os
           códigos desenvolvidos estão disponíveis de forma aberta em repositórios
           do GitHub.

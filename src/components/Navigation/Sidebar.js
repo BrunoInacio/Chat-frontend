@@ -34,8 +34,7 @@ export default function Sidebar(props) {
         {menuItens.map((item) => (
           <ListItem button key={item.title} component={Link} divider={item.divider}
             selected={item.to === pathname} classes={{ selected: classes.selected }}
-            onClick={props.mobile ? props.closeMenu : null} to={item.to}
-          >
+            onClick={props.mobile ? props.closeMenu : null} to={item.to}>
             <ListItemIcon className={(item.to === pathname ? classes.selected : null)}>
               {(item.to === pathname ? item.iconSelected : item.icon)}
             </ListItemIcon>
@@ -59,15 +58,13 @@ export default function Sidebar(props) {
 
   return props.mobile ? (
       <SwipeableDrawer classes={{ paper: classes.drawerOpen }}
-        open={props.open} onClose={props.closeMenu} onOpen={props.openMenu}
-      >
+        open={props.open} onClose={props.closeMenu} onOpen={props.openMenu}>
         {drawerContent}
       </SwipeableDrawer>
     ) : (
       <Drawer variant="permanent"
         className={props.open ? classes.drawerOpen : classes.drawerClose}
-        classes={{ paper: props.open ? classes.drawerOpen : classes.drawerClose }}
-      >
+        classes={{ paper: props.open ? classes.drawerOpen : classes.drawerClose }}>
         {drawerContent}
       </Drawer>
     )

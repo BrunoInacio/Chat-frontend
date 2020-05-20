@@ -8,8 +8,12 @@ import {
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
-export default function Team() {
+export default function Team(props) {
   const pageClasses = usePageStyles();
+
+  React.useEffect(() => {
+    props.setTitle("Equipe");
+  })
 
   const [detailed, setDetailed] = React.useState({
     open: false,

@@ -8,8 +8,13 @@ import {
 } from '@material-ui/core';
 
 
-export default function ChatBot() {
+export default function ChatBot(props) {
   const pageClasses = usePageStyles();
+
+  React.useEffect(() => {
+    props.setTitle("Chatbot");
+  })
+
 
   return (
     <Paper elevation={2} className={pageClasses.fullBox}>

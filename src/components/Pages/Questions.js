@@ -11,7 +11,11 @@ import {
   ExpandMore as ExpandMoreIcon,
 } from '@material-ui/icons';
 
-export default function Questions() {
+export default function Questions(props) {
+  React.useEffect(() => {
+    props.setTitle("Dúvidas comuns");
+  })
+
   return (
       <Box textAlign="justify">
         {FAQ.map((item, _) => (

@@ -7,8 +7,12 @@ import {
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
-export default function Technology() {
+export default function Technology(props) {
   const pageClasses = usePageStyles();
+
+  React.useEffect(() => {
+    props.setTitle("Tecnologias");
+  })
 
   return (
     <Box display="flex" alignItems="center" flexWrap="wrap">

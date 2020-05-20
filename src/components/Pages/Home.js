@@ -6,8 +6,12 @@ import {
 } from '@material-ui/core';
 
 
-export default function Home() {
+export default function Home(props) {
   const pageClasses = usePageStyles();
+
+  React.useEffect(() => {
+    props.setTitle("Início");
+  })
 
   return (
     <Paper elevation={2} className={pageClasses.content}>
