@@ -1,13 +1,12 @@
 import React from 'react';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline, Box, Container } from '@material-ui/core';
+import { CssBaseline, Container } from '@material-ui/core';
 
 import Theme from './App.theme'
 import useStyles from './App.style';
-
-import Routes from './App.routes'
 import Navigation from '../Navigation';
+import Routes from './App.routes'
 
 import { useWidth } from '../../utils';
 
@@ -27,20 +26,11 @@ export default function App() {
     <MuiThemeProvider theme={Theme}>
       <CssBaseline />
 
-      <Box display="flex" height="100%" width="100%">
-        <Navigation title={title} isMobile={isMobile} />
-
-        <Box flexGrow={1} display="flex" flexDirection="column">
-          <Box className={classes.appBarSpacer} />
-
-          <Box overflow="auto" flexGrow={1}>
-            <Container className={classes.content}>
-              <Routes setTitle={setTitle} />
-            </Container>
-          </Box>
-        </Box>
-
-      </Box>
+      <Navigation title={title} isMobile={isMobile}>
+        <Container className={classes.content}>
+          <Routes setTitle={setTitle} />
+        </Container>
+      </Navigation>
     </MuiThemeProvider>
   );
 }

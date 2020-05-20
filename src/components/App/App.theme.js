@@ -10,12 +10,4 @@ export default createMuiTheme({
   status: {
     danger: 'orange',
   },
-  navigation: {
-    drawer: {
-      width: 240,
-    },
-    drawerClosed: {
-      width: 60,
-    }
-  },
 });

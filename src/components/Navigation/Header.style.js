@@ -42,8 +42,8 @@ export default makeStyles((theme) => ({
   appBarShift: {
     zIndex: theme.zIndex.drawer - 1,
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.navigation.drawer.width,
-      width: `calc(100% - ${theme.navigation.drawer.width}px)`,
+      marginLeft: props => props.drawerSize.width,
+      width: props => `calc(100% - ${props.drawerSize.width}px)`,
       transition: theme.transitions.create(['width', 'margin'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   // Header
   toolbar: {
-    width: theme.navigation.drawer.width,
+    width: props => props.drawerSize.width,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
@@ -15,9 +15,9 @@ export default makeStyles((theme) => ({
   },
   // Footer
   footer: {
-    width: theme.navigation.drawer.width,
     position: 'absolute',
     bottom: 0,
+    width: props => props.drawerSize.width,
     textAlign: 'center',
   },
   // Itens
@@ -30,7 +30,7 @@ export default makeStyles((theme) => ({
   },
   drawerOpen: {
     overflowX: 'hidden',
-    width: theme.navigation.drawer.width,
+    width: props => props.drawerSize.width,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -38,7 +38,7 @@ export default makeStyles((theme) => ({
   },
   drawerClose: {
     overflowX: 'hidden',
-    width: theme.navigation.drawerClosed.width,
+    width: props => props.drawerSize.closedWidth,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,

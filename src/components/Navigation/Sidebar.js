@@ -14,7 +14,7 @@ import {
 } from '@material-ui/icons';
 
 export default function Sidebar(props) {
-  const classes = useStyles();
+  const classes = useStyles({ drawerSize: props.drawerSize });
   const pathname = useLocation().pathname;
 
   const drawerContent = (

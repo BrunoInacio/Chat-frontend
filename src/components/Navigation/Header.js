@@ -13,33 +13,37 @@ import {
 } from '@material-ui/icons';
 
 export default function Header(props) {
-  const classes = useStyles();
-
+  const classes = useStyles({ drawerSize: props.drawerSize });
+  
   return (
-    <AppBar color="primary" position="fixed"
-      className={(props.open ? classes.appBarShift : classes.appBar)}>
-      <Toolbar>
-        <IconButton edge="start" color="inherit" onClick={props.openMenu}
-          className={(props.open ? classes.hideButton : classes.menuButton)}>
-          <MenuIcon />
-        </IconButton>
-
-        <Typography variant="h6" noWrap 
-          className={(props.open ? classes.titleDisplaced : classes.titleOrigin)}>
-          {props.title}
-        </Typography>
-
-        <Box flexGrow={1} />
-
-        <Box display="flex">
-          <IconButton edge="end" onClick={() => { }} color="inherit">
-            <WbIncandescentIcon />
+    <React.Fragment>
+      <AppBar position="fixed" color="primary"
+        className={(props.open ? classes.appBarShift : classes.appBar)}>
+        <Toolbar>
+          <IconButton edge="start" color="inherit" onClick={props.openMenu}
+            className={(props.open ? classes.hideButton : classes.menuButton)}>
+            <MenuIcon />
           </IconButton>
-          <IconButton edge="end" onClick={() => { }} color="inherit">
-            <AccountCircleIcon />
-          </IconButton>
-        </Box>
-      </Toolbar>
-    </AppBar>
+
+          <Typography noWrap variant="h6" 
+            className={(props.open ? classes.titleDisplaced : classes.titleOrigin)}>
+            {props.title}
+          </Typography>
+
+          <Box flexGrow={1} />
+
+          <Box display="flex">
+            <IconButton color="inherit" onClick={() => { }}>
+              <WbIncandescentIcon />
+            </IconButton>
+            <IconButton  color="inherit" onClick={() => { }}>
+              <AccountCircleIcon />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      
+      <Toolbar />
+    </React.Fragment>
   );
 }
