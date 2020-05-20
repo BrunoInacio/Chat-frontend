@@ -33,7 +33,7 @@ export default function Header(props) {
           <Box flexGrow={1} />
 
           <Box display="flex">
-            <IconButton color="inherit" onClick={() => { }}>
+            <IconButton color="inherit" onClick={props.switchTheme}>
               <WbIncandescentIcon />
             </IconButton>
             <IconButton  color="inherit" onClick={() => { }}>

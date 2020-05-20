@@ -3,7 +3,7 @@ import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline, Container } from '@material-ui/core';
 
-import Theme from './App.theme'
+import getTheme from './App.theme'
 import useStyles from './App.style';
 import Navigation from '../Navigation';
 import Routes from './App.routes'
@@ -11,10 +11,14 @@ import Routes from './App.routes'
 import { useWidth } from '../../utils';
 
 export default function App() {
+  const [title, setTitle] = React.useState("");
+  const [Theme, setTheme] = React.useState(getTheme('light'));
+  const isMobile = useWidth() < Theme.breakpoints.values['sm'];
   const classes = useStyles();
   
-  const isMobile = useWidth() < Theme.breakpoints.values['sm'];
-  const [title, setTitle] = React.useState("");
+  const switchTheme = () => {
+    setTheme(Theme.palette.type == 'light' ? getTheme('dark') : getTheme('light'));
+  };
 
   React.useEffect(() => {
     document.title = "Chatbot" + (title ? " - " + title : "");
@@ -26,7 +30,7 @@ export default function App() {
     <MuiThemeProvider theme={Theme}>
       <CssBaseline />
 
-      <Navigation title={title} isMobile={isMobile}>
+      <Navigation title={title} switchTheme={switchTheme} isMobile={isMobile}>
         <Container className={classes.content}>
           <Routes setTitle={setTitle} />
         </Container>

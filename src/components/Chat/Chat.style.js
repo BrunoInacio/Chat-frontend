@@ -22,7 +22,7 @@ export default makeStyles((theme) => ({
     borderRadius: 4,
     marginBottom: theme.spacing(1),
     padding: theme.spacing(2),
-    color: theme.palette.secondary.contrastText,
+    color: theme.palette.primary.contrastText,
   },
   miniTime: {
     color: 'white',
@@ -37,13 +37,13 @@ export default makeStyles((theme) => ({
     textAlign: 'right',
   },
   user: {
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.primary.dark,
   },
   botContainer: {
     textAlign: 'left',
   },
   bot: {
-    backgroundColor: theme.palette.secondary.dark,
+    backgroundColor: theme.palette.primary.light,
   },
   dateContainer: {
     textAlign: 'center',

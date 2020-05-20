@@ -15,7 +15,6 @@ export default function ChatBot(props) {
     props.setTitle("Chatbot");
   })
 
-
   return (
     <Paper elevation={2} className={pageClasses.fullBox}>
       <Chat />

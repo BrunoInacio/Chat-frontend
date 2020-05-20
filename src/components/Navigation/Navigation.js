@@ -31,6 +31,7 @@ export default function Navigation(props) {
           openMenu={handleOpenMenu} 
           title={props.title} 
           drawerSize={drawerSize}
+          switchTheme={props.switchTheme}
         />
 
         <Box flexGrow={1} overflow="auto">
