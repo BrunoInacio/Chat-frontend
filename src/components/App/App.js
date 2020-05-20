@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline, Container, Box } from '@material-ui/core';
+import { CssBaseline, Box, Container } from '@material-ui/core';
 
 import Theme from './App.theme'
 import useStyles from './App.style';
@@ -13,14 +13,14 @@ export default function App() {
   const classes = useStyles();
   
   return (
-    <div className={classes.root}>
-      <MuiThemeProvider theme={Theme}>
-        <CssBaseline />
+    <MuiThemeProvider theme={Theme}>
+      <CssBaseline />
 
+      <Box display="flex" height="100%" width="100%">
         <Navigation />
 
         <Box flexGrow={1} display="flex" flexDirection="column">
-          <div className={classes.appBarSpacer} />
+          <Box className={classes.appBarSpacer} />
 
           <Box overflow="auto" flexGrow={1}>
             <Container className={classes.content}>
@@ -28,8 +28,8 @@ export default function App() {
             </Container>
           </Box>
         </Box>
-
-      </MuiThemeProvider>
-    </div>
+        
+      </Box>
+    </MuiThemeProvider>
   );
 }

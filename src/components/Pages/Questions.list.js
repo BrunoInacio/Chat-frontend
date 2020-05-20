@@ -1,4 +1,10 @@
-const questoes = [
+const questions = [
+  {
+    'question': "Como posso testar o Chatbot?",
+    'answer': "Para testar o chatbot basta enviar uma pergunta ou alguma mensagem\
+               de início de conversa e o programa automaticamente responderá\
+               adequadamente.",
+  },
   {
     'question': "O que é um Chatbot?",
     'answer': "Chatbot é um software de computador que simula conversas \
@@ -18,23 +24,20 @@ const questoes = [
   {
     'question': "O que é Processamento de Linguagem Natural (PLN)?",
     'answer': "O Processamento de Linguagem Natural (PLN) é uma área que da \
-    Inteligência Artificial que interage com a Ciência da Computação e com a \
-    área de linguística visando estudar problemas relacionados à produção e \
-    interpretação de conteúdo em linguagens humanas (naturais). \
-    \
-    Segundo Russell e Norvig, as linguagens naturais se diferenciam das \
-    linguagens formais por, por exemplo, não conterem um conjunto definido de \
-    cadeias, formadas a partir de uma gramática com regras definidas, incluírem \
-    ambiguidade e mudarem constantemente. Por estes motivos, a modelagem de \
-    linguagens naturais é mais consistente se feita com o uso de modelos \
-    estatísticos no lugar de regras de produção, como uma gramática formal.",
-  },
-  {
-    'question': "Como posso testar o Chatbot?",
-    'answer': "Para testar o chatbot basta enviar uma pergunta ou alguma mensagem\
-               de início de conversa e o programa automaticamente responderá\
-               adequadamente.",
+               Inteligência Artificial que interage com a Ciência da Computação \
+               e com a área de linguística visando estudar problemas \
+               relacionados à produção e interpretação de conteúdo em \
+               linguagens humanas (naturais). \
+               \
+               Segundo Russell e Norvig, as linguagens naturais se diferenciam \
+               das linguagens formais por, por exemplo, não conterem um \
+               conjunto definido de cadeias, formadas a partir de uma gramática \
+               com regras definidas, incluírem ambiguidade e mudarem \
+               constantemente. Por estes motivos, a modelagem de linguagens \
+               naturais é mais consistente se feita com o uso de modelos \
+               estatísticos no lugar de regras de produção, como uma gramática \
+               formal.",
   },
 ]
 
-export default questoes
+export default questions;

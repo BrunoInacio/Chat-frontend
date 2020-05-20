@@ -6,12 +6,10 @@ export default createMuiTheme({
   palette: {
     primary: indigo,
     secondary: deepPurple,
-
   },
   status: {
     danger: 'orange',
   },
-
   navigation: {
     drawer: {
       width: 240,

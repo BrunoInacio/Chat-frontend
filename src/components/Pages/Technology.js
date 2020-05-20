@@ -3,8 +3,8 @@ import usePageStyles from './Pages.style';
 import techs from './Technology.list';
 
 import {
-  Grid, Typography,
-  Card, CardMedia, CardContent, CardActionArea, Box,
+  Box, Typography,
+  Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
 export default function Technology() {

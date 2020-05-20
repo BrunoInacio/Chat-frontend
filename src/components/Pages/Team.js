@@ -4,8 +4,8 @@ import team from './Team.list';
 import TeamDetailed from './Team.detailed';
 
 import {
-  Paper, Typography,
-  Card, CardMedia, CardContent, CardActionArea, Box,
+  Box, Paper, Typography,
+  Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
 export default function Team() {

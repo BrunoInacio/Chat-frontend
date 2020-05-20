@@ -70,9 +70,5 @@ export default function Sidebar(props) {
     </Drawer>
   );
 
-  return (
-    <div>
-      {props.mobile ? mobileMenu : desktopMenu}
-    </div>
-  );
+  return props.mobile ? mobileMenu : desktopMenu;
 }

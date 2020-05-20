@@ -2,7 +2,6 @@ import React from 'react';
 
 import {
   Home as HomeIcon, HomeOutlined as HomeIconOutlined,
-  Mail as MailIcon, MailOutlined as MailIconOutlined,
   Info as InfoIcon, InfoOutlined as InfoIconOutlined,
   Help as HelpIcon, HelpOutlineOutlined as HelpIconOutlined,
   People as PeoplIcon, PeopleOutlined as PeoplIconOutlined,

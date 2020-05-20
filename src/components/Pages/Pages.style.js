@@ -1,9 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
   content: {
     flexGrow: 1,
     maxHeight: "100%",
@@ -14,9 +11,6 @@ export default makeStyles((theme) => ({
     textAlign: 'left',
     color: theme.palette.secondary.main,
     marginBottom: theme.spacing(5),
-  },
-  desc: {
-    textAlign: 'justify',
   },
   grid: {
     marginBottom: theme.spacing(2),
