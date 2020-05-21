@@ -23,7 +23,7 @@ export default function App() {
   React.useEffect(() => {
     document.title = "Chatbot" + (title ? " - " + title : "");
     document.querySelector("meta[name=theme-color]")
-      .setAttribute("content", Theme.palette.primary.main);
+      .setAttribute("content", Theme.palette.background.header);
   });
 
   return (

@@ -28,6 +28,7 @@ export default makeStyles((theme) => ({
   },
   // Drawer
   appBar: {
+    backgroundColor: theme.palette.background.header,
     [theme.breakpoints.up('sm')]: {
       zIndex: theme.zIndex.drawer + 1,
       transition: theme.transitions.create(['width', 'margin'], {
@@ -37,6 +38,7 @@ export default makeStyles((theme) => ({
     }
   },
   appBarShift: {
+    backgroundColor: theme.palette.background.header,
     zIndex: theme.zIndex.drawer - 1,
     [theme.breakpoints.up('sm')]: {
       marginLeft: props => props.drawerSize.width,

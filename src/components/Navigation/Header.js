@@ -17,7 +17,7 @@ export default function Header(props) {
   
   return (
     <React.Fragment>
-      <AppBar position="fixed" color="primary"
+      <AppBar position="fixed"
         className={(props.open ? classes.appBarShift : classes.appBar)}>
         <Toolbar>
           <Fade in={!props.open} timeout={{enter: "250ms"}}
