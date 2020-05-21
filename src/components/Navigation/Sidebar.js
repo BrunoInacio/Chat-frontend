@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link } from 'react-router-dom';
 
 import useStyles from './Sidebar.style';
 import menuItens from './Sidebar.itens';
@@ -32,18 +32,27 @@ export default function Sidebar(props) {
 
       <List>
         {menuItens.map((item) => (
-          <ListItem button key={item.title} component={Link} divider={item.divider}
-            selected={item.to === pathname} classes={{ selected: classes.selected }}
-            onClick={props.mobile ? props.closeMenu : null} to={item.to}>
-            <ListItemIcon className={(item.to === pathname ? classes.selected : null)}>
-              {(item.to === pathname ? item.iconSelected : item.icon)}
+          <ListItem button 
+            key={item.title} 
+            component={Link} 
+            divider={item.divider}
+            selected={item.to === pathname} 
+            classes={{ selected: classes.selected }}
+            onClick={props.mobile ? props.closeMenu : null} 
+            to={item.to}
+          >
+            <ListItemIcon className={item.to === pathname ? classes.selected : null}>
+              {item.to === pathname ? item.iconSelected : item.icon}
             </ListItemIcon>
             <ListItemText primary={item.title} />
           </ListItem>
         ))}
       </List>
 
-      <Box className={classes.footer} display={(props.open || props.mobile ? 'block':'none')}>
+      <Box 
+        className={classes.footer}
+        display={(props.open || props.mobile) ? "block":"none"}
+      >
         <Divider />
         <Typography variant="caption" align="center">
           Projeto de formatura
@@ -57,14 +66,20 @@ export default function Sidebar(props) {
   );
 
   return props.mobile ? (
-      <SwipeableDrawer classes={{ paper: classes.drawerOpen }}
-        open={props.open} onClose={props.closeMenu} onOpen={props.openMenu}>
+      <SwipeableDrawer
+        classes={{ paper: classes.drawerOpen }}
+        open={props.open}
+        onClose={props.closeMenu}
+        onOpen={props.openMenu}
+      >
         {drawerContent}
       </SwipeableDrawer>
     ) : (
-      <Drawer variant="permanent"
+      <Drawer
+        variant="permanent"
         className={props.open ? classes.drawerOpen : classes.drawerClose}
-        classes={{ paper: props.open ? classes.drawerOpen : classes.drawerClose }}>
+        classes={{ paper: props.open ? classes.drawerOpen : classes.drawerClose }}
+      >
         {drawerContent}
       </Drawer>
     )

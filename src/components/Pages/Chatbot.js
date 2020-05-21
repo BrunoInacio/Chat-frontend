@@ -12,7 +12,7 @@ export default function ChatBot(props) {
   const pageClasses = usePageStyles();
 
   React.useEffect(() => {
-    props.setTitle("Chatbot");
+    props.setTitle("Conversa");
   })
 
   return (

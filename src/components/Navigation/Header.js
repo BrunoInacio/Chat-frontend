@@ -17,19 +17,27 @@ export default function Header(props) {
   
   return (
     <React.Fragment>
-      <AppBar position="fixed"
-        className={(props.open ? classes.appBarShift : classes.appBar)}>
+      <AppBar
+        position="fixed"
+        className={props.open ? classes.appBarShift : classes.appBar}
+      >
         <Toolbar>
-          <Fade in={!props.open} timeout={{enter: "250ms"}}
-            style={{ transitionDelay: props.open ? '0ms' : '200ms' }}>
-            <IconButton edge="start" color="inherit" onClick={props.openMenu}
-              className={classes.menuButton}>
+          <Fade in={!props.open} style={{ transitionDelay: '150ms' }}>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={props.openMenu}
+              className={classes.menuButton}
+            >
               <MenuIcon />
             </IconButton>
           </Fade>
 
-          <Typography noWrap variant="h6" 
-            className={(props.open ? classes.titleDisplaced : classes.titleOrigin)}>
+          <Typography 
+            noWrap
+            variant="h6"
+            className={props.open ? classes.titleDisplaced : classes.titleOrigin}
+          >
             {props.title}
           </Typography>
 

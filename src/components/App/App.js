@@ -17,13 +17,13 @@ export default function App() {
   const classes = useStyles();
   
   const switchTheme = () => {
-    setTheme(Theme.palette.type == 'light' ? getTheme('dark') : getTheme('light'));
+    setTheme(Theme.palette.type === 'light' ? getTheme('dark') : getTheme('light'));
   };
 
   React.useEffect(() => {
     document.title = "Chatbot" + (title ? " - " + title : "");
     document.querySelector("meta[name=theme-color]")
-      .setAttribute("content", Theme.palette.background.header);
+            .setAttribute("content", Theme.palette.background.header);
   });
 
   return (
