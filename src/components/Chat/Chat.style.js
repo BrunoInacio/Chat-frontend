@@ -10,13 +10,14 @@ export default makeStyles((theme) => ({
   sendButton: {
     height: 36,
     alignSelf: 'flex-end',
+    color: theme.palette.primary.main,
   },
 
   message: {
     position: 'relative',
     display: 'inline-block',
     textAlign: 'left',
-    maxWidth: '70%',
+    maxWidth: '90%',
     wordBreak: 'break-word',
     overflow: 'hidden',
     borderRadius: 4,
@@ -49,8 +50,8 @@ export default makeStyles((theme) => ({
     textAlign: 'center',
   },
   date: {
-    color: theme.palette.text.secondary,
-    backgroundColor: theme.palette.warning.light,
+    color: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.secondary.main,
     padding: theme.spacing(1),
   },
 }));

@@ -22,7 +22,7 @@ export default makeStyles((theme) => ({
   },
   // Itens
   selected: {
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
   },
   // Drawer
   drawer: {

@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
   },
   title: {
     textAlign: 'left',
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
     marginBottom: theme.spacing(5),
   },
   grid: {

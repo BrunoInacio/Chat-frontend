@@ -6,9 +6,6 @@ export default makeStyles((theme) => ({
     position: 'fixed',
     left: theme.spacing(2),
   },
-  hideButton: {
-    display: 'none',
-  },
   // Title
   titleDisplaced: {
     marginLeft: theme.spacing(4),

@@ -20,7 +20,7 @@ export default function Sidebar(props) {
   const drawerContent = (
     <Box className={classes.drawer}>
       <Box className={classes.toolbar}>
-        <Typography variant="h4" color="secondary">
+        <Typography variant="h4" color="primary">
           Chatbot
         </Typography>
         <IconButton onClick={props.closeMenu} className={classes.menuButton}>

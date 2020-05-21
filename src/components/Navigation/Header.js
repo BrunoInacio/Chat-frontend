@@ -3,7 +3,7 @@ import React from 'react';
 import useStyles from './Header.style';
 
 import {
-  Box, AppBar, Toolbar, IconButton, Typography,
+  Box, AppBar, Toolbar, IconButton, Typography, Fade 
 } from '@material-ui/core';
 
 import {
@@ -20,10 +20,13 @@ export default function Header(props) {
       <AppBar position="fixed" color="primary"
         className={(props.open ? classes.appBarShift : classes.appBar)}>
         <Toolbar>
-          <IconButton edge="start" color="inherit" onClick={props.openMenu}
-            className={(props.open ? classes.hideButton : classes.menuButton)}>
-            <MenuIcon />
-          </IconButton>
+          <Fade in={!props.open} timeout={{enter: "250ms"}}
+            style={{ transitionDelay: props.open ? '0ms' : '200ms' }}>
+            <IconButton edge="start" color="inherit" onClick={props.openMenu}
+              className={classes.menuButton}>
+              <MenuIcon />
+            </IconButton>
+          </Fade>
 
           <Typography noWrap variant="h6" 
             className={(props.open ? classes.titleDisplaced : classes.titleOrigin)}>
