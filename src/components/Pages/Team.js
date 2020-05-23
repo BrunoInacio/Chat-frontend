@@ -14,25 +14,14 @@ import {
 function Team(props) {
   const pageClasses = usePageStyles();
 
-  React.useEffect(() => {
-    props.setTitle("Equipe");
-  })
+  React.useEffect(() => props.setTitle("Equipe"));
 
-  const [detailed, setDetailed] = React.useState({
-    open: false,
+  const [detailed, setDetailed] = React.useState({ open: false });
+  const handleClose = () => setDetailed({ open: false });
+  const handleOpen = (member) => setDetailed({
+    open: true,
+    ...member,
   });
-
-  const handleOpen = (member) => {
-    setDetailed({
-      open: true,
-      ...member,
-    });
-  };
-  const handleClose = () => {
-    setDetailed({
-      open: false,
-    });
-  };
 
   return (
     <Box overflow="auto">

@@ -1,24 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import usePageStyles from './Pages.style';
 import withPages from './Pages';
 
 import FAQ from './Questions.list';
 
 import {
-  Box, Typography, Button,
+  Typography, Button,
   ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, ExpansionPanelActions
 } from '@material-ui/core';
 
 import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 
 function Questions(props) {
-  const pageClasses = usePageStyles();
-
-  React.useEffect(() => {
-    props.setTitle("Dúvidas comuns");
-  })
+  React.useEffect(() => props.setTitle("Dúvidas comuns"));
 
   return FAQ.map((item, _) => (
     <ExpansionPanel key={item.question}>

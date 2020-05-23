@@ -11,7 +11,6 @@ export default makeStyles((theme) => ({
   },
   content: {
     maxHeight: "100%",
-
     padding: theme.spacing(2),
     overflow: "auto",
     [theme.breakpoints.down('xs')]: {
@@ -19,9 +18,17 @@ export default makeStyles((theme) => ({
     },
   },
 
+  frame: {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: theme.spacing(2),
+  },
   card: {
     width: 220,
+    marginRight: theme.spacing(4),
+    marginBottom: theme.spacing(3),
     [theme.breakpoints.down('sm')]: {
+      marginRight: theme.spacing(2),
       width: 140,
     },
   },
@@ -31,6 +38,7 @@ export default makeStyles((theme) => ({
       height: 140,
     },
   },
+
   detailed: {
     margin: 'auto',
     width: 440,
@@ -44,6 +52,7 @@ export default makeStyles((theme) => ({
       height: 280,
     },
   },
+  
   fullBox: {
     flexGrow: 1,
     height: "100%",

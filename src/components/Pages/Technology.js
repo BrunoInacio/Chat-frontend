@@ -12,26 +12,26 @@ import {
 
 function Technology(props) {
   const pageClasses = usePageStyles();
-
-  React.useEffect(() => {
-    props.setTitle("Tecnologias");
-  })
+  React.useEffect(() => props.setTitle("Tecnologias"));
 
   return (
-    <Box display="flex" alignItems="center" flexWrap="wrap">
+    <Box className={pageClasses.frame}>
       {techs.map(tech => (
-        <Box key={tech.name} margin={1}>
-          <Card className={pageClasses.card}>
-            <CardActionArea>
-              <CardMedia className={pageClasses.media} image={tech.photo} title={tech.name} />
-              <CardContent>
-                <Typography gutterBottom variant="h6">
-                  {tech.name}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Box>
+        <Card className={pageClasses.card} key={tech.name}>
+          <CardActionArea>
+
+            <CardMedia 
+              className={pageClasses.media}
+              image={tech.photo}
+              title={tech.name}
+            />
+
+            <CardContent>
+              <Typography gutterBottom variant="h6">{tech.name}</Typography>
+            </CardContent>
+
+          </CardActionArea>
+        </Card>
       ))}
     </Box>
   );
