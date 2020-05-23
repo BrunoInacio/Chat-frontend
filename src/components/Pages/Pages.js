@@ -8,9 +8,9 @@ import {
 
 export default (WrappedPage) => (props) => {
     const pageClasses = usePageStyles();
-  
+
     return (
-      <Container className={pageClasses.container}>
+      <Container disableGutters className={pageClasses.container}>
         <WrappedPage {...props} />
       </Container>
     );
