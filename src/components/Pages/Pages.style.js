@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+  // Page container
   container: {
     position: "relative",
     height: "100%",
@@ -9,8 +10,9 @@ export default makeStyles((theme) => ({
       padding: theme.spacing(2, 1),
     },
   },
+
+  // Default pages
   content: {
-    maxHeight: "100%",
     padding: theme.spacing(2),
     overflow: "auto",
     [theme.breakpoints.down('xs')]: {
@@ -18,10 +20,10 @@ export default makeStyles((theme) => ({
     },
   },
 
+  // Cards
   frame: {
     display: "flex",
     flexWrap: "wrap",
-    padding: theme.spacing(2),
   },
   card: {
     width: 220,
@@ -39,6 +41,7 @@ export default makeStyles((theme) => ({
     },
   },
 
+  // Detailed
   detailed: {
     margin: 'auto',
     width: 440,
@@ -52,15 +55,16 @@ export default makeStyles((theme) => ({
       height: 280,
     },
   },
-  
-  fullBox: {
-    flexGrow: 1,
-    height: "100%",
-    padding: theme.spacing(3),
-  },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
     top: theme.spacing(1),
+  },
+
+  // Full page
+  fullBox: {
+    flexGrow: 1,
+    height: "100%",
+    padding: theme.spacing(3),
   },
 }));

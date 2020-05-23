@@ -3,17 +3,16 @@ import React from 'react';
 import usePageStyles from './Pages.style';
 import withPages from './Pages';
 
-import team from './Team.list';
-import TeamDetailed from './Team.detailed';
+import Detailed from './Team.detailed';
+import TeamList from './Team.list';
 
 import {
-  Box, Paper, Typography,
+  Box, Paper, Typography, Divider,
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
 function Team(props) {
   const pageClasses = usePageStyles();
-
   React.useEffect(() => props.setTitle("Equipe"));
 
   const [detailed, setDetailed] = React.useState({ open: false });
@@ -24,38 +23,41 @@ function Team(props) {
   });
 
   return (
-    <Box overflow="auto">
-      {team.map(group => (
-        <Paper elevation={2} className={pageClasses.content + ' ' + pageClasses.grid} key={group.title}>
-          <Typography variant="h4" className={pageClasses.title}>{group.title}</Typography>
-          <Box display="flex" flexWrap="wrap">
-            {group.members.map(member => (
-              <Box m={1} key={member.name}>
-                <Card className={pageClasses.card}>
-                  <CardActionArea onClick={() => handleOpen(member)} profile={member}>
-                    <CardMedia className={pageClasses.media} image={member.photo} title={member.name} />
-                    <CardContent>
-                      <Typography gutterBottom variant="h6">
-                        {member.name}
-                      </Typography>
-                      <Typography variant="overline" color="textSecondary" component="p">
-                        {member.NUSP}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Box>
-              ))}
-          </Box>    
-        </Paper>
-      ))}
-      
+    <Paper elevation={2} className={pageClasses.content}>
+      {TeamList.map(group => (
+        <Box key={group.title}>
+          <Typography variant="h4" color="primary">
+            {group.title}
+          </Typography>
 
-      {detailed.open
-        ? <TeamDetailed detailed={detailed} handleClose={handleClose}/>
-        : null
-      }
-    </Box>
+          <Box className={pageClasses.frame} marginTop={2} marginBottom={2}>
+            {group.members.map(member => (
+              <Card className={pageClasses.card} key={member.name}>
+                <CardActionArea onClick={() => handleOpen(member)} profile={member}>
+                  <CardMedia 
+                    className={pageClasses.media} 
+                    image={member.photo} 
+                    title={member.name}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6">
+                      {member.name}
+                    </Typography>
+                    <Typography variant="overline" color="textSecondary">
+                      {member.NUSP}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            ))}
+          </Box>
+        </Box>
+      ))}
+
+      {detailed.open ? (
+        <Detailed detailed={detailed} handleClose={handleClose}/>
+      ) : null}
+    </Paper>
   );
 }
 

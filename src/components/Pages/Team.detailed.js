@@ -18,18 +18,21 @@ export default function TeamDetailed(props) {
   return (
     <Dialog onClose={props.handleClose} open={props.detailed.open}>
       <Card className={pageClasses.detailed}>
-        <CardMedia className={pageClasses.bigMedia} image={props.detailed.photo} title={props.detailed.name} />
+
+        <CardMedia
+          className={pageClasses.bigMedia}
+          image={props.detailed.photo}
+          title={props.detailed.name}
+        />
 
         <IconButton className={pageClasses.closeButton} onClick={props.handleClose}>
           <CloseIcon />
         </IconButton>
 
         <CardContent>
-          <ListItem disableGutters>
-            <Typography gutterBottom variant="h5">
-              {props.detailed.name}
-            </Typography>
-          </ListItem>
+          <Typography gutterBottom variant="h5">
+            {props.detailed.name}
+          </Typography>
 
           {props.detailed.NUSP ? (
             <ListItem dense disableGutters>
@@ -37,7 +40,7 @@ export default function TeamDetailed(props) {
               <ListItemText primaryTypographyProps={{variant: 'overline'}} primary={props.detailed.NUSP} />
             </ListItem>
           ) : null}
-          
+
           {props.detailed.email ? (
             <ListItem dense disableGutters>
               <ListItemIcon><MailIcon color="secondary" /></ListItemIcon>
@@ -45,6 +48,7 @@ export default function TeamDetailed(props) {
             </ListItem>
           ) : null}
         </CardContent>
+
       </Card>
     </Dialog>
   );
