@@ -10,10 +10,7 @@ import {
 
 function Home(props) {
   const pageClasses = usePageStyles();
-
-  React.useEffect(() => {
-    props.setTitle("Início");
-  })
+  React.useEffect(() => props.setTitle("Início"));
 
   return (
     <Paper elevation={2} className={pageClasses.content}>

@@ -1,30 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import useErrorStyles from './Error.style';
+import usePageStyles from '../Pages.style';
 import withPages from '../Pages';
 
 import {
-  Paper, Typography
+  Paper, Typography, Button,
 } from '@material-ui/core';
 
 
-function Error404() {
-  const errorClasses = useErrorStyles();
+function Error404(props) {
+  const pageClasses = usePageStyles();
+  React.useEffect(() => props.setTitle("Página não encontrada"));
   
   return (
-    <div className={errorClasses.root}>
-      <Paper elevation={4} className={errorClasses.content}>
+    <Paper elevation={2} className={pageClasses.content}>
 
-        <Typography variant="h2" className={errorClasses.title} gutterBottom>
-          Página não encontrada
-        </Typography>
+      <Typography variant="h2" color="error" gutterBottom>
+        Página não encontrada
+      </Typography>
 
-        <Typography variant="subtitle1" className={errorClasses.desc}>
-          Utilize o menu lateral para navegar apenas por páginas válidas.
-        </Typography>
+      <Typography paragraph align="justify" variant="subtitle1" color="error">
+        Utilize o menu lateral para navegar apenas por páginas válidas.
+      </Typography>
 
-      </Paper>
-    </div>
+      <Button color="primary" component={Link} to="/home">
+        Voltar para o início
+      </Button>
+
+    </Paper>
   );
 }
 

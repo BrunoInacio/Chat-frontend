@@ -10,10 +10,7 @@ import {
 
 function Info(props) {
   const pageClasses = usePageStyles();
-
-  React.useEffect(() => {
-    props.setTitle("Informações");
-  })
+  React.useEffect(() => props.setTitle("Informações"));
 
   return (
     <Paper elevation={2} className={pageClasses.content}>
@@ -72,7 +69,7 @@ function Info(props) {
             <a href="https://github.com/BrunoInacio/chat-front-end">Front-end</a>
           </li>
           <li>
-            <a href="">Back-end</a>
+            <a href="/">Back-end</a>
           </li>
         </ul>
       </Typography>
