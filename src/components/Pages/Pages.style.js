@@ -11,20 +11,13 @@ export default makeStyles((theme) => ({
   },
   content: {
     maxHeight: "100%",
-    textAlign: 'justify',
-    flexWrap: 'wrap',
+
     padding: theme.spacing(2),
-    overflow: 'auto',
+    overflow: "auto",
     [theme.breakpoints.down('xs')]: {
       height: "100%",
     },
   },
-  title: {
-    textAlign: 'left',
-    color: theme.palette.primary.main,
-    marginBottom: theme.spacing(5),
-  },
-  
 
   card: {
     width: 220,

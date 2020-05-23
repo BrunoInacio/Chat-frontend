@@ -18,7 +18,7 @@ function Info(props) {
   return (
     <Paper elevation={2} className={pageClasses.content}>
 
-      <Typography variant="h2" className={pageClasses.title}>
+      <Typography variant="h2" color="primary" gutterBottom>
         Chatbot
       </Typography>
 
@@ -26,7 +26,7 @@ function Info(props) {
         Olá,
       </Typography>
 
-      <Typography paragraph variant="subtitle1">
+      <Typography paragraph align="justify" variant="subtitle1">
         Este site é a demonstração do Projeto de Formatura entitulado 
         <Typography variant="overline">
           <b> Chatbots para Antecipação de Demanda de Clientes
@@ -38,7 +38,7 @@ function Info(props) {
         Bruno Brandão Inácio e Pedro de Moraes Ligabue.
       </Typography>
 
-      <Typography paragraph variant="subtitle1">
+      <Typography paragraph align="justify" variant="subtitle1">
         Neste projeto de formatura são estudados métodos de apoio à interação,
         em forma de conversa de texto entre usuários e chatbots em um sistema 
         de atendimento ao cliente. A fim de atingir seu objetivo, é realizado 
@@ -53,7 +53,7 @@ function Info(props) {
         interação humana para fornecer uma melhor experiência aos clientes.
       </Typography>
 
-      <Typography paragraph variant="subtitle1">
+      <Typography paragraph align="justify" variant="subtitle1">
         Através do menu na lateral esquerda é possível navegar pelo site.
         Você encontrará opções referentes à página 'Chatbot', onde poderá
         observar e realizar testes com o chatbot desenvolvido. Além disso,
@@ -63,7 +63,7 @@ function Info(props) {
         e o contato dos autores do projeto.
       </Typography>
 
-      <Typography variant="subtitle1">
+      <Typography paragraph align="justify" variant="subtitle1">
         O projeto foi dividido em duas partes: o front-end e o back-end e os
         códigos desenvolvidos estão disponíveis de forma aberta em repositórios
         do GitHub:
