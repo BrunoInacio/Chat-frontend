@@ -1,5 +1,7 @@
 import React from 'react';
+
 import usePageStyles from './Pages.style';
+import withPages from './Pages';
 
 import Chat from '../Chat';
 
@@ -8,7 +10,7 @@ import {
 } from '@material-ui/core';
 
 
-export default function ChatBot(props) {
+function ChatBot(props) {
   const pageClasses = usePageStyles();
 
   React.useEffect(() => {
@@ -21,3 +23,5 @@ export default function ChatBot(props) {
     </Paper>
   );
 }
+
+export default withPages(ChatBot);

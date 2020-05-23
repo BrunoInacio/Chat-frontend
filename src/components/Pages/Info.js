@@ -1,12 +1,14 @@
 import React from 'react';
+
 import usePageStyles from './Pages.style';
+import withPages from './Pages';
 
 import {
   Paper, Typography
 } from '@material-ui/core';
 
 
-export default function Info(props) {
+function Info(props) {
   const pageClasses = usePageStyles();
 
   React.useEffect(() => {
@@ -70,3 +72,5 @@ export default function Info(props) {
     </Paper>
   );
 }
+
+export default withPages(Info);

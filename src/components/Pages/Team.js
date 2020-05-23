@@ -1,5 +1,8 @@
 import React from 'react';
+
 import usePageStyles from './Pages.style';
+import withPages from './Pages';
+
 import team from './Team.list';
 import TeamDetailed from './Team.detailed';
 
@@ -8,7 +11,7 @@ import {
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
-export default function Team(props) {
+function Team(props) {
   const pageClasses = usePageStyles();
 
   React.useEffect(() => {
@@ -66,3 +69,5 @@ export default function Team(props) {
     </Box>
   );
 }
+
+export default withPages(Team);
