@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   // Menu Button
   menuButton: {
-    position: 'fixed',
+    position: "fixed",
     left: theme.spacing(2),
   },
   // Title

@@ -15,12 +15,14 @@ import {
 } from '@material-ui/icons';
 
 function Questions(props) {
+  const pageClasses = usePageStyles();
+
   React.useEffect(() => {
     props.setTitle("Dúvidas comuns");
   })
 
   return (
-      <Box textAlign="justify">
+      <Box className={pageClasses.content}>
         {FAQ.map((item, _) => (
           <ExpansionPanel key={item.question}>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
