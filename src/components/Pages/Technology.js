@@ -15,7 +15,7 @@ function Technology(props) {
   React.useEffect(() => props.setTitle("Tecnologias"));
 
   return (
-    <Box className={pageClasses.frame}>
+    <Box className={pageClasses.frame} padding={2}>
       {techs.map(tech => (
         <Card className={pageClasses.card} key={tech.name}>
           <CardActionArea>
