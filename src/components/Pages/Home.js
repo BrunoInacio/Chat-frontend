@@ -18,7 +18,7 @@ function Home(props) {
   return (
     <Paper elevation={2} className={pageClasses.content}>
 
-      <Typography variant="h2" className={pageClasses.title}>
+      <Typography variant="h2" color="primary" gutterBottom>
         Chatbot
       </Typography>
 
@@ -26,7 +26,7 @@ function Home(props) {
         Olá,
       </Typography>
 
-      <Typography paragraph variant="subtitle1">
+      <Typography paragraph align="justify" variant="subtitle1">
         Este site é a demonstração do Projeto de Formatura entitulado 
         <Typography variant="overline">
           <b> Chatbots para Antecipação de Demanda de Clientes
@@ -38,7 +38,7 @@ function Home(props) {
         Bruno Brandão Inácio e Pedro de Moraes Ligabue.
       </Typography>
 
-      <Typography paragraph variant="subtitle1">
+      <Typography paragraph align="justify" variant="subtitle1">
         Por favor, utilize o menu na lateral esquerda para navegar pelo site. 
         Nele você encontrará a página 'Chatbot', onde será possível observar e
         realizar testes com o chatbot em funcionamento.

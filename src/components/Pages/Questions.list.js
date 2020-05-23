@@ -4,6 +4,12 @@ const questions = [
     'answer': "Para testar o chatbot basta enviar uma pergunta ou alguma mensagem\
                de início de conversa e o programa automaticamente responderá\
                adequadamente.",
+    'actions': [
+      {
+      'text': "Ir para Chatbot",
+      'to': '/chatbot'
+      },
+    ]
   },
   {
     'question': "O que é um Chatbot?",
@@ -22,6 +28,17 @@ const questions = [
                podem ser capazes de prever demandas",
   },
   {
+    'question': "Quais as vantagens do uso de um Chatbot?",
+    'answer': "Uma implementação adequada de atendimento automatizado gera \
+               benefícios para ambas as partes envolvidas. Para a empresa, \
+               é possível atrair público mais jovem, reduzir custos com \
+               centrais de atendimento e realocar funcionários e investimentos \
+               em outras áreas a fim de melhorar a experiência dos usuários e \
+               de gerar maiores retornos. Enquanto para o cliente, é possível \
+               reduzir o tempo gasto com ferramentas de busca e simplificar o \
+               acesso a informações e recomendações.",
+  },
+  {
     'question': "O que é Processamento de Linguagem Natural (PLN)?",
     'answer': "O Processamento de Linguagem Natural (PLN) é uma área que da \
                Inteligência Artificial que interage com a Ciência da Computação \
@@ -37,6 +54,18 @@ const questions = [
                naturais é mais consistente se feita com o uso de modelos \
                estatísticos no lugar de regras de produção, como uma gramática \
                formal.",
+  },
+  {
+    'question': "Como posso entrar em contato com os autores do projeto?",
+    'answer': "Na página referente à Equipe, é possível clicar em cima da foto \
+               de um dos autores para expandir informações mais detalhadas \
+               sobre o autor, incluindo informações de contato.",
+    'actions': [
+      {
+      'text': "Ver Equipe",
+      'to': '/team'
+      },
+    ]
   },
 ]
 
