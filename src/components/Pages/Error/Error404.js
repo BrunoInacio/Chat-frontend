@@ -1,12 +1,14 @@
 import React from 'react';
+
 import useErrorStyles from './Error.style';
+import withPages from '../Pages';
 
 import {
   Paper, Typography
 } from '@material-ui/core';
 
 
-export default function Error404() {
+function Error404() {
   const errorClasses = useErrorStyles();
   
   return (
@@ -25,3 +27,5 @@ export default function Error404() {
     </div>
   );
 }
+
+export default withPages(Error404);

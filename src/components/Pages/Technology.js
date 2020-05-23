@@ -1,5 +1,8 @@
 import React from 'react';
+
 import usePageStyles from './Pages.style';
+import withPages from './Pages';
+
 import techs from './Technology.list';
 
 import {
@@ -7,7 +10,7 @@ import {
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
-export default function Technology(props) {
+function Technology(props) {
   const pageClasses = usePageStyles();
 
   React.useEffect(() => {
@@ -33,3 +36,5 @@ export default function Technology(props) {
     </Box>
   );
 }
+
+export default withPages(Technology);

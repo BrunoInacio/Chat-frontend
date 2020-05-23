@@ -4,7 +4,6 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline, Container } from '@material-ui/core';
 
 import getTheme from './App.theme'
-import useStyles from './App.style';
 import Navigation from '../Navigation';
 import Routes from './App.routes'
 
@@ -14,7 +13,6 @@ export default function App() {
   const [title, setTitle] = React.useState("");
   const [Theme, setTheme] = React.useState(getTheme('light'));
   const isMobile = useWidth() < Theme.breakpoints.values['sm'];
-  const classes = useStyles();
   
   const switchTheme = () => {
     setTheme(Theme.palette.type === 'light' ? getTheme('dark') : getTheme('light'));
@@ -31,9 +29,7 @@ export default function App() {
       <CssBaseline />
 
       <Navigation title={title} switchTheme={switchTheme} isMobile={isMobile}>
-        <Container className={classes.content}>
-          <Routes setTitle={setTitle} />
-        </Container>
+        <Routes setTitle={setTitle} />
       </Navigation>
     </MuiThemeProvider>
   );

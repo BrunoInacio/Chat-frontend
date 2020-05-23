@@ -1,5 +1,8 @@
 import React from 'react';
 
+import usePageStyles from './Pages.style';
+import withPages from './Pages';
+
 import FAQ from './Questions.list';
 
 import {
@@ -11,7 +14,7 @@ import {
   ExpandMore as ExpandMoreIcon,
 } from '@material-ui/icons';
 
-export default function Questions(props) {
+function Questions(props) {
   React.useEffect(() => {
     props.setTitle("Dúvidas comuns");
   })
@@ -34,3 +37,5 @@ export default function Questions(props) {
       </Box>
   );
 }
+
+export default withPages(Questions);
