@@ -4,9 +4,9 @@ export default makeStyles((theme) => ({
   // Header
   toolbar: {
     width: props => props.drawerSize.width,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
   },
@@ -15,10 +15,10 @@ export default makeStyles((theme) => ({
   },
   // Footer
   footer: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     width: props => props.drawerSize.width,
-    textAlign: 'center',
+    textAlign: "center",
   },
   // Itens
   selected: {
@@ -26,10 +26,10 @@ export default makeStyles((theme) => ({
   },
   // Drawer
   drawer: {
-    whiteSpace: 'nowrap',
+    whiteSpace: "nowrap",
   },
   drawerOpen: {
-    overflowX: 'hidden',
+    overflowX: "hidden",
     width: props => props.drawerSize.width,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
@@ -37,7 +37,7 @@ export default makeStyles((theme) => ({
     }),
   },
   drawerClose: {
-    overflowX: 'hidden',
+    overflowX: "hidden",
     width: props => props.drawerSize.closedWidth,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,

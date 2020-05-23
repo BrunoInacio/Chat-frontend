@@ -2,28 +2,30 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   container: {
-    position: 'relative',
+    position: "relative",
     height: "100%",
     maxWidth: theme.breakpoints.values['lg'],
     [theme.breakpoints.up('sm')]: {
-      padding: theme.spacing(2, 1, 2, 1),
+      padding: theme.spacing(2, 1),
     },
   },
-
   content: {
-    flexGrow: 1,
     maxHeight: "100%",
-    overflow: 'auto',
+    textAlign: 'justify',
+    flexWrap: 'wrap',
     padding: theme.spacing(2),
+    overflow: 'auto',
+    [theme.breakpoints.down('xs')]: {
+      height: "100%",
+    },
   },
   title: {
     textAlign: 'left',
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(5),
   },
-  grid: {
-    marginBottom: theme.spacing(2),
-  },
+  
+
   card: {
     width: 220,
     [theme.breakpoints.down('sm')]: {
