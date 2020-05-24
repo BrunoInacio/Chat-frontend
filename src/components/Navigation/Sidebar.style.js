@@ -15,8 +15,7 @@ export default makeStyles((theme) => ({
   },
   // Footer
   footer: {
-    position: "absolute",
-    bottom: 0,
+    marginTop: "auto",
     width: props => props.drawerSize.width,
     textAlign: "center",
   },
@@ -26,6 +25,9 @@ export default makeStyles((theme) => ({
   },
   // Drawer
   drawer: {
+    display: "flex",
+    flexDirection: "column",
+    height: "100%",
     whiteSpace: "nowrap",
   },
   drawerOpen: {
