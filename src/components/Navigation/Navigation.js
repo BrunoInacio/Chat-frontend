@@ -34,9 +34,7 @@ export default function Navigation(props) {
           switchTheme={props.switchTheme}
         />
 
-        <Box flexGrow={1} overflow="auto">
-          {props.children}
-        </Box>
+        {props.children}
       </Box>
     </Box>
   );
