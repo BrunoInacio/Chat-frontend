@@ -16,7 +16,7 @@ export default function Navigation(props) {
   const handleCloseMenu = () => setMenuOpen(false);
 
   return (
-    <Box display="flex" height="100%" width="100%">
+    <Box display="flex" minHeight="100vh" maxWidth="100vw">
       <Sidebar
         open={menuOpen}
         closeMenu={handleCloseMenu}
