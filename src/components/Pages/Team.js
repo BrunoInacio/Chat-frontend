@@ -7,7 +7,7 @@ import Detailed from './Team.detailed';
 import TeamList from './Team.list';
 
 import {
-  Box, Paper, Typography, Divider,
+  Box, Paper, Typography, 
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
@@ -55,7 +55,7 @@ function Team(props) {
       ))}
 
       {detailed.open ? (
-        <Detailed detailed={detailed} handleClose={handleClose}/>
+        <Detailed detailed={detailed} handleClose={handleClose} />
       ) : null}
     </Paper>
   );

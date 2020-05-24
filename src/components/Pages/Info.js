@@ -4,7 +4,7 @@ import usePageStyles from './Pages.style';
 import withPages from './Pages';
 
 import {
-  Paper, Typography
+  Paper, Typography, Button,
 } from '@material-ui/core';
 
 
@@ -64,15 +64,14 @@ function Info(props) {
         O projeto foi dividido em duas partes: o front-end e o back-end e os
         códigos desenvolvidos estão disponíveis de forma aberta em repositórios
         do GitHub:
-        <ul>
-          <li>
-            <a href="https://github.com/BrunoInacio/chat-front-end">Front-end</a>
-          </li>
-          <li>
-            <a href="/">Back-end</a>
-          </li>
-        </ul>
       </Typography>
+
+      <Button color="primary" href="https://github.com/BrunoInacio/chat-front-end">
+          Front-end
+      </Button>
+      <Button color="primary" href="/" disabled>
+          Back-end
+      </Button>
 
     </Paper>
   );

@@ -6,16 +6,13 @@ import withPages from './Pages';
 import Chat from '../Chat';
 
 import {
-  Paper, Typography, Grid
+  Paper, Box
 } from '@material-ui/core';
 
 
 function ChatBot(props) {
   const pageClasses = usePageStyles();
-
-  React.useEffect(() => {
-    props.setTitle("Conversa");
-  })
+  React.useEffect(() => props.setTitle("Conversa"));
 
   return (
     <Paper elevation={2} className={pageClasses.fullBox}>
