@@ -31,6 +31,7 @@ export default function Navigation(props) {
           openMenu={handleOpenMenu} 
           title={props.title} 
           drawerSize={drawerSize}
+          mobile={props.isMobile}
           switchTheme={props.switchTheme}
         />
 
