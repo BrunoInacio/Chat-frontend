@@ -16,7 +16,11 @@ export default function Navigation(props) {
   const handleCloseMenu = () => setMenuOpen(false);
 
   return (
-    <Box display="flex" minHeight="100vh" maxWidth="100vw">
+    <Box
+      display="flex"
+      minHeight="100vh"
+      maxWidth="100vw"
+    >
       <Sidebar
         open={menuOpen}
         closeMenu={handleCloseMenu}
@@ -25,7 +29,11 @@ export default function Navigation(props) {
         drawerSize={drawerSize}
       />
 
-      <Box display="flex" flexGrow={1} flexDirection="column">
+      <Box
+        display="flex"
+        flexGrow={1}
+        flexDirection="column"
+      >
         <Header 
           open={menuOpen} 
           openMenu={handleOpenMenu} 
