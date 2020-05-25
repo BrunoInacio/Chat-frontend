@@ -60,7 +60,6 @@ export default function MessageList(props) {
       flexGrow="1" 
       display="flex" 
       flexDirection="column" 
-      overflow="auto" 
       bgcolor="background.messages" p={2} mb={2}
     > 
       {sortedMessages.map((message, index) => (

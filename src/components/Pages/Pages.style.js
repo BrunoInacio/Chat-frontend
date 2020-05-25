@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
   container: {
     position: "relative",
     height: "100%",
+    width: "100%",
     maxWidth: theme.breakpoints.values['lg'],
     [theme.breakpoints.up('sm')]: {
       padding: theme.spacing(2, 1),
@@ -14,7 +15,6 @@ export default makeStyles((theme) => ({
   // Default pages
   content: {
     padding: theme.spacing(2),
-    overflow: "auto",
     [theme.breakpoints.down('xs')]: {
       height: "100%",
     },
@@ -63,8 +63,15 @@ export default makeStyles((theme) => ({
 
   // Full page
   fullBox: {
-    flexGrow: 1,
-    height: "100%",
-    padding: theme.spacing(3),
+    position: "absolute",
+    top: 0,
+
+    [theme.breakpoints.up('sm')]: {
+      top: theme.spacing(2),
+      bottom: theme.spacing(2),
+      right: theme.spacing(1),
+      left: theme.spacing(1),
+      padding: theme.spacing(1, 2),
+    },
   },
 }));
