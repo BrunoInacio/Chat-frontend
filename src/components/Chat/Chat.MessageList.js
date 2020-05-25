@@ -1,17 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import useStyles from './Chat.style';
 
 import Message from './Message'
 
-import {
-  Typography, Paper, Box
-} from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
-import {
-  sameDay, formatTime
-} from '../../utils';
+import { sameDay, formatTime } from '../../utils';
 
-export default function MessageList(props) {
+function MessageList(props) {
   const classes = useStyles();
 
   const messageList = React.useRef(null)
@@ -70,3 +68,7 @@ export default function MessageList(props) {
     </Box>
   );
 }
+
+const mapStateToProps = state => ({ messages: state.messages })
+
+export default connect(mapStateToProps)(MessageList)
