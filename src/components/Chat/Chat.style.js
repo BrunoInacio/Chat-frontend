@@ -6,14 +6,11 @@ export default makeStyles((theme) => ({
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    overflow: "hidden",
   },
   messageListContainer: {
     flexGrow: 1,
     overflow: "auto",
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: 64,
-    },
+
     '&::-webkit-scrollbar': {
       width: '0.4em'
     },
@@ -23,12 +20,11 @@ export default makeStyles((theme) => ({
   },
   inputContainer: {
     width: "100%",
-    paddingTop: theme.spacing(1),
+    backgroundColor: theme.palette.background.paper,
     [theme.breakpoints.down('xs')]: {
-      position: "fixed",
+      position: "sticky",
       bottom: 0,
-      height: 64,
-      padding: theme.spacing(1, 2)
+      padding: theme.spacing(0, 2, 1, 2),
     },
   },
 
