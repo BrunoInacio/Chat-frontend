@@ -8,7 +8,7 @@ import useStyles from './Chat.style';
 import MessageList from "./Chat.MessageList"
 import MessageInput from "./Chat.Input"
 
-import {Paper, Box} from '@material-ui/core';
+import {Divider, Box} from '@material-ui/core';
 
 function Chat({ addMessage }) {
   const classes = useStyles();
@@ -60,14 +60,15 @@ function Chat({ addMessage }) {
       <Box className={classes.messageListContainer}>
         <MessageList />
       </Box>
-      <Paper elevation={2} className={classes.inputContainer}>
+      <Box elevation={2} className={classes.inputContainer}>
+        <Divider />
         <MessageInput 
           value={newMessageContent}
           handleChange={handleMessageInput} 
           handleSubmit={handleMessageSubmit} 
           enabled={connected} 
         />
-      </Paper>
+      </Box>
     </Box>
   );
 }

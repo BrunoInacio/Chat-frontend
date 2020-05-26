@@ -14,7 +14,7 @@ export default function MessageInput(props) {
 
   return (
     <form className={classes.flexDisplay} onSubmit={props.handleSubmit}>
-      <TextField autoFocus fullWidth multiline rows={1} rowsMax={4}
+      <TextField autoFocus fullWidth multiline rows={1} rowsMax={4} margin="dense"
         label="Mensagem" placeholder="Digite sua mensagem aqui."
         className={classes.form} color="primary"
         disabled={!props.enabled} value={props.value} onChange={props.handleChange} />
