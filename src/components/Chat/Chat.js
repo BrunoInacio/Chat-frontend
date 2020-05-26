@@ -1,30 +1,33 @@
 import React  from 'react';
-import { connect } from 'react-redux' 
+import { connect } from 'react-redux';
 
-import { addMessage } from '../../redux/actions'
+import { addMessage } from '../../redux/actions';
 
 import useStyles from './Chat.style';
 
 import MessageList from "./Chat.MessageList"
 import MessageInput from "./Chat.Input"
+import WebSocketAPI from './WebSocketAPI';
 
 import {Divider, Box} from '@material-ui/core';
 
 function Chat({ addMessage }) {
   const classes = useStyles();
 
-  const websocket = React.useRef(null)
-
-  const [connected, setConnected] = React.useState(true);
-  const [newMessageContent, setNewMessageContent] = React.useState("");
-
   const addNewMessage = (content, origin, date) => { 
     addMessage({ content, origin, date }); 
   }
 
+  const connection = new WebSocketAPI(msg => {
+    let { content, origin, date } = msg
+    addNewMessage(content, origin, date)
+  });
+
+  const [newMessageContent, setNewMessageContent] = React.useState("");
+
   const sendMessage = () => {
     addNewMessage(newMessageContent, "user", new Date().toISOString())
-    websocket.current.send(JSON.stringify({
+    connection.send(JSON.stringify({
       content: newMessageContent,
       origin: "user",
       date: new Date().toISOString()
@@ -41,20 +44,6 @@ function Chat({ addMessage }) {
 
   const handleMessageInput = (e) => { setNewMessageContent(e.target.value) }
 
-  React.useEffect(() => {
-    websocket.current = new WebSocket("ws://localhost:6789")
-    websocket.current.onopen = () => { console.log("CONNECTED") }
-    websocket.current.onclose = () => { console.log("DISCONNECTED") }
-    websocket.current.onmessage = (e) => {
-      let { content, origin, date } = JSON.parse(e.data)
-      addNewMessage(content, origin, date)
-    }
-    setConnected(true)
-    return () => {
-      websocket.current.close()
-    }
-  }, []);
-
   return (
     <Box className={classes.root}> 
       <Box className={classes.messageListContainer}>
@@ -66,7 +55,7 @@ function Chat({ addMessage }) {
           value={newMessageContent}
           handleChange={handleMessageInput} 
           handleSubmit={handleMessageSubmit} 
-          enabled={connected} 
+          enabled={true} 
         />
       </Box>
     </Box>
