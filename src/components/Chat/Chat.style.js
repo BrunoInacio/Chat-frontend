@@ -18,27 +18,6 @@ export default makeStyles((theme) => ({
       backgroundColor: 'rgb(0, 0, 0, 0.1)',
     }
   },
-  inputContainer: {
-    width: "100%",
-    backgroundColor: theme.palette.background.paper,
-    [theme.breakpoints.down('xs')]: {
-      position: "sticky",
-      bottom: 0,
-      padding: theme.spacing(0, 2, 1, 2),
-    },
-  },
-
-  flexDisplay: {
-    display: 'flex',
-  },
-  form: {
-    marginRight: theme.spacing(2),
-  },
-  sendButton: {
-    height: 36,
-    alignSelf: 'flex-end',
-    color: theme.palette.primary.main,
-  },
 
   message: {
     position: 'relative',
@@ -80,5 +59,24 @@ export default makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.secondary.main,
     padding: theme.spacing(1),
+  },
+
+  // Input
+  inputContainer: {
+    width: "100%",
+    backgroundColor: theme.palette.background.paper,
+    [theme.breakpoints.down('xs')]: {
+      position: "sticky",
+      bottom: 0,
+      padding: theme.spacing(0, 2, 1, 2),
+    },
+  },
+  flexDisplay: {
+    display: 'flex',
+  },
+  sendButton: {
+    height: 36,
+    alignSelf: 'flex-end',
+    marginLeft: theme.spacing(2),
   },
 }));
