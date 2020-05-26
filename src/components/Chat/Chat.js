@@ -9,40 +9,34 @@ import MessageList from "./Chat.MessageList"
 import MessageInput from "./Chat.Input"
 import WebSocketAPI from './WebSocketAPI';
 
-import {Divider, Box} from '@material-ui/core';
+import { Divider, Box } from '@material-ui/core';
 
 function Chat({ addMessage }) {
   const classes = useStyles();
 
-  const addNewMessage = (content, origin, date) => { 
-    addMessage({ content, origin, date }); 
-  }
-
-  const connection = new WebSocketAPI(msg => {
-    let { content, origin, date } = msg
-    addNewMessage(content, origin, date)
-  });
-
   const [newMessageContent, setNewMessageContent] = React.useState("");
+  const connection = new WebSocketAPI(msg => addMessage(msg));
 
   const sendMessage = () => {
-    addNewMessage(newMessageContent, "user", new Date().toISOString())
-    connection.send(JSON.stringify({
+    const msg = {
       content: newMessageContent,
       origin: "user",
       date: new Date().toISOString()
-    }))
-    setNewMessageContent("")
-  }
+    };
 
+    addMessage(msg);
+    connection.send(JSON.stringify(msg))
+    setNewMessageContent("")
+  };
+
+  const handleMessageInput = (e) => setNewMessageContent(e.target.value);
   const handleMessageSubmit = (e) => {
     e.preventDefault()
-    if (!/^[ ]*$/.test(newMessageContent)) {
-      sendMessage()
-    }
-  }
 
-  const handleMessageInput = (e) => { setNewMessageContent(e.target.value) }
+    if (!/^\W*$/.test(newMessageContent))
+      sendMessage()
+  };
+
 
   return (
     <Box className={classes.root}> 
