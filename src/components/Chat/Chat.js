@@ -6,7 +6,6 @@ import { addMessage } from '../../redux/actions';
 import useStyles from './Chat.style';
 
 import MessageList from "./Chat.MessageList"
-import MessageInput from "./Chat.Input"
 import WebSocketAPI from './WebSocketAPI';
 
 import { 
@@ -18,7 +17,7 @@ import {
 function Chat({ addMessage }) {
   const classes = useStyles();
 
-  const connection = new WebSocketAPI(msg => addMessage(msg));
+  const connection = WebSocketAPI(msg => addMessage(msg));
   const [newMessageContent, setNewMessageContent] = React.useState("");
 
   const sendMessage = () => {
@@ -37,7 +36,7 @@ function Chat({ addMessage }) {
   const handleMessageSubmit = (e) => {
     e.preventDefault()
 
-    if (!/^\W*$/.test(newMessageContent))
+    if (!/^\s*$/.test(newMessageContent))
       sendMessage()
   };
 
