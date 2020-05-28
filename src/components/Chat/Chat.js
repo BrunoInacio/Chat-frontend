@@ -1,23 +1,21 @@
 import React  from 'react';
 import { connect } from 'react-redux';
 
-import { addMessage } from '../../redux/actions';
-
 import useStyles from './Chat.style';
 
-import MessageList from "./Chat.MessageList"
-import WebSocketAPI from './WebSocketAPI';
+import { addMessage } from '../../redux/actions';
 
-import { 
-  Divider, Box, Button, TextField,
- } from '@material-ui/core';
+import MessageList from "./Chat.MessageList"
+import ConnectWebSocket from './ConnectWebSocket';
+
+import { Divider, Box, Button, TextField } from '@material-ui/core';
 
  import { Send as SendIcon } from '@material-ui/icons';
 
 function Chat({ addMessage }) {
   const classes = useStyles();
 
-  const connection = WebSocketAPI(msg => addMessage(msg));
+  const connection = ConnectWebSocket(addMessage);
   const [newMessageContent, setNewMessageContent] = React.useState("");
 
   const sendMessage = () => {
@@ -28,16 +26,16 @@ function Chat({ addMessage }) {
     };
 
     addMessage(msg);
-    connection.send(JSON.stringify(msg))
-    setNewMessageContent("")
+    connection.send(JSON.stringify(msg));
+    setNewMessageContent("");
   };
 
   const handleMessageInput = (e) => setNewMessageContent(e.target.value);
   const handleMessageSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!/^\s*$/.test(newMessageContent))
-      sendMessage()
+      sendMessage();
   };
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline, Container } from '@material-ui/core';
+import { CssBaseline } from '@material-ui/core';
 
 import getTheme from './App.theme'
 import Navigation from '../Navigation';

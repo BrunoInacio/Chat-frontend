@@ -11,7 +11,7 @@ export default function WebSocketAPI(listener) {
     websocket.current.onmessage = (e) => listener(JSON.parse(e.data));
 
     return () => websocket.current.close()
-  }, []);
+  }, [listener]);
 
   return websocket.current;
 }
