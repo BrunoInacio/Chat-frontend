@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import useStyles from './Chat.style';
 
-import Message from './Message'
+import Message from './Chat.Message'
 
 import { Box } from '@material-ui/core';
 
@@ -53,13 +53,7 @@ function MessageList(props) {
   }, [sortedMessages]);
 
   return (
-    <Box 
-      ref={messageList}
-      flexGrow="1" 
-      display="flex" 
-      flexDirection="column" 
-      bgcolor="background.messages" p={2} mb={2}
-    > 
+    <Box ref={messageList} display="flex" flexDirection="column">
       {sortedMessages.map((message, index) => (
         <Message key={index} origin={message.origin} date={message.date}>
           {message.content}
