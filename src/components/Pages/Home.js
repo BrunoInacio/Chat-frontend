@@ -7,7 +7,7 @@ import {
   Paper, Typography
 } from '@material-ui/core';
 
-import useTitle from '../../utils/useTitle';
+import { useTitle } from '../../utils';
 
 
 function Home({ setTitle }) {

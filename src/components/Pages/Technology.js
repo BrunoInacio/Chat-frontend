@@ -10,7 +10,7 @@ import {
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
-import useTitle from '../../utils/useTitle';
+import { useTitle } from '../../utils';
 
 function Technology({ setTitle }) {
   const pageClasses = usePageStyles();

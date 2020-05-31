@@ -12,7 +12,7 @@ import {
 
 import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 
-import useTitle from '../../utils/useTitle';
+import { useTitle } from '../../utils';
 
 function Questions({ setTitle }) {
   useTitle("Dúvidas comuns", setTitle)
