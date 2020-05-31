@@ -18,8 +18,9 @@ export default function App() {
     setTheme(Theme.palette.type === 'light' ? getTheme('dark') : getTheme('light'));
   };
 
-  React.useEffect(() => {
-    document.title = "Chatbot" + (title ? " - " + title : "");
+  React.useEffect(() => { document.title = "Chatbot" + (title ? " - " + title : ""); }, [title]);
+
+  React.useEffect(() => { 
     document.querySelector("meta[name=theme-color]")
             .setAttribute("content", Theme.palette.background.header);
   });
