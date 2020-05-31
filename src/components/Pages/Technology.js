@@ -10,9 +10,11 @@ import {
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
-function Technology(props) {
+import useTitle from '../../utils/useTitle';
+
+function Technology({ setTitle }) {
   const pageClasses = usePageStyles();
-  React.useEffect(() => props.setTitle("Tecnologias"));
+  useTitle("Tecnologias", setTitle)
 
   return (
     <Box className={pageClasses.frame} padding={2}>
