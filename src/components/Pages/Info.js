@@ -7,10 +7,12 @@ import {
   Paper, Typography, Button,
 } from '@material-ui/core';
 
+import useTitle from '../../utils/useTitle';
 
-function Info(props) {
+
+function Info({ setTitle }) {
   const pageClasses = usePageStyles();
-  React.useEffect(() => props.setTitle("Informações"));
+  useTitle("Informações", setTitle)
 
   return (
     <Paper elevation={2} className={pageClasses.content}>
