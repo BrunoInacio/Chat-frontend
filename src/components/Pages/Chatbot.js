@@ -9,7 +9,7 @@ import {
   Paper, Box
 } from '@material-ui/core';
 
-import useTitle from '../../utils/useTitle';
+import { useTitle } from '../../utils';
 
 
 function ChatBot({ setTitle }) {
