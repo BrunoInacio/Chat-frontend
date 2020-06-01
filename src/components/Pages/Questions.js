@@ -12,10 +12,8 @@ import {
 
 import { ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 
-import { useTitle } from '../../utils';
-
 function Questions({ setTitle }) {
-  useTitle("Dúvidas comuns", setTitle)
+  React.useEffect(() => { setTitle("Dúvidas comuns") }, [setTitle])
 
   return FAQ.map((item, _) => (
     <ExpansionPanel key={item.question}>

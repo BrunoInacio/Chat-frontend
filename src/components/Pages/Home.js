@@ -7,12 +7,10 @@ import {
   Paper, Typography
 } from '@material-ui/core';
 
-import { useTitle } from '../../utils';
-
 
 function Home({ setTitle }) {
   const pageClasses = usePageStyles();
-  useTitle("Início", setTitle)
+  React.useEffect(() => { setTitle("Início") }, [setTitle])
 
   return (
     <Paper elevation={2} className={pageClasses.content}>
