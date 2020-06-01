@@ -1,7 +1,12 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function useTitle(newTitle, setTitle) {
+export default function useTitle(initialTitle) {
+
+  const [title, setTitle] = useState(initialTitle);
+
   useEffect(() => { 
-    setTitle(newTitle)
-  });
+    document.title = "Chatbot" + (title ? " - " + title : ""); 
+  }, [title]);
+
+  return [title, setTitle]
 } 
