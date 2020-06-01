@@ -7,18 +7,16 @@ import getTheme from './App.theme'
 import Navigation from '../Navigation';
 import Routes from './App.routes'
 
-import { useWidth } from '../../utils';
+import { useWidth, useTitle } from '../../utils';
 
 export default function App() {
-  const [title, setTitle] = React.useState("");
+  const [title, setTitle] = useTitle("");
   const [Theme, setTheme] = React.useState(getTheme('light'));
   const isMobile = useWidth() < Theme.breakpoints.values['sm'];
   
   const switchTheme = () => {
     setTheme(Theme.palette.type === 'light' ? getTheme('dark') : getTheme('light'));
   };
-
-  React.useEffect(() => { document.title = "Chatbot" + (title ? " - " + title : ""); }, [title]);
 
   React.useEffect(() => { 
     document.querySelector("meta[name=theme-color]")
