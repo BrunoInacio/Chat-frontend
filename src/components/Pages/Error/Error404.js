@@ -8,12 +8,10 @@ import {
   Paper, Typography, Button,
 } from '@material-ui/core';
 
-import { useTitle } from '../../../utils';
-
 
 function Error404({ setTitle }) {
   const pageClasses = usePageStyles();
-  useTitle("Página não encontrada", setTitle)
+  React.useEffect(() => { setTitle("Página não encontrada") }, [setTitle])
   
   return (
     <Paper elevation={2} className={pageClasses.content}>

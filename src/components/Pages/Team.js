@@ -11,11 +11,10 @@ import {
   Card, CardMedia, CardContent, CardActionArea,
 } from '@material-ui/core';
 
-import { useTitle } from '../../utils';
 
 function Team({ setTitle }) {
   const pageClasses = usePageStyles();
-  useTitle("Equipe", setTitle)
+  React.useEffect(() => { setTitle("Equipe") }, [setTitle])
 
   const [detailed, setDetailed] = React.useState({ open: false });
   const handleClose = () => setDetailed({ open: false });

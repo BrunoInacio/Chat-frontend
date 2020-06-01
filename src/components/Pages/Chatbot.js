@@ -9,12 +9,10 @@ import {
   Paper, Box
 } from '@material-ui/core';
 
-import { useTitle } from '../../utils';
-
 
 function ChatBot({ setTitle }) {
   const pageClasses = usePageStyles();
-  useTitle("Conversa", setTitle)
+  React.useEffect(() => { setTitle("Conversa") }, [setTitle])
 
   return (
     <Paper elevation={2} className={pageClasses.fullBox}>
