@@ -48,6 +48,17 @@ const darkTheme = {
 
 export default function useTheme() {
   const [theme, setTheme] = React.useState(createMuiTheme(lightTheme));
+  const [width, setWidth] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   React.useEffect(() => {
     document.querySelector("meta[name=theme-color]")
@@ -58,5 +69,7 @@ export default function useTheme() {
     setTheme(createMuiTheme(theme.palette.type === 'light' ? darkTheme : lightTheme));
   };
 
-  return [theme, switchPalette]
+  const isMobile = width < theme.breakpoints.values['sm'];
+
+  return [theme, isMobile, switchPalette]
 }
