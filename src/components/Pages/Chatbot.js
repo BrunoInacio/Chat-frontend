@@ -1,7 +1,7 @@
 import React from 'react';
 
 import usePageStyles from './Pages.style';
-import withPages from './Pages';
+import withPages from './withPages';
 
 import Chat from '../Chat';
 

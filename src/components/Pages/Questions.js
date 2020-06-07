@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import withPages from './Pages';
+import withPages from './withPages';
 
 import FAQ from './Questions.list';
 
