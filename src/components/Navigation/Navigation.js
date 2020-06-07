@@ -27,6 +27,7 @@ export default function Navigation(props) {
         openMenu={handleOpenMenu}
         mobile={props.isMobile}
         drawerSize={drawerSize}
+        role="navigation"
       />
 
       <Box

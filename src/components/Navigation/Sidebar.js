@@ -20,38 +20,41 @@ export default function Sidebar(props) {
   const drawerContent = (
     <Box className={classes.drawer}>
       <Box className={classes.toolbar}>
-        <Typography variant="h4" color="primary">
+        <Typography variant="h4" component="h1" color="primary">
           Chatbot
         </Typography>
-        <IconButton onClick={props.closeMenu} className={classes.menuButton}>
+        <IconButton onClick={props.closeMenu} className={classes.menuButton} title="Esconder menu">
           <ChevronLeftIcon />
         </IconButton>
       </Box>
 
       <Divider />
 
-      <List>
-        {menuItens.map((item) => (
-          <ListItem button 
-            key={item.title} 
-            component={Link} 
-            divider={item.divider}
-            selected={item.to === pathname} 
-            classes={{ selected: classes.selected }}
-            onClick={props.mobile ? props.closeMenu : null} 
-            to={item.to}
-          >
-            <ListItemIcon className={item.to === pathname ? classes.selected : null}>
-              {item.to === pathname ? item.iconSelected : item.icon}
-            </ListItemIcon>
-            <ListItemText primary={item.title} />
-          </ListItem>
-        ))}
-      </List>
+      <nav>
+        <List>
+          {menuItens.map((item) => (
+            <ListItem button 
+              key={item.title} 
+              component={Link} 
+              divider={item.divider}
+              selected={item.to === pathname} 
+              classes={{ selected: classes.selected }}
+              onClick={props.mobile ? props.closeMenu : null} 
+              to={item.to}
+            >
+              <ListItemIcon className={item.to === pathname ? classes.selected : null}>
+                {item.to === pathname ? item.iconSelected : item.icon}
+              </ListItemIcon>
+              <ListItemText primary={item.title} role="link" />
+            </ListItem>
+          ))}
+        </List>
+      </nav>
 
       <Box 
         className={classes.footer}
         display={(props.open || props.mobile) ? "block":"none"}
+        role="contentinfo"
       >
         <Divider />
         <Typography variant="caption" align="center">

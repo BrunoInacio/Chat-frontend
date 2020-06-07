@@ -36,6 +36,7 @@ export default function Header(props) {
           <Typography 
             noWrap
             variant="h6"
+            component="h1"
             className={props.open ? classes.titleDisplaced : classes.titleOrigin}
           >
             {props.title}
@@ -44,10 +45,10 @@ export default function Header(props) {
           <Box flexGrow={1} />
 
           <Box display="flex">
-            <IconButton color="inherit" onClick={props.switchTheme}>
+            <IconButton color="inherit" onClick={props.switchTheme} title="Trocar tema">
               <WbIncandescentIcon />
             </IconButton>
-            <IconButton  color="inherit" onClick={() => { }}>
+            <IconButton  color="inherit" onClick={() => { }} title="Ver perfil">
               <AccountCircleIcon />
             </IconButton>
           </Box>
