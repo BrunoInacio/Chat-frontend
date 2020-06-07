@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import usePageStyles from '../Pages.style';
-import withPages from '../Pages';
+import withPages from '../withPages';
 
 import {
   Paper, Typography, Button,
