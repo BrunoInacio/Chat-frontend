@@ -54,12 +54,14 @@ function Chat({ addMessage }) {
             margin="dense"
             value={newMessageContent}
             onChange={handleMessageInput}
+            id="new-message"
           />
           <Button
             type="submit"
             variant="text"
             color="primary"
             className={classes.sendButton}
+            aria-label="Enviar mensagem"
           >
             <SendIcon />
           </Button>

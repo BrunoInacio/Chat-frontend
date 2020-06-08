@@ -19,7 +19,7 @@ export default function Message(props) {
 
   return (
     <Paper className={classes.message + ' ' + classes[origin]}>
-      <Typography variant={isMessage ? "body1" : "subtitle2"}>
+      <Typography variant={isMessage ? "body1" : "subtitle2"} component="h2">
         {props.children}
       </Typography>
 
