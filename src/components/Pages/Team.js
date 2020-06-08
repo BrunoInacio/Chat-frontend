@@ -27,7 +27,7 @@ function Team({ setTitle }) {
     <Paper elevation={2} className={pageClasses.content}>
       {TeamList.map(group => (
         <Box key={group.title}>
-          <Typography variant="h4" color="primary">
+          <Typography variant="h4" color="primary" component="h2">
             {group.title}
           </Typography>
 
@@ -41,7 +41,7 @@ function Team({ setTitle }) {
                     title={member.name}
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h6">
+                    <Typography gutterBottom variant="h6" component="h3">
                       {member.name}
                     </Typography>
                     <Typography variant="overline" color="textSecondary">

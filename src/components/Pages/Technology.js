@@ -28,7 +28,7 @@ function Technology({ setTitle }) {
             />
 
             <CardContent>
-              <Typography gutterBottom variant="h6">{tech.name}</Typography>
+              <Typography gutterBottom variant="h6" component="h2">{tech.name}</Typography>
             </CardContent>
 
           </CardActionArea>
