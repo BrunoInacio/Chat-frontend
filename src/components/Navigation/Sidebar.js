@@ -24,7 +24,7 @@ export default function Sidebar(props) {
           Chatbot
         </Typography>
 
-        <Tooltip title="Esconder menu" aria-label="Esconder menu">
+        <Tooltip title="Esconder menu" aria-label="Esconder menu" enterDelay={500}>
           <IconButton onClick={props.closeMenu} className={classes.menuButton}>
             <ChevronLeftIcon />
           </IconButton>

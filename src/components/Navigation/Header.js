@@ -23,7 +23,7 @@ export default function Header(props) {
       >
         <Toolbar>
           <Fade in={!props.open} style={{ transitionDelay: '150ms' }}>
-            <Tooltip title="Ver perfil" aria-label="Ver perfil">
+            <Tooltip title="Exibir menu" aria-label="Exibir menu" enterDelay={500}>
               <IconButton
                 edge="start"
                 color="inherit"
@@ -47,13 +47,13 @@ export default function Header(props) {
           <Box flexGrow={1} />
 
           <Box display="flex">
-            <Tooltip title="Trocar tema" aria-label="Trocar tema">
+            <Tooltip title="Trocar tema" aria-label="Trocar tema" enterDelay={500}>
               <IconButton color="inherit" onClick={props.switchTheme}>
                 <WbIncandescentIcon />
               </IconButton>
             </Tooltip>
 
-            <Tooltip title="Ver perfil" aria-label="Ver perfil">
+            <Tooltip title="Ver perfil" aria-label="Ver perfil" enterDelay={500}>
               <IconButton  color="inherit" onClick={() => { }}>
                 <AccountCircleIcon />
               </IconButton>
