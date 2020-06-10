@@ -3,7 +3,7 @@ import React from 'react';
 import useStyles from './Header.style';
 
 import {
-  Box, AppBar, Toolbar, IconButton, Typography, Fade 
+  Box, AppBar, Toolbar, IconButton, Typography, Fade, Tooltip
 } from '@material-ui/core';
 
 import {
@@ -23,14 +23,16 @@ export default function Header(props) {
       >
         <Toolbar>
           <Fade in={!props.open} style={{ transitionDelay: '150ms' }}>
-            <IconButton
-              edge="start"
-              color="inherit"
-              onClick={props.openMenu}
-              className={classes.menuButton}
-            >
-              <MenuIcon />
-            </IconButton>
+            <Tooltip title="Ver perfil" aria-label="Ver perfil">
+              <IconButton
+                edge="start"
+                color="inherit"
+                onClick={props.openMenu}
+                className={classes.menuButton}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Tooltip>
           </Fade>
 
           <Typography 
@@ -45,12 +47,17 @@ export default function Header(props) {
           <Box flexGrow={1} />
 
           <Box display="flex">
-            <IconButton color="inherit" onClick={props.switchTheme} title="Trocar tema">
-              <WbIncandescentIcon />
-            </IconButton>
-            <IconButton  color="inherit" onClick={() => { }} title="Ver perfil">
-              <AccountCircleIcon />
-            </IconButton>
+            <Tooltip title="Trocar tema" aria-label="Trocar tema">
+              <IconButton color="inherit" onClick={props.switchTheme}>
+                <WbIncandescentIcon />
+              </IconButton>
+            </Tooltip>
+
+            <Tooltip title="Ver perfil" aria-label="Ver perfil">
+              <IconButton  color="inherit" onClick={() => { }}>
+                <AccountCircleIcon />
+              </IconButton>
+            </Tooltip>
           </Box>
         </Toolbar>
       </AppBar>
