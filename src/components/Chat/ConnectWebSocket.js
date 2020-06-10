@@ -13,5 +13,5 @@ export default function WebSocketAPI(listener) {
     return () => websocket.current.close()
   }, [listener]);
 
-  return websocket.current;
+  return websocket;
 }

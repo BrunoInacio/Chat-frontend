@@ -7,6 +7,7 @@ import { addMessage } from '../../redux/actions';
 
 import MessageList from "./Chat.MessageList"
 import ConnectWebSocket from './ConnectWebSocket';
+import useInputMessage from './useInputMessage';
 
 import { Divider, Box, Button, TextField } from '@material-ui/core';
 
@@ -14,29 +15,14 @@ import { Divider, Box, Button, TextField } from '@material-ui/core';
 
 function Chat({ addMessage }) {
   const classes = useStyles();
-
   const connection = ConnectWebSocket(addMessage);
-  const [newMessageContent, setNewMessageContent] = React.useState("");
 
-  const sendMessage = () => {
-    const msg = {
-      content: newMessageContent,
-      origin: "user",
-      date: new Date().toISOString()
-    };
-
+  const sendMessage = (msg) => {
     addMessage(msg);
-    connection.send(JSON.stringify(msg));
-    setNewMessageContent("");
-  };
+    connection.current.send(JSON.stringify(msg));
+  }
 
-  const handleMessageInput = (e) => setNewMessageContent(e.target.value);
-  const handleMessageSubmit = (e) => {
-    e.preventDefault();
-
-    if (!/^\s*$/.test(newMessageContent))
-      sendMessage();
-  };
+  const [message, handleInput, handleSubmit] = useInputMessage(sendMessage);
 
   return (
     <Box className={classes.root}> 
@@ -46,14 +32,14 @@ function Chat({ addMessage }) {
 
       <Box elevation={2} className={classes.inputContainer}>
         <Divider />
-        <form className={classes.flexDisplay} onSubmit={handleMessageSubmit}>
+        <form className={classes.flexDisplay} onSubmit={handleSubmit}>
           <TextField autoFocus fullWidth
             label="Mensagem"
             placeholder="Digite sua mensagem aqui."
             color="primary"
             margin="dense"
-            value={newMessageContent}
-            onChange={handleMessageInput}
+            value={message}
+            onChange={handleInput}
             id="new-message"
           />
           <Button
