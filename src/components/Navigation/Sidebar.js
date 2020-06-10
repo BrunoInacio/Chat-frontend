@@ -6,7 +6,7 @@ import menuItens from './Sidebar.itens';
 
 import {
   Drawer, SwipeableDrawer, Box, Typography, IconButton, 
-  List, ListItem, ListItemIcon, ListItemText, Divider,
+  List, ListItem, ListItemIcon, ListItemText, Divider, Tooltip
 } from '@material-ui/core';
 
 import {
@@ -23,9 +23,12 @@ export default function Sidebar(props) {
         <Typography variant="h4" component="h1" color="primary">
           Chatbot
         </Typography>
-        <IconButton onClick={props.closeMenu} className={classes.menuButton} title="Esconder menu">
-          <ChevronLeftIcon />
-        </IconButton>
+
+        <Tooltip title="Esconder menu" aria-label="Esconder menu">
+          <IconButton onClick={props.closeMenu} className={classes.menuButton}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </Tooltip>
       </Box>
 
       <Divider />
