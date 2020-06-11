@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box } from '@material-ui/core';
 
-import Message from './Chat.Message'
+import MessageDisplay from './Chat.MessageDisplay'
 import useMessagesList from './useMessagesList'
 
 export default function MessageList(props) {
@@ -21,9 +21,9 @@ export default function MessageList(props) {
   return (
     <Box ref={messageList} display="flex" flexDirection="column">
       {sortedMessages.map((message, index) => (
-        <Message key={index} origin={message.origin} date={message.date}>
+        <MessageDisplay key={index} origin={message.origin} date={message.date}>
           {message.content}
-        </Message>
+        </MessageDisplay>
       ))}
     </Box>
   );

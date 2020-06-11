@@ -7,6 +7,17 @@ export default makeStyles((theme) => ({
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
+
+    [theme.breakpoints.up('sm')]: {
+      position: 'absolute',
+      height: 'auto',
+      top: theme.spacing(2),
+      bottom: theme.spacing(2),
+      right: theme.spacing(1),
+      left: theme.spacing(1),
+      padding: theme.spacing(1, 2),
+    },
+
   },
   // Message List
   messageListContainer: {

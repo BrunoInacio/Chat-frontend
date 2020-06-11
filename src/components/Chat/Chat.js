@@ -1,57 +1,25 @@
 import React  from 'react';
 
-import { connect } from 'react-redux';
-import { addMessage } from '../../redux/actions';
-
 import useStyles from './Chat.style';
 
-import { Divider, Box, Button, TextField } from '@material-ui/core';
-import { Send as SendIcon } from '@material-ui/icons';
+import { Divider, Box, Paper } from '@material-ui/core';
 
+import MessageInput from "./Chat.MessageInput"
 import MessageList from "./Chat.MessageList"
-import ConnectWebSocket from './ConnectWebSocket';
-import useInputMessage from './useInputMessage';
 
-function Chat({ addMessage }) {
+export default function Chat() {
   const classes = useStyles();
-  const connection = ConnectWebSocket(addMessage);
-  
-  const [message, handleInput, handleSubmit] = useInputMessage((msg) => {
-    addMessage(msg);
-    connection.current.send(JSON.stringify(msg));
-  });
 
   return (
-    <Box className={classes.root}> 
+    <Paper elevation={2} className={classes.root}>
       <Box className={classes.messageListContainer}>
         <MessageList />
       </Box>
 
-      <Box elevation={2} className={classes.inputContainer}>
+      <Box className={classes.inputContainer}>
         <Divider />
-        <form className={classes.flexDisplay} onSubmit={handleSubmit}>
-          <TextField autoFocus fullWidth
-            label="Mensagem"
-            placeholder="Digite sua mensagem aqui."
-            color="primary"
-            margin="dense"
-            value={message}
-            onChange={handleInput}
-            id="new-message"
-          />
-          <Button
-            type="submit"
-            variant="text"
-            color="primary"
-            className={classes.sendButton}
-            aria-label="Enviar mensagem"
-          >
-            <SendIcon />
-          </Button>
-        </form>
+        <MessageInput />
       </Box>
-    </Box>
+    </Paper>
   );
 }
-
-export default connect(null, { addMessage })(Chat);

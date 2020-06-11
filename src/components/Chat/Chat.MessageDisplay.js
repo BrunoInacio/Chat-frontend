@@ -5,9 +5,7 @@ import { Typography, Paper } from '@material-ui/core';
 
 import { formatTime } from '../../utils';
 
-export default function Message(props) {
-  const { origin, date } = props;
-
+export default function MessageDisplay({ origin, date, children }) {
   if (origin === undefined) {
     throw new Error("Missing 'origin' parameter.")
   } else if (origin !== "bot" && origin !== "user" && origin !== "date") {
@@ -20,7 +18,7 @@ export default function Message(props) {
   return (
     <Paper className={classes.message + ' ' + classes[origin]}>
       <Typography variant={isMessage ? "body1" : "subtitle2"} component="h2">
-        {props.children}
+        {children}
       </Typography>
 
       {isMessage ? (
