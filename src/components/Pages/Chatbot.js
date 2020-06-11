@@ -6,7 +6,7 @@ import withPages from './withPages';
 import Chat from '../Chat';
 
 import {
-  Paper, Box
+  Paper,
 } from '@material-ui/core';
 
 

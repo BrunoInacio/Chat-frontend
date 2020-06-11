@@ -1,28 +1,25 @@
 import React  from 'react';
+
 import { connect } from 'react-redux';
+import { addMessage } from '../../redux/actions';
 
 import useStyles from './Chat.style';
 
-import { addMessage } from '../../redux/actions';
+import { Divider, Box, Button, TextField } from '@material-ui/core';
+import { Send as SendIcon } from '@material-ui/icons';
 
 import MessageList from "./Chat.MessageList"
 import ConnectWebSocket from './ConnectWebSocket';
 import useInputMessage from './useInputMessage';
 
-import { Divider, Box, Button, TextField } from '@material-ui/core';
-
- import { Send as SendIcon } from '@material-ui/icons';
-
 function Chat({ addMessage }) {
   const classes = useStyles();
   const connection = ConnectWebSocket(addMessage);
-
-  const sendMessage = (msg) => {
+  
+  const [message, handleInput, handleSubmit] = useInputMessage((msg) => {
     addMessage(msg);
     connection.current.send(JSON.stringify(msg));
-  }
-
-  const [message, handleInput, handleSubmit] = useInputMessage(sendMessage);
+  });
 
   return (
     <Box className={classes.root}> 
