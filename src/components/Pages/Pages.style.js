@@ -60,18 +60,4 @@ export default makeStyles((theme) => ({
     right: theme.spacing(1),
     top: theme.spacing(1),
   },
-
-  // Full page
-  fullBox: {
-    height: "100%",
-    [theme.breakpoints.up('sm')]: {
-      position: "absolute",
-      height: "auto",
-      top: theme.spacing(2),
-      bottom: theme.spacing(2),
-      right: theme.spacing(1),
-      left: theme.spacing(1),
-      padding: theme.spacing(1, 2),
-    },
-  },
 }));
