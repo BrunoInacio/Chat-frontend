@@ -5,9 +5,12 @@ export default makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
     [theme.breakpoints.up('sm')]: {
-      position: 'absolute',
       top: theme.spacing(2),
       bottom: theme.spacing(2),
       right: theme.spacing(1),
@@ -32,22 +35,19 @@ export default makeStyles((theme) => ({
 
   // Messages
   message: {
-    position: 'relative',
     maxWidth: '90%',
     textAlign: 'left',
     wordBreak: 'break-word',
     overflow: 'hidden',
     marginBottom: theme.spacing(1),
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     color: theme.palette.primary.contrastText,
   },
   miniTime: {
-    color: 'white',
-    position: 'absolute',
-    right: 0,
-    bottom: 0,
-    padding: '0.2rem',
+    float: "right",
+    margin: theme.spacing(2, 0, -1, 3),
     fontSize: '0.6rem',
+    color: 'white',
   },
 
   // Message types
@@ -62,7 +62,6 @@ export default makeStyles((theme) => ({
   date: {
     alignSelf: 'center',
     backgroundColor: theme.palette.secondary.main,
-    padding: theme.spacing(1),
   },
 
   // Input
