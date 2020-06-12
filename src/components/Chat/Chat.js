@@ -5,7 +5,7 @@ import { addMessage } from '../../redux/actions';
 
 import useStyles from './Chat.style';
 
-import { Box, Paper } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 
 import ConnectWebSocket from './ConnectWebSocket';
 import MessageInput from "./Chat.MessageInput"
@@ -28,10 +28,7 @@ function Chat({ addMessage }) {
 
   return (
     <Paper elevation={2} className={classes.root}>
-      <Box className={classes.messageListContainer}>
-        <MessageList />
-      </Box>
-
+      <MessageList />
       <MessageInput sendMessage={sendMessage} />
     </Paper>
   );
