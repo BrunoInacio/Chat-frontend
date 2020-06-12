@@ -1,17 +1,16 @@
 import React from 'react';
 
-import useStyles from './Chat.style';
+import useStyles from './Chatbot.style';
 
 import { Box } from '@material-ui/core';
 
 import MessageDisplay from './Chat.MessageDisplay'
-import useMessagesList from './useMessagesList'
+import useMessageList from '../Chat/useMessageList'
 
-export default function MessageList() {
+export default function MessageList({ websocket }) {
   const classes = useStyles();
-
   const messageList = React.useRef(null)
-  const sortedMessages = useMessagesList();
+  const sortedMessages = useMessageList(websocket);
 
   React.useEffect(() => {
     let node = messageList.current;

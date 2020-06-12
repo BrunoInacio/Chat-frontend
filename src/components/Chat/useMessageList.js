@@ -1,11 +1,11 @@
 import React  from 'react';
-import { useSelector } from 'react-redux';
 
+import { useSelector } from 'react-redux';
 import { sameDay, formatTime } from '../../utils';
 
-export default function useMessagesList() {
-  const messages = useSelector(state => state.messages);
+export default function useMessageList() {
   const [sortedMessages, setSortedMessages] = React.useState([]);
+  const messages = useSelector(state => state.messages);
 
   const addDateMessages = (sortedMessages) => {
     if (sortedMessages.length < 1)
