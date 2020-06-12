@@ -5,11 +5,23 @@ import useStyles from './Chatbot.style';
 import { Button, TextField, Box, Divider } from '@material-ui/core';
 import { Send as SendIcon } from '@material-ui/icons';
 
-import useMessageInput from '../Chat/useMessageInput'
-
-export default function ChatInput({ websocket }) {
+export default function ChatInput({ chat }) {
   const classes = useStyles();
-  const [messageContent, handleInput, handleSubmit] = useMessageInput(websocket);
+  const [messageContent, setMessageContent] = React.useState("");
+  
+  const handleInput = (e) => {
+    setMessageContent(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (/^\s*$/.test(messageContent))
+      return;
+
+    chat.current.sendMessage(messageContent);
+    setMessageContent("");
+  };
   
   return (
     <Box className={classes.inputContainer}>

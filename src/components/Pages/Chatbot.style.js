@@ -11,17 +11,14 @@ export default makeStyles((theme) => ({
     right: 0,
     left: 0,
     [theme.breakpoints.up('sm')]: {
-      top: theme.spacing(2),
-      bottom: theme.spacing(2),
-      right: theme.spacing(1),
-      left: theme.spacing(1),
+      margin: theme.spacing(2, 1),
       padding: theme.spacing(1, 2),
     },
   },
   
   // Message List
   messageListContainer: {
-    flexGrow: 1,
+    marginTop: "auto",
     padding: theme.spacing(1),
     overflow: 'auto',
 
