@@ -19,13 +19,13 @@ export default function MessageDisplay({ origin, date, children }) {
     <Paper className={classes.message + ' ' + classes[origin]}>
       <Typography variant={isMessage ? "body1" : "subtitle2"} component="h2">
         {children}
+        
+        {isMessage ? (
+          <span className={classes.miniTime}>
+            {formatTime.hour(new Date(date))}
+          </span>
+        ) : null}
       </Typography>
-
-      {isMessage ? (
-        <span className={classes.miniTime}>
-          {formatTime.hour(new Date(date))}
-        </span>
-      ) : null}
     </Paper>
   )
 }
