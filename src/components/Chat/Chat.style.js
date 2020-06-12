@@ -3,27 +3,24 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   // Container
   root: {
-    height: '100%',
-    width: '100%',
     display: 'flex',
     flexDirection: 'column',
 
     [theme.breakpoints.up('sm')]: {
       position: 'absolute',
-      height: 'auto',
       top: theme.spacing(2),
       bottom: theme.spacing(2),
       right: theme.spacing(1),
       left: theme.spacing(1),
       padding: theme.spacing(1, 2),
     },
-
   },
+  
   // Message List
   messageListContainer: {
     flexGrow: 1,
-    overflow: 'auto',
     padding: theme.spacing(1),
+    overflow: 'auto',
 
     '&::-webkit-scrollbar': {
       width: '0.4em'
@@ -36,8 +33,8 @@ export default makeStyles((theme) => ({
   // Messages
   message: {
     position: 'relative',
-    textAlign: 'left',
     maxWidth: '90%',
+    textAlign: 'left',
     wordBreak: 'break-word',
     overflow: 'hidden',
     marginBottom: theme.spacing(1),
@@ -52,6 +49,8 @@ export default makeStyles((theme) => ({
     padding: '0.2rem',
     fontSize: '0.6rem',
   },
+
+  // Message types
   user: {
     alignSelf: 'flex-end',
     backgroundColor: theme.palette.primary.dark,
@@ -69,10 +68,10 @@ export default makeStyles((theme) => ({
   // Input
   inputContainer: {
     width: '100%',
+    position: 'sticky',
+    bottom: 0,
     backgroundColor: theme.palette.background.paper,
     [theme.breakpoints.down('xs')]: {
-      position: 'sticky',
-      bottom: 0,
       padding: theme.spacing(0, 2, 1, 2),
     },
   },
