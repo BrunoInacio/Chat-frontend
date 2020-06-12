@@ -1,5 +1,6 @@
 import React from 'react';
-import useStyles from './Chat.style';
+
+import useStyles from './Chatbot.style';
 
 import { Typography, Paper } from '@material-ui/core';
 
@@ -17,10 +18,10 @@ export default function MessageDisplay({ origin, date, children }) {
 
   return (
     <Paper className={classes.message + ' ' + classes[origin]}>
-      <Typography variant={isMessage ? "body1" : "subtitle2"} component="h2">
+      <Typography variant={origin !== "date" ? "body1" : "subtitle2"} component="h2">
         {children}
-        
-        {isMessage ? (
+
+        {origin !== "date" ? (
           <span className={classes.miniTime}>
             {formatTime.hour(new Date(date))}
           </span>
