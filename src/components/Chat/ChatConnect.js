@@ -5,7 +5,7 @@ import { addMessage } from '../../redux/actions';
 
 import ConnectWebSocket from './ConnectWebSocket';
 
-export default function Chat() {
+export default function ChatConnect() {
   const websocket = ConnectWebSocket();
   const dispatch = useDispatch();
 
@@ -22,7 +22,7 @@ export default function Chat() {
       dispatch(addMessage(msg));
       websocket.current.send(JSON.stringify(msg));
     }
-  }, [])
+  }, [websocket, dispatch])
 
   return websocket;
 }
