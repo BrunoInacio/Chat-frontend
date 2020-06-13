@@ -12,32 +12,33 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ConnectedAlert({ chat }) {
   const classes = useStyles();
+  const isConnected = chat.current.isConnected;
 
   const [alert, setAlert] = React.useState({ open: false });
   const handleClose = () => setAlert({ ...alert, open: false })
-  
+
   React.useEffect(() => {
-    if (chat.current.isConnected === true) {
+    if (isConnected === true) {
       setAlert({
         open: true,
         type: "success",
         message: "Você está conectado.",
       })
-    } else if (chat.current.isConnected === false) {
+    } else if (isConnected === false) {
       setAlert({
         open: true,
         type: "error",
         message: "Você não está conectado!",
       })
     }
-  }, [chat.current.isConnected])
+  }, [isConnected])
 
   return (
       <Snackbar 
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         open={alert.open}
         onClose={handleClose}
-        autoHideDuration={5000}
+        autoHideDuration={3000}
         className={classes.alert}
       >
         <MuiAlert elevation={5} variant="filled" severity={alert.type}>
