@@ -1,5 +1,4 @@
 import React  from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 
 import { Snackbar } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -7,18 +6,24 @@ import MuiAlert from '@material-ui/lab/Alert';
 export default function ConnectedAlert({ chat }) {
   const isConnected = chat.current.isConnected;
 
-  const [alert, setAlert] = React.useState({ open: false });
-  const handleClose = () => setAlert({ ...alert, open: false })
+  const [connectionAlert, setConnectionAlert] = React.useState({ 
+    open: false,
+  });
+
+  const handleClose = () => setConnectionAlert({
+    ...connectionAlert, 
+    open: false,
+  })
 
   React.useEffect(() => {
     if (isConnected === true) {
-      setAlert({
+      setConnectionAlert({
         open: true,
         type: "success",
         message: "Você está conectado.",
       })
     } else if (isConnected === false) {
-      setAlert({
+      setConnectionAlert({
         open: true,
         type: "error",
         message: "Você não está conectado!",
@@ -29,12 +34,16 @@ export default function ConnectedAlert({ chat }) {
   return (
       <Snackbar 
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-        open={alert.open}
+        open={connectionAlert.open}
         onClose={handleClose}
         autoHideDuration={3000}
       >
-        <MuiAlert elevation={5} variant="filled" severity={alert.type}>
-          {alert.message}
+        <MuiAlert 
+          elevation={5} 
+          variant="filled"
+          severity={connectionAlert.type}
+        >
+          {connectionAlert.message}
         </MuiAlert>
       </Snackbar>
   );

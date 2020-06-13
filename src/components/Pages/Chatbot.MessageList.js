@@ -23,7 +23,10 @@ export default function MessageList() {
       <Box display="flex" flexDirection="column">
 
         {sortedMessages.map((message, index) => (
-          <Paper key={index} className={classes.message + ' ' + classes[message.origin]}>
+          <Paper 
+            key={index} 
+            className={classes.message + ' ' + classes[message.origin]}
+          >
             <Typography
               variant={message.origin !== "date" ? "body1" : "subtitle2"}
               component="h2"

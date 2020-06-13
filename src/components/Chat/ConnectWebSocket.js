@@ -25,6 +25,25 @@ export default function WebSocketAPI() {
       console.log("ERROR");
     }
 
+    websocket.current.waitForConnection = (callback, interval, maxCalls = 30) => {
+      if (!maxCalls)
+        return;
+
+      if (websocket.current.readyState === 1) {
+        callback();
+      } else {
+        setTimeout(() => {
+          websocket.current.waitForConnection(callback, interval, --maxCalls)
+        }, interval);
+      }
+    }
+
+    websocket.current.safeSend = (msg) => {
+      websocket.current.waitForConnection(() => {
+        websocket.current.send(msg)
+      }, 1000)
+    }
+
     return () => websocket.current.close()
   }, []);
 
