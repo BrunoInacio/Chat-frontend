@@ -8,24 +8,25 @@ export default function WebSocketAPI() {
 
   React.useEffect(() => {
     websocket.current = new WebSocket("ws://localhost:6789");
-    return () => websocket.current.close()
-  }, []);
 
-  React.useEffect(() => {
     websocket.current.onopen = () => {
       setConnected(true);
       console.log("CONNECTED");
     }
 
     websocket.current.onclose = (e) => {
-      setConnected(false);
+      if (!e.wasClean)
+        setConnected(false);
+        
       console.log("DISCONNECTED");
     }
 
     websocket.current.onerror = (e) => {
       console.log("ERROR");
     }
-  })
+
+    return () => websocket.current.close()
+  }, []);
 
   return websocket;
 }

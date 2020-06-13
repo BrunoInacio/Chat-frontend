@@ -4,14 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Snackbar } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
 
-const useStyles = makeStyles((theme) => ({
-  alert: {
-    position: 'absolute',
-  }
-}));
-
 export default function ConnectedAlert({ chat }) {
-  const classes = useStyles();
   const isConnected = chat.current.isConnected;
 
   const [alert, setAlert] = React.useState({ open: false });
@@ -39,7 +32,6 @@ export default function ConnectedAlert({ chat }) {
         open={alert.open}
         onClose={handleClose}
         autoHideDuration={3000}
-        className={classes.alert}
       >
         <MuiAlert elevation={5} variant="filled" severity={alert.type}>
           {alert.message}
