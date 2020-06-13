@@ -15,10 +15,10 @@ export default makeStyles((theme) => ({
       padding: theme.spacing(1, 2),
     },
   },
-  
+
   // Message List
   messageListContainer: {
-    marginTop: "auto",
+    marginTop: 'auto',
     padding: theme.spacing(1),
     overflow: 'auto',
 
@@ -41,7 +41,7 @@ export default makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
   },
   miniTime: {
-    float: "right",
+    float: 'right',
     margin: theme.spacing(2, 0, -1, 3),
     fontSize: '0.6rem',
     color: 'white',

@@ -52,8 +52,9 @@ export default function useMessageList() {
   React.useEffect(() => {
     let sortedMessages = [...messages]
     sortedMessages.sort((a, b) => (new Date(a.date) < new Date(b.date) ? -1 : 1))
+    sortedMessages = addDateMessages(sortedMessages);
 
-    setSortedMessages(addDateMessages(sortedMessages))
+    setSortedMessages(sortedMessages)
   }, [messages]);
 
   return sortedMessages;
