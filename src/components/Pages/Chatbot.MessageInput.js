@@ -27,7 +27,7 @@ export default function ChatInput({ chat }) {
     <Box className={classes.inputContainer}>
       <Divider />
 
-      <form className={classes.flexDisplay} onSubmit={handleSubmit}>
+      <form className={classes.flexDisplay} onSubmit={handleSubmit} autoComplete="off">
         <TextField autoFocus fullWidth
           label="Mensagem"
           placeholder="Digite sua mensagem aqui."

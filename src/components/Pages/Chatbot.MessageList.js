@@ -14,7 +14,8 @@ export default function MessageList() {
 
   React.useEffect(() => {
     let node = messageList.current;
-    node.scrollTop = node.scrollHeight;
+    node.scrollTo(0, node.scrollHeight);
+    window.scrollTo(0, node.scrollHeight);
   }, [sortedMessages]);
 
   return (
