@@ -1,6 +1,6 @@
 import React  from 'react';
 
-export default function WebSocketAPI() {
+export default function ConnectWebSocket() {
   const websocket = React.useRef([]);
   
   const [isConnected, setConnected] = React.useState(null);
@@ -21,12 +21,12 @@ export default function WebSocketAPI() {
       console.log("DISCONNECTED");
     }
 
-    websocket.current.onerror = (e) => {
+    websocket.current.onerror = () => {
       console.log("ERROR");
     }
 
     websocket.current.waitForConnection = (callback, interval, maxCalls = 30) => {
-      if (!maxCalls)
+      if (maxCalls <= 0)
         return;
 
       if (websocket.current.readyState === 1) {
