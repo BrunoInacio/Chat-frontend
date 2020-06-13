@@ -18,9 +18,9 @@ export default function ChatConnect() {
         origin: "user",
         date: new Date().toISOString()
       };
-  
+
       dispatch(addMessage(msg));
-      websocket.current.send(JSON.stringify(msg));
+      websocket.current.safeSend(JSON.stringify(msg));
     }
   }, [websocket, dispatch])
 

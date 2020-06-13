@@ -20,6 +20,7 @@ function ChatBot({ setTitle }) {
   return (
     <Paper elevation={2} className={classes.root}>
       <ConnectedAlert chat={chat} />
+
       <MessageList />
       <MessageInput chat={chat} />
     </Paper>

@@ -11,9 +11,9 @@ export default function useMessageList() {
     if (sortedMessages.length < 1)
       return []
 
-    let datedMessages = []
     let datedIndex = 0
-    let lastDate = sortedMessages[0].date
+    let datedMessages = []
+    let lastDate = []
   
     for (let i = 0; i < sortedMessages.length; i++) {
       const message = sortedMessages[i]
