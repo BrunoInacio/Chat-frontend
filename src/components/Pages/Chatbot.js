@@ -15,14 +15,14 @@ function ChatBot({ setTitle }) {
   const classes = useStyles();
   React.useEffect(() => { setTitle("Conversa") }, [setTitle])
 
-  const chat = ChatConnect();
+  const [sendMessage, isConnected] = useChat();
 
   return (
     <Paper elevation={2} className={classes.root}>
-      <ConnectedAlert chat={chat} />
+      <ConnectedAlert isConnected={isConnected} />
 
       <MessageList />
-      <MessageInput chat={chat} />
+      <MessageInput sendMessage={sendMessage} />
     </Paper>
   );
 }
