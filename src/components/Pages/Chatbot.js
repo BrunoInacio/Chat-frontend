@@ -5,7 +5,7 @@ import useStyles from './Chatbot.style';
 
 import { Paper } from '@material-ui/core';
 
-import ChatConnect from '../Chat/ChatConnect';
+import useChat from '../Chat/useChat';
 import ConnectedAlert from '../Chat/ConnectedAlert';
 
 import MessageInput from "./Chatbot.MessageInput"
