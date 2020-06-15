@@ -3,8 +3,7 @@ import React  from 'react';
 import { Snackbar } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
 
-export default function ConnectedAlert({ chat }) {
-  const isConnected = chat.current.isConnected;
+export default function ConnectedAlert({ isConnected }) {
 
   const [connectionAlert, setConnectionAlert] = React.useState({ 
     open: false,
