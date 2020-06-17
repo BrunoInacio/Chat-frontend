@@ -18,16 +18,16 @@ export default function useMessageList() {
     for (let i = 0; i < sortedMessages.length; i++) {
       const message = sortedMessages[i]
 
-      if (message.origin === undefined) {
-        throw new Error("Missing 'origin' parameter.");
-      } else if (message.origin !== "bot" && message.origin !== "user" && message.origin !== "date") {
-        throw new Error("Origin can only be 'user', 'date' or 'bot'.");
+      if (message.sender === undefined) {
+        throw new Error("Missing 'sender' parameter.");
+      } else if (message.sender !== "bot" && message.sender !== "user" && message.sender !== "date") {
+        throw new Error("Sender can only be 'user', 'date' or 'bot'.");
       }
 
-      if (!sameDay(new Date(message.date), new Date(lastDate)) && message.origin !== "date") {
+      if (!sameDay(new Date(message.date), new Date(lastDate)) && message.sender !== "date") {
         datedMessages[datedIndex++] = { 
-          origin: "date",
-          content: formatTime.day(new Date(message.date)),
+          sender: "date",
+          message: formatTime.day(new Date(message.date)),
           date: message.date 
         }
       }
