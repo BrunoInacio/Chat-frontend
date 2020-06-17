@@ -10,19 +10,26 @@ export default function useChat() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    socket.onmessage = (e) => dispatch(addMessage(JSON.parse(e.data)))
-
-    socket.sendMessage = (messageContent) => {
+    
+    socket.current.on("bot_uttered", (res) => {
+      dispatch(addMessage({
+        message: res.text,
+        sender: "bot",
+        date: new Date().toISOString()
+      }))
+    })
+    
+    socket.current.sendMessage = (messageContent) => {
       const msg = {
-        content: messageContent,
-        origin: "user",
+        message: messageContent,
+        sender: "user",
         date: new Date().toISOString()
       };
 
       dispatch(addMessage(msg));
-      socket.safeSend(JSON.stringify(msg));
+      socket.current.safeSend(msg);
     }
   }, [socket, dispatch])
 
-  return [socket.sendMessage, socket.isConnected];
+  return [socket.current.sendMessage, socket.current.connected];
 }
