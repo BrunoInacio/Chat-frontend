@@ -25,14 +25,14 @@ export default function MessageList() {
         {sortedMessages.map((message, index) => (
           <Paper 
             key={index} 
-            className={classes.message + ' ' + classes[message.origin]}
+            className={classes.message + ' ' + classes[message.sender]}
           >
             <Typography
-              variant={message.origin !== "date" ? "body1" : "subtitle2"}
+              variant={message.sender !== "date" ? "body1" : "subtitle2"}
               component="h2"
             >
-              {message.content}
-              {message.origin !== "date" ? (
+              {message.message}
+              {message.sender !== "date" ? (
                 <span className={classes.miniTime}>
                   {formatTime.hour(new Date(message.date))}
                 </span>
