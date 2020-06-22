@@ -18,7 +18,7 @@ const authors = [
 const professor = [
   {
     'name': "Dra. Anarosa Alves Franco Brandão",
-    'photo': "https://pcs.usp.br/wp-content/plugins/pcslu/images/images_docentes_anarosa.jpg",
+    'photo': "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4728035E1",
     'NUSP': 319590
   }
 ]

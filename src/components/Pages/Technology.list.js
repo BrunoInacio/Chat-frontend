@@ -10,6 +10,10 @@ const tecnologias = [
   {
     'name': "Material UI",
     'photo': "https://material-ui.com/static/logo.svg",
+  },
+  {
+    'name': "Socket.IO",
+    'photo': "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
   }
 ]
 
