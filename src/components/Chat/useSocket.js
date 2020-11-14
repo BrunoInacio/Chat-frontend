@@ -12,6 +12,11 @@ export default function useSocket() {
     socket.current.on('connect', () => {
       setConnected(true);
       console.log("CONNECTED");
+      socket.current.emit('user_uttered', {
+        message: "/get_started",
+        sender: "user",
+        date: new Date().toISOString()
+      })
     })
 
     socket.current.on('disconnect', (reason) => {
