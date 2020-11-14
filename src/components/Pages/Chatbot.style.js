@@ -80,4 +80,4 @@ export default makeStyles((theme) => ({
     alignSelf: 'flex-end',
     marginLeft: theme.spacing(2),
   },
-}));
+}), {index: 1});

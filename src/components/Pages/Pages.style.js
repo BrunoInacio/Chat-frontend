@@ -60,4 +60,4 @@ export default makeStyles((theme) => ({
     right: theme.spacing(1),
     top: theme.spacing(1),
   },
-}));
+}), {index: 1});

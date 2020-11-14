@@ -46,4 +46,4 @@ export default makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
-}));
+}), {index: 1});

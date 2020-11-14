@@ -49,4 +49,4 @@ export default makeStyles((theme) => ({
       }),
     }
   },
-}));
+}), {index: 1});
