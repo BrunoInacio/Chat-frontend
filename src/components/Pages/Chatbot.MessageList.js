@@ -31,7 +31,9 @@ export default function MessageList() {
               variant={message.sender !== "date" ? "body1" : "subtitle2"}
               component="h2"
             >
-              {message.message}
+              {message.message.split("\n").reduce((acc, line) =>
+                <>{acc}<br />{line}</>
+              )}
               {message.sender !== "date" ? (
                 <span className={classes.miniTime}>
                   {formatTime.hour(new Date(message.date))}
