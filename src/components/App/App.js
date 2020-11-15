@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
@@ -17,9 +18,12 @@ export default function App() {
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
 
-      <Navigation title={title} switchTheme={switchTheme} isMobile={isMobile}>
-        <Routes setTitle={setTitle} />
-      </Navigation>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Navigation title={title} switchTheme={switchTheme} isMobile={isMobile}>
+          <Routes setTitle={setTitle} />
+        </Navigation>
+      </BrowserRouter>
+
     </MuiThemeProvider>
   );
 }
