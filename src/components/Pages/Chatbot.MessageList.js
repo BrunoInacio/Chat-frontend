@@ -31,9 +31,15 @@ export default function MessageList() {
               variant={message.sender !== "date" ? "body1" : "subtitle2"}
               component="h2"
             >
-              {message.message.split("\n").reduce((acc, line) =>
-                <>{acc}<br />{line}</>
-              )}
+              {message.message.split(/(\n|https?:\/\/\S+(?:\.\S+)+(?:\/\S*)*)/).reduce((acc, text) => {
+                if (/https?:\/\/\S+(?:\.\S+)+(?:\/\S*)*/.test(text)) {
+                  return <>{acc}<a href={text}>{text}</a></>
+                } else if (/\n/.test(text)) {
+                  return <>{acc}<br /></>
+                } else {
+                return <>{acc}{text}</>
+                }
+              })}
               {message.sender !== "date" ? (
                 <span className={classes.miniTime}>
                   {formatTime.hour(new Date(message.date))}
