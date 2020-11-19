@@ -69,7 +69,7 @@ function Info({ setTitle }) {
       <Button color="primary" href="https://github.com/BrunoInacio/chat-front-end">
           Front-end
       </Button>
-      <Button color="primary" href="/" disabled>
+      <Button color="primary" href="https://github.com/Pligabue/rasa_chatbot">
           Back-end
       </Button>
 
