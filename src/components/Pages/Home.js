@@ -31,19 +31,21 @@ function Home({ setTitle }) {
         </Typography>
         do curso de Engenharia Elétrica com Ênfase em Computação da 
         Escola Politécnica da Universidade de São Paulo (POLI-USP)
-        e foi desenvolvido pelos alunos
-        Bruno Brandão Inácio e Pedro de Moraes Ligabue.
+        e foi desenvolvido pelos alunos Bruno Brandão Inácio 
+        e Pedro de Moraes Ligabue, sob orientação da
+        professora Dra. Anarosa Brandão.
       </Typography>
 
       <Typography paragraph align="justify" variant="subtitle1">
-        Por favor, utilize o menu na lateral esquerda para navegar pelo site. 
-        Nele você encontrará a página 'Chatbot', onde será possível observar e
-        realizar testes com o chatbot em funcionamento.
+        Sinta-se à vontade para explorar o site através do menu presente na
+        lateral esquerda.
+        Nele você encontrará a página 'Chatbot',
+        onde será possível conversar em tempo real com o chatbot e realizar
+        testes de funcionamento.
         Além disso, outras páginas apresentam todas as informações relevantes 
-        sobre o projeto, como a descrição completa, tecnologias utilizadas, 
-        equipe e informações de contato.
+        sobre o projeto, como informações de uso, tecnologias utilizadas, 
+        equipe de trabalho e informações de contato.
       </Typography>
-
     </Paper>
   );
 }

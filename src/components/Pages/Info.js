@@ -31,21 +31,29 @@ function Info({ setTitle }) {
         </Typography>
         do curso de Engenharia Elétrica com Ênfase em Computação da 
         Escola Politécnica da Universidade de São Paulo (POLI-USP)
-        e foi desenvolvido pelos alunos
-        Bruno Brandão Inácio e Pedro de Moraes Ligabue.
+        e foi desenvolvido pelos alunos Bruno Brandão Inácio 
+        e Pedro de Moraes Ligabue, sob orientação da
+        professora Dra. Anarosa Brandão.
+
+        Neste projeto de formatura foram estudados e implementados métodos de 
+        apoio à interação, em forma de conversa de texto, entre usuários e 
+        chatbots em um sistema de atendimento a clientes no contexto de uma 
+        distribuidora de energia elétrica.
       </Typography>
 
       <Typography paragraph align="justify" variant="subtitle1">
-        Neste projeto de formatura são estudados métodos de apoio à interação,
-        em forma de conversa de texto entre usuários e chatbots em um sistema 
-        de atendimento ao cliente. A fim de atingir seu objetivo, é realizado 
-        primeiramente o desenvolvimento de uma interface gráfica para plataforma 
-        web, capaz de receber requisições de usuários e se comunicar com um
-        servidor, possibilitando uma interação simples e intuitiva por meio de 
-        conversas de texto entre os usuários e os chatbots.
-        Em seguida, é feita a análise de diferentes algoritmos de Processamento 
-        de Linguagem Natural (PLN) que possam ser aplicados aos chatbots de 
-        forma que eles sejam capazes de identificar e responder questões
+        O projeto conta com uma interface gráfica
+        para plataforma web capaz de receber requisições de usuários,
+        de maneira simples e intuitiva e que foi desenvolvida com especial
+        cuidado com relação a recursos de 
+        acessibilidade e ao uso de um design e
+        de fluxos de interação próximos a padrões já consolidados, buscando
+        tornar o site acessível ao máximo de clientes possível.
+
+        Já os chatbots foram construídos a partir de uma análise de diferentes
+        algoritmos de 
+        Processamento de Linguagem Natural (PLN) que pudessem ser combinados
+        para formar chatbots de capazes de identificar e responder questões
         dos usuários de forma coerente, sendo suficientemente parecido com uma
         interação humana para fornecer uma melhor experiência aos clientes.
       </Typography>
@@ -53,7 +61,7 @@ function Info({ setTitle }) {
       <Typography paragraph align="justify" variant="subtitle1">
         Através do menu na lateral esquerda é possível navegar pelo site.
         Você encontrará opções referentes à página 'Chatbot', onde poderá
-        observar e realizar testes com o chatbot desenvolvido. Além disso,
+        realizar testes em tempo real com o chatbot desenvolvido. Além disso,
         outras páginas apresentam todas as informações relevantes sobre o
         projeto, como a as tecnologias utilizadas e dúvidas comuns. Por fim,
         na página referente à equipe, é possível encontrar mais informações
@@ -61,9 +69,9 @@ function Info({ setTitle }) {
       </Typography>
 
       <Typography paragraph align="justify" variant="subtitle1">
-        O projeto foi dividido em duas partes: o front-end e o back-end e os
-        códigos desenvolvidos estão disponíveis de forma aberta em repositórios
-        do GitHub:
+        O desenvolvimento do projeto foi dividido entre as etapas de
+        <i> front-end</i> e <i>back-end</i> e os
+        códigos desenvolvidos estão disponíveis de forma aberta através do GitHub:
       </Typography>
 
       <Button color="primary" href="https://github.com/BrunoInacio/chat-front-end">
