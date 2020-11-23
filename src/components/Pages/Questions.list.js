@@ -51,6 +51,24 @@ const questions = [
     'title': "Questões sobre o projeto",
     'questions': [
       {
+        'question': "Quais as vantagens do uso de um Chatbot?",
+        'answer': "Uma implementação adequada de atendimento automatizado gera \
+                   benefícios tanto para as empresas quanto para os usuários \
+                   envolvidos. \
+                   Do ponto de vista da empresa, os chatbots representam um \
+                   modelo de atendimento altamente escalável, que possibilita \
+                   geração de valor através da redução de gastos com centrais \
+                   de atendimento. Esta economia pode ser realocada em recursos \
+                   de outras áreas a fim de melhorar a experiência dos \
+                   consumidores e de atrair e satisfazer um público mais \
+                   jovem que está acostumado com interações mais humanas com \
+                   a tecnologia. \
+                   Do ponto de vista dos clientes, o sistema automatizado \
+                   implica em uma redução do tempo gasto com ferramentas de \
+                   busca e a simplificação do acesso a informações e \
+                   recomendações.",
+      },
+      {
         'question': "O que é um Chatbot?",
         'answer': "Um chatbot é um software capaz de simular conversas humanas,\
                    possibilitando comunicação entre pessoas e computadores com \
@@ -66,32 +84,36 @@ const questions = [
                    podem ser capazes de prever demandas.",
       },
       {
-        'question': "Quais as vantagens do uso de um Chatbot?",
-        'answer': "Uma implementação adequada de atendimento automatizado gera \
-                   benefícios para ambas as partes envolvidas. Para a empresa, \
-                   é possível atrair público mais jovem, reduzir custos com \
-                   centrais de atendimento e realocar funcionários e investimentos \
-                   em outras áreas a fim de melhorar a experiência dos usuários e \
-                   de gerar maiores retornos. Enquanto para o cliente, é possível \
-                   reduzir o tempo gasto com ferramentas de busca e simplificar o \
-                   acesso a informações e recomendações.",
+        'question': "O que é Processamento de Linguagem Natural (PLN)?",
+        'answer': "O Processamento de Linguagem Natural é uma área de estudo \
+                   da Inteligência Artificial \
+                   que lida com a comunicação entre seres humanos e \
+                   computadores através das linguagens naturais, ou seja, \
+                   as línguas faladas pelos seres humanos. \
+                   Segundo Russell e Norvig, as linguagens naturais se \
+                   diferenciam das linguagens formais por, por exemplo, não \
+                   conterem um conjunto definido de cadeias, formadas a \
+                   partir de uma gramática com regras definidas, \
+                   incluírem ambiguidade e mudarem constantemente. \
+                   Por estes motivos, a modelagem de linguagens naturais é \
+                   mais consistente se feita com o uso de modelos estatísticos \
+                   no lugar de regras de produção, como uma gramática formal.",
       },
       {
-        'question': "O que é Processamento de Linguagem Natural (PLN)?",
-        'answer': "O Processamento de Linguagem Natural (PLN) é uma área que da \
-                   Inteligência Artificial que interage com a Ciência da Computação \
-                   e com a área de linguística visando estudar problemas \
-                   relacionados à produção e interpretação de conteúdo em \
-                   linguagens humanas (naturais). \
-                   \
-                   Segundo Russell e Norvig, as linguagens naturais se diferenciam \
-                   das linguagens formais por, por exemplo, não conterem um \
-                   conjunto definido de cadeias, formadas a partir de uma gramática \
-                   com regras definidas, incluírem ambiguidade e mudarem \
-                   constantemente. Por estes motivos, a modelagem de linguagens \
-                   naturais é mais consistente se feita com o uso de modelos \
-                   estatísticos no lugar de regras de produção, como uma gramática \
-                   formal.",
+        'question': "Quais técnicas de PLN foram usadas no Chatbot?",
+        'answer': "O funcionamento do chatbot é muito complexo e envolve o \
+                   uso de uma combinação de diferentes técnicas para atingir \
+                   um resultado satisfatório. Três das principais técnicas \
+                   presentes são: Classificação de Intenção, responsável por \
+                   reconhecer a intenção de uma frase de acordo com uma lista \
+                   de possibilidades previamente definida, feita com base \
+                   em métricas de similaridade entre o texto digitado e textos \
+                   utilizados durante treinamento; Extração de Entidade, que \
+                   trata da identificação de termos específicos presentes em \
+                   partes do texto, como por exemplo nome de uma pessoa, nome \
+                   de um lugar ou documento de identificação; Seletor de \
+                   Respostas, responsável por definir respostas adequadas de \
+                   acordo com o fluxo da conversa.",
       },
     ]
   }
