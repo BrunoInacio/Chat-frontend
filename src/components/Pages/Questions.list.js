@@ -7,7 +7,24 @@ const questions = [
         'answer': "Para testar o chatbot basta abrir a página de conversa e \
                    você deverá receber uma mensagem do chatbot indicando algumas \
                    das ações disponíveis. Fique à vontade para fazer uma pergunta \
-                   ou enviar alguma solicitação.",
+                   ou enviar alguma solicitação, assim como você faria com \
+                   atendentes humanos em um serviço de atendimento.",
+        'actions': [
+          {
+          'text': "Ir para Chatbot",
+          'to': '/chatbot'
+          },
+        ]
+      },
+      {
+        'question': "Que tipo de perguntas o chatbot é capaz de responder?",
+        'answer': "O chatbot visa responder questões da mesma forma que \
+                   atendentes humanos fariam em uma empresa de distribuição \
+                   de energia elétrica. Assim, é possível realizar ações como: \
+                   conferir situação de uma conta passada e os débitos \
+                   pendentes, informar a central sobre quedas de energia ou \
+                   consultrar a situação de geradores em determinada área, \
+                   alterar informações de cadastro, entre outras.",
         'actions': [
           {
           'text': "Ir para Chatbot",
@@ -45,10 +62,24 @@ const questions = [
           },
         ]
       },
+      {
+        'question': "O projeto possui código de fonte aberto?",
+        'answer': "Sim! O projeto foi desenvolvido em duas etapas: o front-end \
+                   e o back-end. O código de ambas estão disponíveis na \
+                   plataforma Github de forma totalmente livre. Para \
+                   ver como acessar o código, basta abrir a página de \
+                   informações.",
+        'actions': [
+          {
+          'text': "Ver página de informações",
+          'to': '/info'
+          },
+        ]
+      },
     ]
   },
   {
-    'title': "Questões sobre o projeto",
+    'title': "Questões teóricas",
     'questions': [
       {
         'question': "Quais as vantagens do uso de um Chatbot?",
