@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/chat-front-end/static/js/main.55b8fa4c.chunk.js",
-    "main.js.map": "/chat-front-end/static/js/main.55b8fa4c.chunk.js.map",
+    "main.js": "/chat-front-end/static/js/main.3d2baaf4.chunk.js",
+    "main.js.map": "/chat-front-end/static/js/main.3d2baaf4.chunk.js.map",
     "runtime-main.js": "/chat-front-end/static/js/runtime-main.2277c76b.js",
     "runtime-main.js.map": "/chat-front-end/static/js/runtime-main.2277c76b.js.map",
     "static/js/2.7f9f0244.chunk.js": "/chat-front-end/static/js/2.7f9f0244.chunk.js",
     "static/js/2.7f9f0244.chunk.js.map": "/chat-front-end/static/js/2.7f9f0244.chunk.js.map",
     "index.html": "/chat-front-end/index.html",
-    "precache-manifest.5b2b9edb010c7f374ffb68bb7a23d58a.js": "/chat-front-end/precache-manifest.5b2b9edb010c7f374ffb68bb7a23d58a.js",
+    "precache-manifest.393cbdaaee5551ce3791ec8238074040.js": "/chat-front-end/precache-manifest.393cbdaaee5551ce3791ec8238074040.js",
     "service-worker.js": "/chat-front-end/service-worker.js",
     "static/js/2.7f9f0244.chunk.js.LICENSE.txt": "/chat-front-end/static/js/2.7f9f0244.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2277c76b.js",
     "static/js/2.7f9f0244.chunk.js",
-    "static/js/main.55b8fa4c.chunk.js"
+    "static/js/main.3d2baaf4.chunk.js"
   ]
 }
