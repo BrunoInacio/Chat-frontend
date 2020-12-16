@@ -19,7 +19,7 @@ export default function MessageList() {
   }, [sortedMessages]);
 
   return (
-    <Box ref={messageList} className={classes.messageListContainer}>
+    <Box ref={messageList} className={classes.messageListContainer} role="log" aria-live="polite">
       <Box display="flex" flexDirection="column">
 
         {sortedMessages.map((message, index) => (
